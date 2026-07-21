@@ -1,0 +1,12 @@
+<Project>
+
+  <Target Name="UTS_BuildFinished"
+          AfterTargets="Build">
+
+    <Message
+        Text="UTS Build Completed Successfully."
+        Importance="High" />
+
+  </Target>
+
+</Project>
