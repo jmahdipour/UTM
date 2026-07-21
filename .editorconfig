@@ -1,0 +1,67 @@
+###########################################################
+# UTS - Universal Testing System
+# EditorConfig
+###########################################################
+
+root = true
+
+###########################################################
+# Global
+###########################################################
+
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+###########################################################
+# Visual Basic
+###########################################################
+
+[*.vb]
+
+indent_style = space
+indent_size = 4
+
+visual_basic_preferred_modifier_order = Public,Protected,Friend,Private,MustOverride,NotOverridable,Overrides,Overloads,Shared,MustInherit,NotInheritable,Partial,Async,Iterator,ReadOnly,WriteOnly
+
+visual_basic_style_prefer_isnot_expression = true:suggestion
+visual_basic_style_prefer_simplified_object_creation = true:suggestion
+
+###########################################################
+# XML
+###########################################################
+
+[*.xml]
+indent_size = 2
+
+###########################################################
+# XAML
+###########################################################
+
+[*.xaml]
+indent_size = 4
+
+###########################################################
+# JSON
+###########################################################
+
+[*.json]
+indent_size = 2
+
+###########################################################
+# Markdown
+###########################################################
+
+[*.md]
+trim_trailing_whitespace = false
+
+###########################################################
+# Solution Files
+###########################################################
+
+[*.sln]
+indent_size = 4
