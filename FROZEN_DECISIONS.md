@@ -48,21 +48,21 @@ This is the mandatory entry point for authoritative UTS decisions. Read it befor
 | EDR | Decision | Status | Supersedes or amends |
 |---|---|---|---|
 | EDR-0001 | Separate measurement streams from domain events | FROZEN | Amends GR-013 and resolves CEDR-001 |
+| EDR-0002 | Executable, versioned Test Method model | FROZEN | Resolves CEDR-002; constrained by GR-003/GR-004 |
 
 ## Open decision sequence
 
 These items must be resolved in dependency order:
 
-1. EDR-0002 — Executable Test Method model.
-2. EDR-0003 — Machine and Test State Machines.
-3. EDR-0004 — Safety and Interlock architecture.
-4. EDR-0005 — Measurement Channel, Sensor and Calibration contracts.
-5. Event Dictionary.
-6. UI command and permission matrix.
-7. Physical SQLite model and migration policy.
-8. Application/API contracts.
-9. PLC/driver contracts and verified hardware map.
-10. Reporting, validation and release architecture.
+1. EDR-0003 — Machine and Test State Machines.
+2. EDR-0004 — Safety and Interlock architecture.
+3. EDR-0005 — Measurement Channel, Sensor and Calibration contracts.
+4. Event Dictionary.
+5. UI command and permission matrix.
+6. Physical SQLite model and migration policy.
+7. Application/API contracts.
+8. PLC/driver contracts and verified hardware map.
+9. Reporting, validation and release architecture.
 
 ## Synchronization check
 
