@@ -121,3 +121,7 @@ The supplied `AG01.zip` was integrity-checked and analyzed as legacy engineering
 
 | CEDR-005 | Machine and Test Run use separate coordinated state machines with guarded commands; layered safety/interlocks override all normal transitions. | EDR-0003 and EDR-0004 |
 | CEDR-006 | Press-and-hold JOG is limited to Setup, uses explicit/idempotent Stop and approved 0.1/1/10 mm/min UI presets; no software clutch exists. Physical mapping, thresholds and safety performance remain open. | EDR-0003 and EDR-0004 (partial; hardware verification remains) |
+
+
+| CEDR-003 | Methods declare logical sensor requirements; deploy/run resolution binds actual sensor installations and calibration revisions into an immutable Run Measurement Snapshot. | EDR-0005 |
+| CEDR-004 | Calibration, range, overload validation and quality are per sensor/binding; only applicable Active calibration revisions satisfy production arming. | EDR-0005 |
