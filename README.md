@@ -11,7 +11,7 @@
 Current Version:
 
 ```
-Documentation v0.1
+Documentation v0.2
 ```
 
 Status:
@@ -80,6 +80,10 @@ CPU
 ```
 README.md
 
+DOCUMENTATION_GOVERNANCE.md
+
+FROZEN_DECISIONS.md
+
 AI_HANDOVER_SPECIFICATION.md
 
 CHANGELOG.md
@@ -130,8 +134,11 @@ In Progress
 
 Pending
 
+- Executable Test Method EDR
+- Machine/Test State Machine
+- Safety and Interlock Architecture
+- Measurement/Sensor/Calibration Contracts
 - Event Dictionary
-- State Machine
 - Physical Database
 - UI Pages
 - PLC Layer
