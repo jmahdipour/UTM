@@ -125,3 +125,7 @@ The supplied `AG01.zip` was integrity-checked and analyzed as legacy engineering
 
 | CEDR-003 | Methods declare logical sensor requirements; deploy/run resolution binds actual sensor installations and calibration revisions into an immutable Run Measurement Snapshot. | EDR-0005 |
 | CEDR-004 | Calibration, range, overload validation and quality are per sensor/binding; only applicable Active calibration revisions satisfy production arming. | EDR-0005 |
+
+
+| CEDR-007 | The six primary pages remain Reception/Test/Method/Calibration/Settings/Report; Reception is explicitly an Order-rooted workspace under GR-001. | EDR-0006 |
+| CEDR-012 | Roles/permissions are data-driven and commands are checked in Application plus state/safety guards. Audit/localization/export service details continue in their dedicated designs. | EDR-0006 (UI/permission portion) |
