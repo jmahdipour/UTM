@@ -532,9 +532,17 @@ Event Driven Architecture
 
 Measurement Stream / Domain Event Separation
 
+Executable Versioned Test Method Model
+
 Documentation Repository
 
 Pending
+
+Machine and Test State Machines
+
+Safety and Interlock Architecture
+
+Measurement/Sensor/Calibration Contracts
 
 Event Dictionary
 
