@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: AI_HANDOVER_SPECIFICATION
-version: 0.1
+version: 0.2
 status: FROZEN
 classification: MASTER
 priority: HIGHEST
@@ -372,13 +372,15 @@ Reporting
 
 ## GR-013
 
-Event Detection Engine
+Measurement streams and domain events are separate, connected flows.
 
-The heart of the entire software.
+Continuous calculations consume validated or derived measurement streams according to their declared contracts.
 
-No engine is allowed to calculate directly from raw measurements.
+Semantic landmarks and state changes are represented as versioned domain events with sample provenance.
 
-Every downstream engine consumes Events.
+No mechanical-property, acceptance, reporting or UI module may calculate directly from raw measurements.
+
+The complete governing decision is EDR-0001.
 
 ---
 
@@ -470,17 +472,19 @@ Every architectural decision becomes
 
 EDR
 
-Every EDR becomes
-
-Frozen
+Every EDR follows the governed status lifecycle.
 
 Every Frozen decision updates
+
+FROZEN_DECISIONS
 
 Architecture
 
 AI Handover
 
 Changelog
+
+DOCUMENTATION_GOVERNANCE defines source authority, branch authority and synchronization rules.
 
 ---
 
@@ -525,6 +529,8 @@ Interactive Measurement Widgets
 Analysis Pipeline
 
 Event Driven Architecture
+
+Measurement Stream / Domain Event Separation
 
 Documentation Repository
 
@@ -587,6 +593,10 @@ Before continuing development
 Read
 
 README.md
+
+DOCUMENTATION_GOVERNANCE.md
+
+FROZEN_DECISIONS.md
 
 AI_HANDOVER_SPECIFICATION.md
 
