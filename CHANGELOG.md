@@ -272,3 +272,32 @@ First EDR Package
 - Analyzed the supplied `AG01.zip` legacy VB.NET/WinForms code and recorded its SHA-256 source identity.
 - Added `AG01_LEGACY_CODE_ANALYSIS.md` with controlled classifications for retained capabilities, candidate EDRs, superseded patterns, formulas, PLC evidence and open verification items.
 - Kept all legacy PLC addresses, calibration/scaling values, limits, formulas and speed presets non-authoritative pending hardware/standard verification and approved EDRs.
+
+
+## Documentation v0.2 — Architecture Decisions
+
+### Governance
+
+- Added `DOCUMENTATION_GOVERNANCE.md` with source authority, decision lifecycle, synchronization and branch-release rules.
+- Added `FROZEN_DECISIONS.md` as the mandatory current decision index.
+- Required repository refresh before every analysis, design, implementation or refactoring task.
+
+### EDR-0001
+
+- Frozen the separation of continuous measurement streams from semantic domain events.
+- Amended GR-013 so numerical analysis consumes validated/derived measurement streams while events retain semantic meaning and sample provenance.
+- Preserved immutable raw data and deterministic replay.
+- Defined ordering, timestamps, quality flags, backpressure, graph-decimation isolation and re-analysis lineage.
+- Added `ARCHITECTURE/DATA_FLOW.md`.
+- Resolved CEDR-001.
+
+### Remaining dependency order
+
+1. Executable Test Method model.
+2. Machine/Test State Machines.
+3. Safety and Interlock architecture.
+4. Measurement/Sensor/Calibration contracts.
+5. Event Dictionary.
+6. UI command/permission matrix.
+7. Physical SQLite model.
+8. Application/API and PLC/driver contracts.
