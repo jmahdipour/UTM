@@ -51,18 +51,17 @@ This is the mandatory entry point for authoritative UTS decisions. Read it befor
 | EDR-0002 | Executable, versioned Test Method model | FROZEN | Resolves CEDR-002; constrained by GR-003/GR-004 |
 | EDR-0003 | Separate coordinated Machine and Test Run state machines | FROZEN | Resolves CEDR-005 state portion |
 | EDR-0004 | Layered safety and interlock architecture | FROZEN | Resolves CEDR-005 safety portion; partially resolves CEDR-006 |
+| EDR-0005 | Measurement Channel, Sensor and Calibration contracts | FROZEN | Resolves CEDR-003 and CEDR-004 |
 
 ## Open decision sequence
 
 These items must be resolved in dependency order:
 
-1. EDR-0005 — Measurement Channel, Sensor and Calibration contracts.
-2. Event Dictionary.
-3. UI command and permission matrix.
-4. Physical SQLite model and migration policy.
-5. Application/API contracts.
-6. PLC/driver contracts and verified hardware map.
-7. Reporting, validation and release architecture.
+1. UI command and permission matrix.
+2. Physical SQLite model and migration policy.
+3. Application/API contracts.
+4. PLC/driver contracts and verified hardware map.
+5. Reporting, validation and release architecture.
 
 ## Synchronization check
 
