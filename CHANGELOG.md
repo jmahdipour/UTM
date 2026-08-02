@@ -255,3 +255,16 @@ State Machine
 Architecture Chapters
 
 First EDR Package
+
+
+---
+
+# Unreleased
+
+## Legacy decision ingestion
+
+- Preserved the consolidated legacy TensileTestX handover under `REFERENCES/LEGACY/`.
+- Preserved the historical tensile UI shell under `REFERENCES/LEGACY/`.
+- Added `LEGACY_DECISION_MIGRATION_REGISTER.md` to classify retained statements as migrated, candidate EDR, superseded, open or reference-only.
+- Explicitly retained WPF/MVVM, the Order-rooted domain model and current Frozen Golden Rules where legacy material conflicts.
+- Recorded unresolved sensor, standards, hardware, safety, event-stream and UI architecture items for controlled follow-up.
