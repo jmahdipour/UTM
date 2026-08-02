@@ -542,6 +542,8 @@ Measurement/Sensor/Calibration Contracts
 
 Event Dictionary
 
+Six-page WPF/MVVM UI Architecture and Command/Permission Matrix
+
 Documentation Repository
 
 Pending
@@ -549,8 +551,6 @@ Pending
 State Machine
 
 Database Physical Model
-
-UI Architecture
 
 PLC Layer
 
