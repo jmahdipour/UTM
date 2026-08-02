@@ -135,8 +135,7 @@ In Progress
 Pending
 
 - Executable Test Method EDR
-- Measurement/Sensor/Calibration Contracts
-- Event Dictionary
+
 - Physical Database
 - UI Pages
 - PLC Layer
