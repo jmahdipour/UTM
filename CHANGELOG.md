@@ -342,3 +342,14 @@ First EDR Package
 - Added controlled references to ISO/IEC 17025:2017, ISO 7500-1:2018 and ISO 9513:2012 without claiming conformity.
 - Added the first Frozen Event Dictionary with versioned envelopes and machine, run, measurement-quality, analysis and result events.
 - Resolved CEDR-003 and CEDR-004.
+
+
+### EDR-0006
+
+- Frozen the six-page WPF/MVVM shell: Reception, Test, Method, Calibration, Settings and Report.
+- Defined Reception as an Order-rooted workspace to preserve GR-001.
+- Added the state/permission guarded command matrix, including always-requestable Stop and Setup-only press-and-hold JOG.
+- Defined data-driven permission identifiers instead of role-name checks.
+- Defined the interactive Measurement Widget command behavior, live Test workspace and graph/re-analysis boundaries.
+- Added `UI/UI_ARCHITECTURE.md`.
+- Resolved CEDR-007 and the UI/permission portion of CEDR-012.
