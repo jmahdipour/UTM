@@ -534,13 +534,13 @@ Measurement Stream / Domain Event Separation
 
 Executable Versioned Test Method Model
 
-Documentation Repository
-
-Pending
-
 Machine and Test State Machines
 
 Safety and Interlock Architecture
+
+Documentation Repository
+
+Pending
 
 Measurement/Sensor/Calibration Contracts
 
