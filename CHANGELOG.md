@@ -313,3 +313,21 @@ First EDR Package
 - Required an immutable Run Configuration Snapshot before arming.
 - Added `DOMAIN/TEST_METHOD_MODEL.md`.
 - Resolved CEDR-002.
+
+
+### EDR-0003
+
+- Frozen separate coordinated Machine and Test Run state machines.
+- Replaced string/Boolean state with explicit guarded transitions and stable command rejection reasons.
+- Defined Setup-only press-and-hold JOG, idempotent Stop, approved 0.1/1/10 mm/min UI presets and no software clutch.
+- Defined run terminal EndReason, restart reconciliation and transition audit requirements.
+- Added `ARCHITECTURE/STATE_MACHINES.md`.
+
+### EDR-0004
+
+- Frozen layered Safety and Interlock architecture while keeping hardware-specific safety performance open.
+- Declared the Windows/WPF application non-safety-rated and prohibited it from being the sole safety layer.
+- Defined safety priority, stop intents, interlock snapshots, fail-closed command gating, watchdog behavior and commissioning gates.
+- Added official ISO 12100, ISO 13849-1:2023, ISO 13850 and IEC 60204-1 reference links.
+- Added `ARCHITECTURE/SAFETY_AND_INTERLOCKS.md`.
+- Resolved CEDR-005 and partially resolved CEDR-006.
