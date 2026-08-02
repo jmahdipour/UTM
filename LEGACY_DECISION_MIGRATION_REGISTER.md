@@ -114,3 +114,6 @@ The supplied `AG01.zip` was integrity-checked and analyzed as legacy engineering
 | Candidate | Resolution | Governing decision |
 |---|---|---|
 | CEDR-001 | Continuous measurement streams and semantic domain events are separate, connected flows. | EDR-0001 |
+
+
+| CEDR-002 | Test Methods use immutable released versions containing ordered phases/segments, typed control targets/rates, transitions, terminations and per-segment acquisition profiles. Material, Acceptance, calibration and safety remain separate aggregates. | EDR-0002 |
