@@ -117,3 +117,7 @@ The supplied `AG01.zip` was integrity-checked and analyzed as legacy engineering
 
 
 | CEDR-002 | Test Methods use immutable released versions containing ordered phases/segments, typed control targets/rates, transitions, terminations and per-segment acquisition profiles. Material, Acceptance, calibration and safety remain separate aggregates. | EDR-0002 |
+
+
+| CEDR-005 | Machine and Test Run use separate coordinated state machines with guarded commands; layered safety/interlocks override all normal transitions. | EDR-0003 and EDR-0004 |
+| CEDR-006 | Press-and-hold JOG is limited to Setup, uses explicit/idempotent Stop and approved 0.1/1/10 mm/min UI presets; no software clutch exists. Physical mapping, thresholds and safety performance remain open. | EDR-0003 and EDR-0004 (partial; hardware verification remains) |
