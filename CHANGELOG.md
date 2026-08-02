@@ -331,3 +331,14 @@ First EDR Package
 - Added official ISO 12100, ISO 13849-1:2023, ISO 13850 and IEC 60204-1 reference links.
 - Added `ARCHITECTURE/SAFETY_AND_INTERLOCKS.md`.
 - Resolved CEDR-005 and partially resolved CEDR-006.
+
+
+### EDR-0005 and Event Dictionary
+
+- Frozen separate contracts for logical channels, physical sensors, installations, calibration revisions, channel bindings, zero/tare, compliance correction and run measurement snapshots.
+- Kept the six legacy load-cell and three extensometer selections as unverified inventory evidence.
+- Prohibited implicit Extensometer-to-Stroke fallback and scalar INI calibration factors.
+- Added calibration lifecycle, quality flags, range rules and arming validation.
+- Added controlled references to ISO/IEC 17025:2017, ISO 7500-1:2018 and ISO 9513:2012 without claiming conformity.
+- Added the first Frozen Event Dictionary with versioned envelopes and machine, run, measurement-quality, analysis and result events.
+- Resolved CEDR-003 and CEDR-004.
