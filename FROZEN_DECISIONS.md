@@ -52,16 +52,16 @@ This is the mandatory entry point for authoritative UTS decisions. Read it befor
 | EDR-0003 | Separate coordinated Machine and Test Run state machines | FROZEN | Resolves CEDR-005 state portion |
 | EDR-0004 | Layered safety and interlock architecture | FROZEN | Resolves CEDR-005 safety portion; partially resolves CEDR-006 |
 | EDR-0005 | Measurement Channel, Sensor and Calibration contracts | FROZEN | Resolves CEDR-003 and CEDR-004 |
+| EDR-0006 | UI architecture, command matrix and data-driven permissions | FROZEN | Resolves CEDR-007 and UI portion of CEDR-012 |
 
 ## Open decision sequence
 
 These items must be resolved in dependency order:
 
-1. UI command and permission matrix.
-2. Physical SQLite model and migration policy.
-3. Application/API contracts.
-4. PLC/driver contracts and verified hardware map.
-5. Reporting, validation and release architecture.
+1. Physical SQLite model and migration policy.
+2. Application/API contracts.
+3. PLC/driver contracts and verified hardware map.
+4. Reporting, validation and release architecture.
 
 ## Synchronization check
 
