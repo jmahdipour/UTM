@@ -301,3 +301,15 @@ First EDR Package
 6. UI command/permission matrix.
 7. Physical SQLite model.
 8. Application/API and PLC/driver contracts.
+
+
+### EDR-0002
+
+- Frozen the executable, versioned Test Method model.
+- Defined ordered phases and deterministic segments with typed control modes, targets, rates, transitions and method termination conditions.
+- Defined per-segment sampling and non-recording approach support.
+- Preserved the seven-tab Method experience while separating Test Method, Specimen, Material, Acceptance, physical calibration, chart and report ownership.
+- Defined Draft, Validated, Released and Retired lifecycle with immutable released revisions.
+- Required an immutable Run Configuration Snapshot before arming.
+- Added `DOMAIN/TEST_METHOD_MODEL.md`.
+- Resolved CEDR-002.
