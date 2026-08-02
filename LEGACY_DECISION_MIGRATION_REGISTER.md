@@ -25,6 +25,8 @@ A legacy statement does not become a Frozen UTS decision merely because it is pr
 
 - REFERENCES/LEGACY/MERGED_TensileTestX_Complete.md
 - REFERENCES/LEGACY/tensile_shell.html
+- REFERENCES/LEGACY/AG01/README.md (manifest for the supplied AG01 source archive)
+- AG01_LEGACY_CODE_ANALYSIS.md
 
 ## Status definitions
 
@@ -99,5 +101,9 @@ A legacy statement does not become a Frozen UTS decision merely because it is pr
 6. Event Dictionary.
 7. UI Architecture and command/permission matrix.
 8. Physical SQLite model.
+
+## AG01 source-code ingestion
+
+The supplied `AG01.zip` was integrity-checked and analyzed as legacy engineering evidence. Controlled results are in `AG01_LEGACY_CODE_ANALYSIS.md`. It adds eight compatible capability observations, ten candidate EDR decisions, eight superseded implementation patterns, a reference-only PLC address map, formula evidence and eight verification items. No PLC address, scaling factor, limit, calibration value, formula or legacy UI pattern became Frozen through this ingestion.
 
 # End of document
