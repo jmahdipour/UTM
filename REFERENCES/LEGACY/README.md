@@ -12,5 +12,7 @@ Use `LEGACY_DECISION_MIGRATION_REGISTER.md` at the repository root to determine 
 
 - `MERGED_TensileTestX_Complete.md`: consolidated legacy handover, architecture notes, workflow analysis, hardware notes and appendices.
 - `tensile_shell.html`: historical interactive UI shell/prototype.
+- `AG01/README.md`: integrity manifest and authority warning for the supplied AG01 source archive.
+- `/AG01_LEGACY_CODE_ANALYSIS.md`: controlled extraction of AG01 decisions, conflicts and verification items.
 
 Do not implement numeric acceptance criteria, hardware addresses, calibration constants or safety behavior directly from these files without current verification and the required EDR.
