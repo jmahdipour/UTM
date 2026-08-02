@@ -135,8 +135,6 @@ In Progress
 Pending
 
 - Executable Test Method EDR
-- Machine/Test State Machine
-- Safety and Interlock Architecture
 - Measurement/Sensor/Calibration Contracts
 - Event Dictionary
 - Physical Database
