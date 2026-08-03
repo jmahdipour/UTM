@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: FROZEN_DECISIONS
-version: 0.2
+version: 0.3
 status: FROZEN
 classification: MASTER-INDEX
 last_revision: 2026-08-03
@@ -55,12 +55,13 @@ This is the mandatory entry point for authoritative UTS decisions. Read it befor
 | EDR-0006 | UI architecture, command matrix and data-driven permissions | FROZEN | Resolves CEDR-007 and UI portion of CEDR-012 |
 | EDR-0007 | SQLite persistence, units and migration policy | FROZEN | Resolves the physical persistence decision; governs `DATABASE/` |
 | EDR-0008 | Versioned in-process Application/API contracts | FROZEN | Resolves Application/API boundary; governs `APPLICATION/` and related contract catalogs |
+| EDR-0009 | Hardware-independent driver, PLC mapping lifecycle, Simulator and commissioning gates | FROZEN | Resolves Driver/Simulator contract; physical hardware map and adapter activation remain `BLOCKED-HARDWARE` |
 
 ## Open decision sequence
 
 These items must be resolved in dependency order:
 
-1. PLC/driver contracts and verified hardware map.
+1. Verified physical hardware map and adapter commissioning.
 2. Reporting, validation and release architecture.
 
 ## Synchronization check

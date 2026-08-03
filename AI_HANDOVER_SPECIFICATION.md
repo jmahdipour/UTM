@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: AI_HANDOVER_SPECIFICATION
-version: 0.2
+version: 0.3
 status: FROZEN
 classification: MASTER
 priority: HIGHEST
@@ -550,11 +550,15 @@ Versioned In-Process Application/API Contracts
 
 Command/Query, JOG Lease, Stable Reason Code and Reconciliation Contracts
 
+Hardware-Independent Driver and PLC Mapping Lifecycle Contracts
+
+Deterministic Driver Simulator, Fault Injection and Commissioning Gates
+
 Documentation Repository
 
 Pending
 
-PLC/Driver Contracts and Verified Hardware Map
+Verified Physical Hardware Map and Adapter Commissioning
 
 Reporting, Validation and Release Architecture
 
