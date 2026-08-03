@@ -365,8 +365,18 @@ First EDR Package
 - Required ordered checksummed migrations, verified backup before migration and no in-place downgrade.
 - Revalidated 14/14 structural acceptance checks, foreign keys, integrity and controlled conversion data.
 
+### EDR-0008
+
+- Frozen a versioned in-process Application/API boundary for WPF, Application, Core and Infrastructure.
+- Prohibited public HTTP, REST, gRPC, socket, scripting and remote-motion listeners in v1 without a separate security and safety EDR.
+- Added 57 versioned commands, side-effect-free query contracts and 56 stable reason codes.
+- Defined trusted command envelopes, idempotency, optimistic concurrency and atomic transaction boundaries.
+- Defined fail-closed JOG Begin/Renew/End leases, priority Stop behavior and mandatory reconciliation after uncertain motion timeouts.
+- Kept Re-Analyze isolated from drivers and machine coordination; display-decimated data remains prohibited as scientific input.
+- Added Application ports, transaction boundaries, a 40-requirement traceability matrix, 40 acceptance scenarios and a passing static package validator.
+- Kept executable VB.NET, simulator and hardware acceptance evidence explicitly pending implementation or commissioning.
+
 ### Remaining dependency order
 
-1. Application/API contracts.
-2. PLC/driver contracts and verified hardware map.
-3. Reporting, validation and release architecture.
+1. PLC/driver contracts and verified hardware map.
+2. Reporting, validation and release architecture.
