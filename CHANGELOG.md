@@ -353,3 +353,20 @@ First EDR Package
 - Defined the interactive Measurement Widget command behavior, live Test workspace and graph/re-analysis boundaries.
 - Added `UI/UI_ARCHITECTURE.md`.
 - Resolved CEDR-007 and the UI/permission portion of CEDR-012.
+
+### EDR-0007
+
+- Frozen SQLite as the installation transactional system of record with a controlled single-writer/WAL operating profile.
+- Added a 51-table initial physical model, 19 explicit indexes and 68 protective triggers.
+- Added immutable raw/derived measurement chunks, configuration snapshots, audit/event journals and Re-Test/Re-Analyze lineage.
+- Frozen explicit unit provenance: source, canonical analysis and display/export units remain separate.
+- Frozen force normalization to canonical N while preserving device/import kgf provenance; `1 kgf = 9.80665 N`.
+- Added `DATABASE/Migrations/0001_initial.sql`, migration/backup/recovery policy, requirements traceability and SQL acceptance tests.
+- Required ordered checksummed migrations, verified backup before migration and no in-place downgrade.
+- Revalidated 14/14 structural acceptance checks, foreign keys, integrity and controlled conversion data.
+
+### Remaining dependency order
+
+1. Application/API contracts.
+2. PLC/driver contracts and verified hardware map.
+3. Reporting, validation and release architecture.

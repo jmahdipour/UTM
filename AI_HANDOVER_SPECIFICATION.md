@@ -544,21 +544,17 @@ Event Dictionary
 
 Six-page WPF/MVVM UI Architecture and Command/Permission Matrix
 
+SQLite Physical Model, Migration Policy and Unit Provenance
+
 Documentation Repository
 
 Pending
 
-State Machine
+Application/API Contracts
 
-Database Physical Model
+PLC/Driver Contracts and Verified Hardware Map
 
-PLC Layer
-
-Reporting
-
-API
-
-Hardware Drivers
+Reporting, Validation and Release Architecture
 
 ---
 

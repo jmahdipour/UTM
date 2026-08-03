@@ -53,15 +53,15 @@ This is the mandatory entry point for authoritative UTS decisions. Read it befor
 | EDR-0004 | Layered safety and interlock architecture | FROZEN | Resolves CEDR-005 safety portion; partially resolves CEDR-006 |
 | EDR-0005 | Measurement Channel, Sensor and Calibration contracts | FROZEN | Resolves CEDR-003 and CEDR-004 |
 | EDR-0006 | UI architecture, command matrix and data-driven permissions | FROZEN | Resolves CEDR-007 and UI portion of CEDR-012 |
+| EDR-0007 | SQLite persistence, units and migration policy | FROZEN | Resolves the physical persistence decision; governs `DATABASE/` |
 
 ## Open decision sequence
 
 These items must be resolved in dependency order:
 
-1. Physical SQLite model and migration policy.
-2. Application/API contracts.
-3. PLC/driver contracts and verified hardware map.
-4. Reporting, validation and release architecture.
+1. Application/API contracts.
+2. PLC/driver contracts and verified hardware map.
+3. Reporting, validation and release architecture.
 
 ## Synchronization check
 
