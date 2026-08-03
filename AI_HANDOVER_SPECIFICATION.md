@@ -5,7 +5,7 @@ version: 0.2
 status: FROZEN
 classification: MASTER
 priority: HIGHEST
-last_revision: 2026-08-02
+last_revision: 2026-08-03
 author: Project Owner + OpenAI
 ---
 
@@ -546,11 +546,13 @@ Six-page WPF/MVVM UI Architecture and Command/Permission Matrix
 
 SQLite Physical Model, Migration Policy and Unit Provenance
 
+Versioned In-Process Application/API Contracts
+
+Command/Query, JOG Lease, Stable Reason Code and Reconciliation Contracts
+
 Documentation Repository
 
 Pending
-
-Application/API Contracts
 
 PLC/Driver Contracts and Verified Hardware Map
 
