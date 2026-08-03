@@ -380,3 +380,21 @@ First EDR Package
 
 1. PLC/driver contracts and verified hardware map.
 2. Reporting, validation and release architecture.
+
+
+### EDR-0009
+
+- Frozen the hardware-independent `IMachineDriver` boundary, typed semantic command protocol, capability advertisement and connection/reconciliation lifecycle.
+- Frozen the immutable machine hardware profile and PLC mapping lifecycle from `LegacyEvidence` through independently reviewed `Released`.
+- Frozen deterministic Simulator and fault-injection behavior as software evidence only; Simulator success does not substitute for physical commissioning.
+- Prohibited production generic register/coil writes, software clutch exposure, UI-owned heartbeat and automatic retry/resend after uncertain motion timeouts.
+- Recorded 25 AG01 legacy points as `LEGACY-EVIDENCE` with all writes `WRITE-DISABLED`; no address, polarity, scale, timing or acknowledgement was promoted to verified production data.
+- Preserved raw `kgf` provenance and canonical force normalization under EDR-0007: `1 kgf = 9.80665 N`.
+- Added `ARCHITECTURE/DRIVER_PLC_ARCHITECTURE.md`, Driver contract, hardware-map register, Simulator/fault-injection contract, commissioning gates, traceability and acceptance matrices.
+- Revalidated 45 requirements and 45 acceptance tests with exact status parity: 10 `PASS-DOC`, 26 `PENDING-CODE`, 9 `BLOCKED-HARDWARE`.
+- Kept the physical hardware map `CONTROLLED-DRAFT` and physical adapter activation `BLOCKED-HARDWARE` until controlled machine evidence and signed commissioning exist.
+
+### Remaining dependency order
+
+1. Verified physical hardware map and adapter commissioning.
+2. Reporting, validation and release architecture.
