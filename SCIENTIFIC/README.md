@@ -8,5 +8,9 @@ This package defines the controlled scientific scope and evidence required by ED
 - `TEST_CASE_SPECIFICATIONS.md` defines variants, execution rules, independent oracles and expected evidence for all 45 cases.
 - `TEST_FIXTURE_CATALOG.md` defines analytical, geometry, quality, procedural, Golden and independent fixture contracts.
 - `SOURCE_COVERAGE_AUDIT.md` records the atomic ISO/ASTM traceability gaps and scientific-gate assessment.
+- `ISO_6892_1_2019_CLAUSES_01_10_ATOMIC_RTM.md` atomizes 191 source items from Clauses 1-10 and Table 1.
+- `ISO_6892_1_2019_CLAUSES_01_10_PARAMETERS.md` records 53 extracted parameter/formula candidates pending independent review.
+- `ISO_6892_1_2019_CLAUSES_01_10_ATOMIC_ACCEPTANCE.md` defines 30 bidirectionally linked acceptance variants; all remain `NOT-RUN`.
+- `validate_atomic_traceability.py` checks counts, locators and SCI/SAT/parameter/variant links.
 
-The package is a design baseline. Family-level routing and case design do not mean atomic clause coverage, serialized fixtures, the scientific engine or conformity evidence are complete.
+The package is a design baseline. Clauses 1-10 are atomized and routed, but their independent review remains pending. Clauses 11-23, Annexes A-L and the detailed ASTM profile are not yet atomized. No serialized fixtures, scientific-engine implementation or conformity evidence exists.

@@ -148,7 +148,7 @@ In Progress
 Pending
 
 - remaining production implementation milestones in `ROADMAP.md`
-- atomic ISO source-item/parameter traceability and the detailed ASTM E8/E8M-15a package
+- independent review of the extracted ISO Clauses 1-10 atomic package; atomization of Clauses 11-23 and Annexes A-L; detailed ASTM E8/E8M-15a package
 - serialized scientific fixtures and independent test oracles
 - Scientific Engine implementation and independent closure of all `SCI-*`/`SAT-*` pairs
 - Windows x86 CI/native SQLite validation

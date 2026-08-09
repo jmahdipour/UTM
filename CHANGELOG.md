@@ -463,3 +463,11 @@ Date: 2026-08-09
 - Added `SCIENTIFIC/TEST_FIXTURE_CATALOG.md` covering analytical, geometry, measurement-quality, procedural, Golden and independent fixture admission.
 - Added `SCIENTIFIC/SOURCE_COVERAGE_AUDIT.md` with ISO family routing, open atomic work, the detailed ASTM E8/E8M-15a gap and current gate assessment.
 - Kept all scientific test results `NOT-RUN`; no documentation-only `PASS` or conformity claim was created.
+
+### SG-02 ISO atomic package 1
+
+- Atomized 191 controlled source items from ISO 6892-1:2019 Clauses 1-10, including all 46 Table 1 symbols and the Method A/Method B rate conditions.
+- Added 53 exact parameter/formula candidates with printed-page/PDF-page locators, units, inclusivity and boundary-test requirements.
+- Added 30 atomic acceptance variants linked to every source item and its existing `SCI-*`/`SAT-*` family.
+- Added a static validator for counts, locators and bidirectional source/parameter/acceptance routing.
+- Kept every parameter `INDEPENDENT-REVIEW-PENDING` and every variant `NOT-RUN`; `SG-02` remains open for review, Clauses 11-23, Annexes A-L and the detailed ASTM package.

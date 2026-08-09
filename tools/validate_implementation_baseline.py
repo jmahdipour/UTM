@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import re
+import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -191,6 +192,17 @@ def validate_document_sync(errors: list[str]) -> None:
     ):
         if token not in scientific_cases + scientific_fixtures + scientific_coverage:
             fail(errors, f"Scientific test-design or coverage token missing: {token}")
+
+    atomic_validator = ROOT / "SCIENTIFIC/validate_atomic_traceability.py"
+    atomic_result = subprocess.run(
+        [sys.executable, str(atomic_validator)],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if atomic_result.returncode != 0:
+        fail(errors, "Clauses 1-10 atomic traceability validation failed:\n" + atomic_result.stdout.strip())
 
 
 def main() -> int:
