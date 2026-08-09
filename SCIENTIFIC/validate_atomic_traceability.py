@@ -65,6 +65,26 @@ PACKAGES = (
         expected_variant_count=21,
         page_summary="clauses 11 through 16 and Figures 2-7; printed pages 15-25; PDF pages 21-31",
     ),
+    Package(
+        name="CLAUSES 17-23",
+        rtm=SCIENTIFIC / "ISO_6892_1_2019_CLAUSES_17_23_ATOMIC_RTM.md",
+        parameters=SCIENTIFIC / "ISO_6892_1_2019_CLAUSES_17_23_PARAMETERS.md",
+        acceptance=SCIENTIFIC / "ISO_6892_1_2019_CLAUSES_17_23_ATOMIC_ACCEPTANCE.md",
+        expected_by_clause={
+            "C03": 4,
+            "C10": 11,
+            "C17": 11,
+            "C18": 7,
+            "C19": 6,
+            "C20": 27,
+            "C21": 12,
+            "C22": 17,
+            "C23": 8,
+        },
+        expected_parameter_count=15,
+        expected_variant_count=26,
+        page_summary="clauses 17 through 23 and Figures 1, 8-10; printed pages 17-28; PDF pages 23-34",
+    ),
 )
 
 
@@ -80,7 +100,8 @@ def check_package(
     package: Package,
     known_sci: set[str],
     known_sat: set[str],
-) -> tuple[list[str], set[str], set[str], set[str]]:
+    known_parameters: set[str],
+) -> tuple[list[str], set[str], set[str], set[str], set[str]]:
     errors: list[str] = []
     rtm_text = package.rtm.read_text(encoding="utf-8")
     parameter_text = package.parameters.read_text(encoding="utf-8")
@@ -137,11 +158,13 @@ def check_package(
             f"Expected {package.expected_parameter_count} unique parameter rows; found "
             f"{len(parameter_rows)} rows and {len(parameter_defined)} unique IDs"
         )
-    if parameter_defined != parameter_referenced:
+    unreferenced_local = parameter_defined - parameter_referenced
+    undefined = parameter_referenced - known_parameters
+    if unreferenced_local or undefined:
         errors.append(
             "Parameter routing mismatch; "
-            f"unreferenced={sorted(parameter_defined - parameter_referenced)}, "
-            f"undefined={sorted(parameter_referenced - parameter_defined)}"
+            f"unreferenced-local={sorted(unreferenced_local)}, "
+            f"undefined-global={sorted(undefined)}"
         )
     for row in parameter_rows:
         if "EXTRACTED / INDEPENDENT-REVIEW-PENDING" not in row:
@@ -182,7 +205,7 @@ def check_package(
         if token not in rtm_text + parameter_text + acceptance_text:
             errors.append(f"Package count statement missing: {token}")
 
-    return errors, set(atomic_ids), parameter_defined, variant_defined
+    return errors, set(atomic_ids), parameter_defined, parameter_referenced, variant_defined
 
 
 def main() -> int:
@@ -191,16 +214,28 @@ def main() -> int:
     known_sci = set(ids(scientific_rtm, r"`(SCI-\d{3})`"))
     known_sat = set(ids(scientific_tests, r"`(SAT-\d{3})`"))
 
+    parameter_definition_list = [
+        item
+        for package in PACKAGES
+        for row in table_rows(package.parameters.read_text(encoding="utf-8"), "IP-")
+        for item in ids(row, r"`(IP-[A-Z0-9-]+)`")
+    ]
+    known_parameters = set(parameter_definition_list)
+
     all_errors: list[str] = []
     all_atomic: list[str] = []
     all_parameters: list[str] = []
+    all_parameter_references: list[str] = []
     all_variants: list[str] = []
 
     for package in PACKAGES:
-        errors, atomic_ids, parameter_ids, variant_ids = check_package(package, known_sci, known_sat)
+        errors, atomic_ids, parameter_ids, parameter_references, variant_ids = check_package(
+            package, known_sci, known_sat, known_parameters
+        )
         all_errors.extend(f"{package.name}: {error}" for error in errors)
         all_atomic.extend(atomic_ids)
         all_parameters.extend(parameter_ids)
+        all_parameter_references.extend(parameter_references)
         all_variants.extend(variant_ids)
 
     for label, values in (
@@ -211,6 +246,10 @@ def main() -> int:
         duplicates = sorted(item for item, count in Counter(values).items() if count != 1)
         if duplicates:
             all_errors.append(f"Cross-package duplicate {label} IDs: {duplicates}")
+
+    globally_unreferenced = known_parameters - set(all_parameter_references)
+    if globally_unreferenced:
+        all_errors.append(f"Globally unreferenced parameter IDs: {sorted(globally_unreferenced)}")
 
     if all_errors:
         print("ISO ATOMIC TRACEABILITY: FAIL")

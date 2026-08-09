@@ -479,3 +479,11 @@ Date: 2026-08-09
 - Added 21 acceptance variants for primary/alternative constructions, all required figure landmarks, applicability, procedure sequencing, controlled external-method routing and reporting evidence.
 - Expanded the static validator to check both packages, cross-package ID uniqueness and bidirectional SCI/SAT/parameter/variant routing.
 - Kept every new parameter `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for independent review, Clauses 17-23, Annexes A-L and the detailed ASTM package.
+
+### SG-02 ISO atomic package 3
+
+- Atomized 103 controlled source items from ISO 6892-1:2019 Clauses 17-23 and Figures 1 and 8-10 for `Rm`, `Ag`, `Agt`, `At`, `A`, `Z`, reporting, rounding and uncertainty boundaries.
+- Added 15 parameter/formula candidates covering maximum-force/fracture calculations, plateau midpoint, post-fracture metrology/validity, reduced-area measurement, report precision and the Figure-9 illustration assumption.
+- Added 26 acceptance variants for property applicability/calculation, manual/extensometer fracture workflows, conversion, area measurement, immutable reporting, rate artifacts and prohibited uncertainty adjustments.
+- Expanded the static validator to support globally unique parameter authorities with explicit cross-package reuse while retaining source-local definition checks.
+- Kept every new parameter `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for independent review, Figures 11-15, Annexes A-L and the detailed ASTM package.

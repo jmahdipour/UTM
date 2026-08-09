@@ -21,16 +21,18 @@ The test-design deficiency is now addressed by `TEST_CASE_SPECIFICATIONS.md` and
 4. independently review every extracted numeric/table parameter;
 5. create serialized fixtures and executable evidence.
 
-Two controlled atomization packages are now present for ISO 6892-1:2019 Clauses 1-16:
+Three controlled atomization packages are now present for ISO 6892-1:2019 Clauses 1-23 and Figures 1-10:
 
 - 191 atomic source items covering scope, dependencies, terms/formulas, all 46 Table 1 symbols, environment, specimen/geometry, gauge length, apparatus and test-rate conditions;
 - 53 parameter/formula candidates with exact printed-page/PDF-page locators and boundary semantics;
 - 30 acceptance variants linked bidirectionally to the atomic rows and existing `SCI-*`/`SAT-*` families;
 - 71 additional atomic source items for Clauses 11-16 and every routed construction point in Figures 2-7;
 - 13 additional parameter/formula candidates and 21 acceptance variants for `ReH`, `ReL`, `Rp{x}`, `Rt{x}`, `Rr{x}` and `Ae`;
-- static validation of both packages, counts, references and cross-package identity uniqueness.
+- 103 additional atomic source items for Clauses 17-23 and Figures 1 and 8-10, including maximum-force/fracture extensions, post-fracture workflows, area reduction, every Clause-22 report field/rounding quantum and Clause-23 uncertainty boundaries;
+- 15 additional parameter/formula candidates and 26 acceptance variants, with controlled reuse of package-1 rate, designation, `A` and `Z` parameter authorities;
+- static validation of all three packages, counts, references, global parameter authority and cross-package identity uniqueness.
 
-This is extraction/routing evidence, not independent approval. All 66 parameters remain `INDEPENDENT-REVIEW-PENDING`, all 51 acceptance variants remain `NOT-RUN`, and the remaining ISO clauses/annexes plus ASTM are still open.
+This is extraction/routing evidence, not independent approval. All 81 parameters remain `INDEPENDENT-REVIEW-PENDING`, all 77 acceptance variants remain `NOT-RUN`, and the ISO figures/annexes plus detailed ASTM package are still open.
 
 Therefore, the accurate status is:
 
@@ -60,10 +62,11 @@ File hashes and redistribution controls remain governed by `REFERENCES/README.md
 | Clauses 10.1-10.2 | `SCI-012`; `SAT-012` | 6 zero, gripping, preload and correction items atomized | independent procedural review |
 | Clause 10.3 | `SCI-013`-`SCI-015`; `SAT-013`-`SAT-015` | 43 Method A/B/rate/designation items atomized | independent rate/transition/designation review |
 | Clauses 11-16 | `SCI-018`-`SCI-023`; paired tests | 71 source items, 13 parameters/formulas and 21 variants atomize `ReH`, `ReL`, `Rp{x}`, `Rt{x}`, `Rr{x}`, `Ae` and Figures 2-7 | independent interpretation/parameter review |
-| Clauses 17-19 | `SCI-024`-`SCI-026`; paired tests | `Ag`, `Agt`, `At`, maximum/fracture relationships | plateau/interpolation/extension-source conditions and atomic formulas |
-| Clauses 20-21 | `SCI-027`-`SCI-028`; paired tests | `A`, `Z`, post-fracture validity | each manual/automatic procedure, fracture-position rule and conversion condition |
-| Clause 22 | `SCI-001`, `SCI-015`, `SCI-037`; paired tests | report source identity, conditions and immutable report bundle | field-by-field applicability/format/rounding inventory |
-| Clause 23 | `SCI-036`; `SAT-036` | uncertainty method/evidence family | atomic uncertainty statements, selected method and reviewed parameterization |
+| Clauses 17-19 | `SCI-024`-`SCI-026`; paired tests | 24 source items atomize `Ag`, `Agt`, `At`, maximum/fracture relationships, plateau midpoint and Figure-1 constructions | independent interpretation/parameter review |
+| Clauses 20-21 | `SCI-027`-`SCI-028`; paired tests | 39 source items atomize manual/extensometer `A`, fracture-position validity, conversion, `Z`, geometry measurement and accuracy guidance | independent interpretation/parameter review; Annex H-I detail remains open |
+| Clause 22 | `SCI-001`, `SCI-015`, `SCI-037`; paired tests | 17 source items atomize every minimum field, applicability condition and property-specific rounding quantum | independent interpretation/rounding review; ISO 80000-1 dependency review remains open |
+| Clause 23 | `SCI-036`; `SAT-036` | 8 source items atomize informational status, no-adjustment/no-combination rules and Annex K-L routing | independent interpretation review; Annex K-L detail remains open |
+| Figures 1 and 8-10 | `SCI-013`-`SCI-018`, `SCI-024`-`SCI-027`, `SCI-030`, `SCI-038`-`SCI-041`; paired tests | 15 source items atomize property constructions, all `Rm` behavior classes, illustrated rate schedule and inadmissible rate discontinuity | independent figure/parameter review |
 | Annex A | `SCI-018`-`SCI-026`, `SCI-030`-`SCI-031`; paired tests | computer-control, landmark, interpolation and validation families | every design/data-processing recommendation used by the product and its exact validation tolerance |
 | Annexes B-E | `SCI-007`, `SCI-008`, `SCI-032`; paired tests | all normative specimen-family routing | row-by-row tables, formulas, tolerances and generated boundary cases |
 | Annex F | `SCI-033`; `SAT-033` | opt-in informative estimator | formula/input itemization and informative-labelling assertions |
@@ -103,7 +106,7 @@ These are `Derived Scientific Property` outputs unless a separately mapped stand
 | Gate | Current assessment | Closure blocker |
 |---|---|---|
 | `SG-01 Source Control` | design evidence present | independent integrity/review record still required for release closure |
-| `SG-02 Clause Traceability` | OPEN - ISO packages 1-2 extracted | Clauses 1-16 independent review pending; Clauses 17-23, Annexes A-L and ASTM detailed package absent |
+| `SG-02 Clause Traceability` | OPEN - ISO packages 1-3 extracted | Clauses 1-23 and Figures 1-10 independent review pending; Figures 11-15, Annexes A-L and ASTM detailed package absent |
 | `SG-03` through `SG-10` | NOT STARTED / PENDING IMPLEMENTATION | fixtures, VB.NET implementation, execution, independent evidence and sign-off absent |
 
 No Workbook or scientific-conformity claim may proceed on the basis of the 45 family rows alone.
