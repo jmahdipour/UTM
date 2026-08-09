@@ -49,4 +49,4 @@ Milestone 10 is not one calculation task. It closes only in this order:
 
 The governing definition is `SCIENTIFIC/SCIENTIFIC_COMPLETION_SPECIFICATION.md`.
 
-Current scientific assessment: `SG-02 OPEN - ISO PACKAGES 1-4 EXTRACTED`. Clauses 1-23, Figures 1-10 and informative Annex A now contain 459 atomic source items, 100 parameter/formula candidates and 98 linked acceptance variants. Their independent review remains pending; Figures 11-15, Annexes B-L, the detailed ASTM package, serialized fixtures and executable evidence remain pending.
+Current scientific assessment: `SG-02 OPEN - ISO PACKAGES 1-5 EXTRACTED`. Clauses 1-23, Figures 1-11 and Annexes A-B now contain 507 atomic source items, 119 parameter/formula candidates and 112 linked acceptance variants. Their independent review remains pending; Figures 12-15, Annexes C-L, the detailed ASTM package, serialized fixtures and executable evidence remain pending.

@@ -495,3 +495,11 @@ Date: 2026-08-09
 - Added 21 acceptance variants with independent-oracle requirements, including source-role, raw-data, interpolation/smoothing, fracture, crosshead bridge, slope and validation-scope paths.
 - Expanded the static validator to support Annex source IDs while retaining global identity, source-local parameter, bidirectional routing and count checks across all four packages.
 - Kept Annex A informative, every new parameter `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for independent review, Figures 11-15, Annexes B-L and the detailed ASTM package.
+
+### SG-02 ISO atomic package 5
+
+- Atomized 48 source items from normative Annex B, Tables B.1-B.2 and shared Figure 11 for thin sheet, strip and flat specimens.
+- Added 19 parameter/formula records for shape, length relations, all three Table-B.1 profile tuples, all Table-B.2 tolerance rows and original-area accuracy; reused the two package-1 Annex-B thickness limits without duplication.
+- Added 14 acceptance variants for exact applicability, geometry, table boundaries, preparation, nominal-width eligibility, special thin-material handling and `S0` determination/accuracy.
+- Expanded the static validator to cover five packages while retaining global identity, cross-package parameter reuse, source-local definition and bidirectional routing checks.
+- Kept Annex B normative, recommendations separately classified, every new parameter `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for independent review, Figures 12-15, Annexes C-L and the detailed ASTM package.
