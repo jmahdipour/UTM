@@ -6,6 +6,7 @@ status: FROZEN
 classification: ARCHITECTURE
 governing_edr:
   - EDR-0001
+  - EDR-0014
 ---
 
 # Data Flow Architecture
@@ -58,4 +59,4 @@ sequenceDiagram
 
 ## Implementation gate
 
-No Solution code for the acquisition or analysis pipeline may be treated as production-ready until its public contracts implement the types, provenance and invariants defined by EDR-0001.
+No Solution code for the acquisition or analysis pipeline may be treated as production-ready until its public contracts implement the types, provenance and invariants defined by EDR-0001 and all applicable scientific requirements under EDR-0014.

@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: FROZEN_DECISIONS
-version: 0.4
+version: 0.5
 status: FROZEN
 classification: MASTER-INDEX
 last_revision: 2026-08-09
@@ -39,7 +39,7 @@ This is the mandatory entry point for authoritative UTS decisions. Read it befor
 | GR-009 | Sensor is not Measurement | FROZEN | AI Handover |
 | GR-010 | Measurement is not Calculated Measurement | FROZEN | AI Handover |
 | GR-011 | Interactive Measurement Widget | FROZEN | AI Handover |
-| GR-012 | Analysis pipeline | FROZEN | AI Handover |
+| GR-012 | Analysis pipeline | FROZEN-AS-AMENDED | EDR-0014 |
 | GR-013 | Data and event consumption | FROZEN-AS-AMENDED | EDR-0001 |
 | GR-014 | Hardware independence | FROZEN | AI Handover |
 
@@ -60,14 +60,17 @@ This is the mandatory entry point for authoritative UTS decisions. Read it befor
 | EDR-0011 | SQLite-backed durable operations, recovery and resilience | FROZEN | Resolves long-running operation and crash/startup recovery architecture; motion is excluded from jobs |
 | EDR-0012 | Immutable report bundles, validation and controlled release lifecycle | FROZEN | Resolves reporting/validation/release architecture; production PDF provider remains validation-gated |
 | EDR-0013 | Modular Monolith delivery, pinned dependencies, deployment and performance budgets | FROZEN | Establishes the executable technical baseline and Solution gate |
+| EDR-0014 | Complete revisioned Scientific and Analysis Engine | FROZEN | Amends GR-012; governs ISO 6892-1:2019, isolated ASTM and derived true-curve/energy analysis |
 
 ## Open decision sequence
 
 These items must be resolved in dependency order:
 
 1. Complete the executable Solution milestones in `ROADMAP.md` using Simulator evidence.
-2. Select and validate a .NET Framework 4.8/x86 PDF renderer.
-3. Verify the physical hardware map and complete adapter commissioning separately; status remains `BLOCKED-HARDWARE`.
+2. Complete atomic ISO source-item/parameter traceability and the detailed isolated ASTM E8/E8M-15a package under EDR-0014.
+3. Materialize the controlled scientific fixtures/oracles, then implement and independently verify every v1 `SCI-*`/`SAT-*` pair.
+4. Select and validate a .NET Framework 4.8/x86 PDF renderer.
+5. Verify the physical hardware map and complete adapter commissioning separately; status remains `BLOCKED-HARDWARE`.
 
 ## Synchronization check
 

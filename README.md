@@ -11,13 +11,13 @@
 Current Version:
 
 ```
-Documentation v0.3
+Documentation v0.4
 ```
 
 Status:
 
 ```
-Implementation Baseline Phase
+Implementation Baseline and Scientific Specification Phase
 ```
 
 Project State:
@@ -102,6 +102,8 @@ STANDARDS/
 
 REFERENCES/
 
+SCIENTIFIC/
+
 UI/
 ```
 
@@ -127,7 +129,7 @@ Completed — architecture decisions
 - Material Library
 - Acceptance Architecture
 - Measurement Architecture
-- Analysis Pipeline
+- Analysis Pipeline architecture and complete scientific scope (EDR-0014)
 - Event Driven Architecture
 - Executable Test Method, state, safety, metrology and UI contracts
 - SQLite physical model and Application/API contracts
@@ -136,6 +138,7 @@ Completed — architecture decisions
 - Durable operations/recovery architecture
 - Reporting/validation/release architecture
 - Technical delivery/dependency/performance baseline
+- ISO 6892-1:2019 requirement-family RTM and detailed scientific test-case specification
 
 In Progress
 
@@ -145,6 +148,9 @@ In Progress
 Pending
 
 - remaining production implementation milestones in `ROADMAP.md`
+- atomic ISO source-item/parameter traceability and the detailed ASTM E8/E8M-15a package
+- serialized scientific fixtures and independent test oracles
+- Scientific Engine implementation and independent closure of all `SCI-*`/`SAT-*` pairs
 - Windows x86 CI/native SQLite validation
 - verified physical hardware map and commissioning evidence
 - production PDF renderer compatibility/visual-regression gate

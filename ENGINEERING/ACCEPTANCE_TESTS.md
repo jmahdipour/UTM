@@ -42,3 +42,5 @@ last_revision: 2026-08-09
 | `BAT-030` | same soak remains below 1.2 GiB private bytes | PENDING-CODE |
 | `BAT-031` | physical production/commissioning write adapter is absent or write-disabled | PASS-STATIC |
 | `BAT-032` | every Frozen EDR is indexed and master docs list the latest status | PASS-STATIC |
+| `BAT-033` | EDR-0014, Scientific Completion Specification, 45-family RTM/index, detailed case/fixture design and source-coverage audit exist and cross-reference without claiming execution | PASS-STATIC |
+| `BAT-034` | release validation rejects a scientific-complete/conformity claim while any applicable SCI/SAT result is not PASS | SPECIFIED; PENDING-CODE |

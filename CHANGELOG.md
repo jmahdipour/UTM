@@ -430,3 +430,36 @@ Date: 2026-08-09
 - Added Windows/offline deployment rules, CI/build-quality constraints and explicit performance acceptance budgets.
 - Added Solution Architecture, implementation RTM and baseline acceptance tests.
 - Corrected stale README progress labels and added an executable implementation roadmap.
+
+## Documentation v0.4 - Scientific Scope Correction
+
+Date: 2026-08-09
+
+### Controlled sources
+
+- Registered the supplied `ISO 6892-1:2019(E)` third-edition PDF as `REF-STD-ISO-6892-1-2019`, including page count and SHA-256 identity.
+- Retained the supplied `ASTM E8/E8M-15a` as an exact historical controlled revision; it is not represented as E8/E8M-25.
+- Retained J. R. Davis (ed.), *Tensile Testing*, 2nd edition, ASM International (2004), as a non-normative engineering reference.
+- Kept licensed PDFs outside Git while preserving the controlled source register and integrity checks.
+
+### EDR-0014 and scientific package
+
+- Corrected the incomplete Rm/Rp0.2-only description of scientific completion.
+- Frozen separate ISO 6892-1:2019, ASTM E8/E8M and Derived Engineering analysis profiles.
+- Required every applicable ISO 6892-1 point, property, procedure, validity state, report field and normative Annex G modulus output.
+- Added parameterized `Rp`, `Rt` and `Rr`; `ReH`, `ReL`, `Ae`, `Ag`, `Agt`, `At`, `A`, `Z`, optional `Awn`, `Fm/Rm`, fracture, rate and geometry coverage.
+- Added Annex G `E`, evaluation ranges, point count, coefficient of determination, `Sm` and `Sm(rel)` while prohibiting implicit equivalence between `mE` and `E`.
+- Added derived logarithmic strain, true stress and engineering/true energy integration with explicit post-necking validity limits.
+- Required explicit `Valid`, `Warning`, `Invalid`, `NotApplicable`, `Estimated` and live `Provisional` semantics; failed calculations may not fabricate a number.
+- Added immutable point provenance, manual-correction revisions, graph-decimation isolation and deterministic re-analysis rules.
+- Added `SCIENTIFIC/SCIENTIFIC_COMPLETION_SPECIFICATION.md`, a 45-row scientific RTM and 45 paired acceptance tests.
+- Expanded Roadmap Milestone 10 into ten scientific sub-gates and kept all implementation evidence explicitly pending.
+
+### Scientific traceability and test-design correction
+
+- Corrected the earlier overstatement that the 45 scientific rows alone constituted complete atomic clause coverage or executable acceptance evidence.
+- Classified the 45 `SCI-*`/`SAT-*` pairs as requirement/test families; `SG-02` remains open until every applicable condition, table, formula and reviewed profile parameter is atomically traced.
+- Added `SCIENTIFIC/TEST_CASE_SPECIFICATIONS.md` with variants, execution protocol, independent-oracle rules, expected results and evidence requirements for all 45 cases.
+- Added `SCIENTIFIC/TEST_FIXTURE_CATALOG.md` covering analytical, geometry, measurement-quality, procedural, Golden and independent fixture admission.
+- Added `SCIENTIFIC/SOURCE_COVERAGE_AUDIT.md` with ISO family routing, open atomic work, the detailed ASTM E8/E8M-15a gap and current gate assessment.
+- Kept all scientific test results `NOT-RUN`; no documentation-only `PASS` or conformity claim was created.

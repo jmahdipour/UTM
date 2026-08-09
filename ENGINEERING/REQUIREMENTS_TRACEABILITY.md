@@ -44,3 +44,5 @@ Status vocabulary: `DESIGN-PASS`, `PHASE2-CODE`, `PENDING-WINDOWS`, `PENDING-LAT
 | `BASE-030` | x86 private bytes remain below baseline budget | EDR-0013 | performance suite | `BAT-030` | PENDING-LATER-PHASE |
 | `BASE-031` | Physical adapter remains write-disabled | EDR-0009 | no physical production adapter project | `BAT-031` | DESIGN-PASS / BLOCKED-HARDWARE |
 | `BASE-032` | Documentation/EDR/master index stay synchronized | Governance | baseline validator | `BAT-032` | PHASE2-CODE |
+| `BASE-033` | Scientific completion is governed by EDR-0014 and a controlled scope, routing, test-design and source-coverage package | EDR-0014 | `SCIENTIFIC/` specification, RTM, case/fixture design and coverage audit | `BAT-033` | DESIGN-PASS |
+| `BASE-034` | No scientific implementation/conformity claim is allowed while an applicable SCI/SAT pair is open | EDR-0014; Governance | status/claim validator and release gate | `BAT-034` | DESIGN-PASS / PENDING-LATER-PHASE |

@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: AI_HANDOVER_SPECIFICATION
-version: 0.4
+version: 0.5
 status: FROZEN
 classification: MASTER
 priority: HIGHEST
@@ -292,23 +292,27 @@ Time
 
 Calculated
 
-Stress
+Engineering Stress
 
-Strain
+Engineering Strain
 
 True Stress
 
-True Strain
+Logarithmic True Strain
 
-Young Modulus
+Fm and Rm
 
-Rp0.2
+ReH and ReL
 
-Rm
+Parameterized Rp, Rt and Rr
 
-Energy
+Ae, Ag, Agt, At and A
 
 Reduction of Area
+
+Annex G Modulus and Regression Quality
+
+Engineering and True-Curve Energy
 
 etc.
 
@@ -367,6 +371,8 @@ Acceptance
 ↓
 
 Reporting
+
+The complete scientific scope, profile isolation, validity rules and completion gate are governed by EDR-0014 and `SCIENTIFIC/SCIENTIFIC_COMPLETION_SPECIFICATION.md`.
 
 ---
 
@@ -526,7 +532,7 @@ Measurement Architecture
 
 Interactive Measurement Widgets
 
-Analysis Pipeline
+Analysis Pipeline Architecture
 
 Event Driven Architecture
 
@@ -562,6 +568,8 @@ Reporting, Validation and Controlled Release Architecture
 
 Technical Delivery, Dependency, Deployment and Performance Baseline
 
+Scientific and Analysis Engine Scope, ISO 6892-1:2019 Traceability and Acceptance Specification
+
 Documentation Repository
 
 Pending
@@ -569,6 +577,10 @@ Pending
 Verified Physical Hardware Map and Adapter Commissioning
 
 Executable production implementation and acceptance closure under ROADMAP
+
+Scientific Engine implementation and independent closure of all SCI/SAT requirements
+
+Atomic ISO source-item/parameter traceability, detailed isolated ASTM E8/E8M-15a requirements and serialized scientific fixtures/oracles
 
 Production PDF renderer compatibility and visual-regression validation
 

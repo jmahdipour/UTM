@@ -10,6 +10,7 @@ governing_edr:
   - EDR-0011
   - EDR-0012
   - EDR-0013
+  - EDR-0014
 last_revision: 2026-08-09
 ---
 
