@@ -471,3 +471,11 @@ Date: 2026-08-09
 - Added 30 atomic acceptance variants linked to every source item and its existing `SCI-*`/`SAT-*` family.
 - Added a static validator for counts, locators and bidirectional source/parameter/acceptance routing.
 - Kept every parameter `INDEPENDENT-REVIEW-PENDING` and every variant `NOT-RUN`; `SG-02` remains open for review, Clauses 11-23, Annexes A-L and the detailed ASTM package.
+
+### SG-02 ISO atomic package 2
+
+- Atomized 71 controlled source items from ISO 6892-1:2019 Clauses 11-16 and Figures 2-7 for `ReH`, `ReL`, `Rp{x}`, `Rt{x}`, `Rr{x}` and `Ae`.
+- Added 13 parameter/formula candidates covering the shortened `ReL` window, proof constructions, hysteresis guidance, permanent-set hold/decision boundaries and `Ae` calculation.
+- Added 21 acceptance variants for primary/alternative constructions, all required figure landmarks, applicability, procedure sequencing, controlled external-method routing and reporting evidence.
+- Expanded the static validator to check both packages, cross-package ID uniqueness and bidirectional SCI/SAT/parameter/variant routing.
+- Kept every new parameter `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for independent review, Clauses 17-23, Annexes A-L and the detailed ASTM package.

@@ -21,14 +21,16 @@ The test-design deficiency is now addressed by `TEST_CASE_SPECIFICATIONS.md` and
 4. independently review every extracted numeric/table parameter;
 5. create serialized fixtures and executable evidence.
 
-The first controlled atomization package is now present for ISO 6892-1:2019 Clauses 1-10:
+Two controlled atomization packages are now present for ISO 6892-1:2019 Clauses 1-16:
 
 - 191 atomic source items covering scope, dependencies, terms/formulas, all 46 Table 1 symbols, environment, specimen/geometry, gauge length, apparatus and test-rate conditions;
 - 53 parameter/formula candidates with exact printed-page/PDF-page locators and boundary semantics;
 - 30 acceptance variants linked bidirectionally to the atomic rows and existing `SCI-*`/`SAT-*` families;
-- static validation of counts and references.
+- 71 additional atomic source items for Clauses 11-16 and every routed construction point in Figures 2-7;
+- 13 additional parameter/formula candidates and 21 acceptance variants for `ReH`, `ReL`, `Rp{x}`, `Rt{x}`, `Rr{x}` and `Ae`;
+- static validation of both packages, counts, references and cross-package identity uniqueness.
 
-This is extraction/routing evidence, not independent approval. Every parameter remains `INDEPENDENT-REVIEW-PENDING`, every acceptance variant remains `NOT-RUN`, and the remaining ISO clauses/annexes plus ASTM are still open.
+This is extraction/routing evidence, not independent approval. All 66 parameters remain `INDEPENDENT-REVIEW-PENDING`, all 51 acceptance variants remain `NOT-RUN`, and the remaining ISO clauses/annexes plus ASTM are still open.
 
 Therefore, the accurate status is:
 
@@ -57,7 +59,7 @@ File hashes and redistribution controls remain governed by `REFERENCES/README.md
 | Clause 9 | `SCI-010`; `SAT-010` | 3 apparatus class/range items atomized | independent dependency/class review |
 | Clauses 10.1-10.2 | `SCI-012`; `SAT-012` | 6 zero, gripping, preload and correction items atomized | independent procedural review |
 | Clause 10.3 | `SCI-013`-`SCI-015`; `SAT-013`-`SAT-015` | 43 Method A/B/rate/designation items atomized | independent rate/transition/designation review |
-| Clauses 11-16 | `SCI-018`-`SCI-023`; paired tests | `ReH`, `ReL`, `Rp{x}`, `Rt{x}`, `Rr{x}`, `Ae` | atomic alternative procedures, selection rules and all figure construction points |
+| Clauses 11-16 | `SCI-018`-`SCI-023`; paired tests | 71 source items, 13 parameters/formulas and 21 variants atomize `ReH`, `ReL`, `Rp{x}`, `Rt{x}`, `Rr{x}`, `Ae` and Figures 2-7 | independent interpretation/parameter review |
 | Clauses 17-19 | `SCI-024`-`SCI-026`; paired tests | `Ag`, `Agt`, `At`, maximum/fracture relationships | plateau/interpolation/extension-source conditions and atomic formulas |
 | Clauses 20-21 | `SCI-027`-`SCI-028`; paired tests | `A`, `Z`, post-fracture validity | each manual/automatic procedure, fracture-position rule and conversion condition |
 | Clause 22 | `SCI-001`, `SCI-015`, `SCI-037`; paired tests | report source identity, conditions and immutable report bundle | field-by-field applicability/format/rounding inventory |
@@ -101,7 +103,7 @@ These are `Derived Scientific Property` outputs unless a separately mapped stand
 | Gate | Current assessment | Closure blocker |
 |---|---|---|
 | `SG-01 Source Control` | design evidence present | independent integrity/review record still required for release closure |
-| `SG-02 Clause Traceability` | OPEN - ISO package 1 extracted | Clauses 1-10 independent review pending; Clauses 11-23, Annexes A-L and ASTM detailed package absent |
+| `SG-02 Clause Traceability` | OPEN - ISO packages 1-2 extracted | Clauses 1-16 independent review pending; Clauses 17-23, Annexes A-L and ASTM detailed package absent |
 | `SG-03` through `SG-10` | NOT STARTED / PENDING IMPLEMENTATION | fixtures, VB.NET implementation, execution, independent evidence and sign-off absent |
 
 No Workbook or scientific-conformity claim may proceed on the basis of the 45 family rows alone.

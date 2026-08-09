@@ -202,7 +202,7 @@ def validate_document_sync(errors: list[str]) -> None:
         check=False,
     )
     if atomic_result.returncode != 0:
-        fail(errors, "Clauses 1-10 atomic traceability validation failed:\n" + atomic_result.stdout.strip())
+        fail(errors, "ISO atomic traceability validation failed:\n" + atomic_result.stdout.strip())
 
 
 def main() -> int:
