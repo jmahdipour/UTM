@@ -85,6 +85,18 @@ PACKAGES = (
         expected_variant_count=26,
         page_summary="clauses 17 through 23 and Figures 1, 8-10; printed pages 17-28; PDF pages 23-34",
     ),
+    Package(
+        name="ANNEX A",
+        rtm=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_A_ATOMIC_RTM.md",
+        parameters=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_A_PARAMETERS.md",
+        acceptance=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_A_ATOMIC_ACCEPTANCE.md",
+        expected_by_clause={
+            "AA": 94,
+        },
+        expected_parameter_count=19,
+        expected_variant_count=21,
+        page_summary="informative Annex A, Figures A.1-A.2 and Table A.1; printed pages 34-39; PDF pages 40-45",
+    ),
 )
 
 
@@ -111,7 +123,10 @@ def check_package(
     atomic_ids = [
         item
         for row in atomic_rows
-        for item in ids(row, r"`(ISO19-C\d{2}(?:-[TF]\d{2})?-\d{3})`")
+        for item in ids(
+            row,
+            r"`(ISO19-(?:C\d{2}|A[A-L])(?:-[TF][A-Z0-9]+)?-\d{3})`",
+        )
     ]
     duplicate_atomic = sorted(item for item, count in Counter(atomic_ids).items() if count != 1)
     if duplicate_atomic:

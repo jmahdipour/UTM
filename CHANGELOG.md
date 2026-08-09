@@ -487,3 +487,11 @@ Date: 2026-08-09
 - Added 26 acceptance variants for property applicability/calculation, manual/extensometer fracture workflows, conversion, area measurement, immutable reporting, rate artifacts and prohibited uncertainty adjustments.
 - Expanded the static validator to support globally unique parameter authorities with explicit cross-package reuse while retaining source-local definition checks.
 - Kept every new parameter `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for independent review, Figures 11-15, Annexes A-L and the detailed ASTM package.
+
+### SG-02 ISO atomic package 4
+
+- Atomized 94 source items from informative Annex A, Figures A.1-A.2 and Table A.1, covering raw-data interfaces, channel bandwidth/sampling, computer property determination, fracture, elastic-slope selection, validation and machine-readable guidance.
+- Added 19 parameter/formula candidates for minimum sampling, `ReH`/fracture boundaries, approximate `Rp0.2` slope bounds, validation statistics and every Table-A.1 property limit.
+- Added 21 acceptance variants with independent-oracle requirements, including source-role, raw-data, interpolation/smoothing, fracture, crosshead bridge, slope and validation-scope paths.
+- Expanded the static validator to support Annex source IDs while retaining global identity, source-local parameter, bidirectional routing and count checks across all four packages.
+- Kept Annex A informative, every new parameter `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for independent review, Figures 11-15, Annexes B-L and the detailed ASTM package.
