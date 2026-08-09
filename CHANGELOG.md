@@ -268,6 +268,9 @@ First EDR Package
 - Added `LEGACY_DECISION_MIGRATION_REGISTER.md` to classify retained statements as migrated, candidate EDR, superseded, open or reference-only.
 - Explicitly retained WPF/MVVM, the Order-rooted domain model and current Frozen Golden Rules where legacy material conflicts.
 - Recorded unresolved sensor, standards, hardware, safety, event-stream and UI architecture items for controlled follow-up.
+- Preserved the supplied `jts.zip` and a content-equivalent LF-normalized searchable extraction under `REFERENCES/LEGACY/JTS/`, with SHA-256 manifest, conflict review and deterministic validation.
+- Classified all JTS-local `FROZEN`/`EDR-*` claims as non-authoritative unless already governed by current EDRs; retained reporting, audit, standards, maintenance, graph, plugin and acquisition details as candidate work only.
+- Kept the Order-rooted hierarchy, EDR-0001 stream/event model, EDR-0007 physical schema, EDR-0008 v1 API boundary and EDR-0009 hardware activation gates unchanged.
 
 - Analyzed the supplied `AG01.zip` legacy VB.NET/WinForms code and recorded its SHA-256 source identity.
 - Added `AG01_LEGACY_CODE_ANALYSIS.md` with controlled classifications for retained capabilities, candidate EDRs, superseded patterns, formulas, PLC evidence and open verification items.

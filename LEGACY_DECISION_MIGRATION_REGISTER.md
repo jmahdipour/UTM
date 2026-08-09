@@ -26,6 +26,8 @@ A legacy statement does not become a Frozen UTS decision merely because it is pr
 - REFERENCES/LEGACY/MERGED_TensileTestX_Complete.md
 - REFERENCES/LEGACY/tensile_shell.html
 - REFERENCES/LEGACY/AG01/README.md (manifest for the supplied AG01 source archive)
+- REFERENCES/LEGACY/JTS/README.md (controlled intake for the supplied JTS architecture archive)
+- REFERENCES/LEGACY/JTS/REVIEW_AND_MIGRATION.md
 - AG01_LEGACY_CODE_ANALYSIS.md
 
 ## Status definitions
@@ -129,3 +131,31 @@ The supplied `AG01.zip` was integrity-checked and analyzed as legacy engineering
 
 | CEDR-007 | The six primary pages remain Reception/Test/Method/Calibration/Settings/Report; Reception is explicitly an Order-rooted workspace under GR-001. | EDR-0006 |
 | CEDR-012 | Roles/permissions are data-driven and commands are checked in Application plus state/safety guards. Audit/localization/export service details continue in their dedicated designs. | EDR-0006 (UI/permission portion) |
+
+## JTS architecture archive ingestion
+
+The supplied `jts.zip` was received and reviewed on 2026-08-09. Its SHA-256 is `334e9341ba5be8980fce5c140b1d59a5be660bd1338d90f10aabc4da8c52f8ce`.
+
+The archive contains 87 Markdown files, including 82 chapters (`ARCH-000` through `ARCH-081`). Every chapter labels itself `FROZEN` and cites a legacy EDR identifier, but those labels do not establish authority in the current UTS repository. The exact archive and a content-equivalent LF-normalized searchable extraction are preserved under `REFERENCES/LEGACY/JTS/`.
+
+### JTS dispositions
+
+| ID | Source statement or topic | Status | Governing resolution |
+|---|---|---|---|
+| JTS-MIG-001 | Platform is VB.NET, .NET Framework 4.8, WPF/MVVM, SQLite and x86. | MIGRATED | AI Handover §3 already governs it. |
+| JTS-MIG-002 | UI/Application must not directly manipulate PLC registers or SQLite. | MIGRATED | EDR-0006, EDR-0008 and EDR-0009 already govern it. |
+| JTS-MIG-003 | Raw data is immutable; calculations/results are derived and versioned. | MIGRATED | EDR-0001 and EDR-0007 already govern it. |
+| JTS-SUP-001 | Archived v0.1 README, AI Handover, Changelog and Roadmap are the current baseline. | SUPERSEDED | Current `main` includes EDR-0001 through EDR-0009 and newer master documents. |
+| JTS-SUP-002 | Every downstream calculation consumes Events rather than validated/derived measurement streams. | SUPERSEDED | EDR-0001 amends GR-013 and separates measurement streams from semantic events. |
+| JTS-SUP-003 | Customer → Project → Order is the permanent business hierarchy. | SUPERSEDED | GR-001 keeps Order as the highest business object. |
+| JTS-SUP-004 | JTS SQLite Schema v1.1 is authoritative and permanent. | SUPERSEDED | EDR-0007 and migration `0001_initial.sql` govern the physical schema. |
+| JTS-REF-001 | Fatek/Facon/VS20NL-P1 details, PLC references and numeric motion/acquisition examples. | REFERENCE-ONLY | Hardware map remains `CONTROLLED-DRAFT`; physical adapter remains `BLOCKED-HARDWARE`. |
+| JTS-CEDR-001 | Reporting, report versioning, validation and release workflow. | CANDIDATE-EDR | Incorporate into the next already-open reporting/validation/release architecture. |
+| JTS-CEDR-002 | Audit trail and electronic signatures. | CANDIDATE-EDR | Requires identity, signature, retention, threat and regulatory-scope decisions. |
+| JTS-CEDR-003 | Standards library governance. | CANDIDATE-EDR | Requires controlled standard revisions and requirement/formula verification. |
+| JTS-CEDR-004 | Machine verification and preventive maintenance. | CANDIDATE-EDR | Requires equipment evidence, schedules, permissions and lock policy. |
+| JTS-CEDR-005 | Graph/curve analysis and correction contract. | CANDIDATE-EDR | Must preserve raw data and define re-analysis/decimation/marker traceability. |
+| JTS-CEDR-006 | Plugin and external integration boundary. | CANDIDATE-EDR | EDR-0008 prohibits v1 public listeners; future scope requires security/safety EDRs. |
+| JTS-CEDR-007 | Acquisition performance profile. | CANDIDATE-EDR | Numeric rates, queues, timeouts and batch sizes require code benchmarks and hardware evidence. |
+
+Detailed evidence, duplicate-topic mapping and line references are in `REFERENCES/LEGACY/JTS/REVIEW_AND_MIGRATION.md`. No JTS statement became Frozen through this ingestion.
