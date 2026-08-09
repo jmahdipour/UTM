@@ -1,0 +1,77 @@
+<Window x:Class="UTS.Presentation.Wpf.Shell.ShellWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding ApplicationTitle}"
+        Width="1280"
+        Height="800"
+        MinWidth="1024"
+        MinHeight="640"
+        WindowStartupLocation="CenterScreen">
+  <Grid Background="#F2F4F7">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Border Grid.Row="0" Background="#17324D" Padding="20,14">
+      <DockPanel>
+        <TextBlock Text="{Binding ApplicationTitle}"
+                   Foreground="White"
+                   FontSize="24"
+                   FontWeight="SemiBold" />
+        <TextBlock Text="{Binding BaselineStatus}"
+                   Foreground="#DCE7F2"
+                   FontSize="14"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center" />
+      </DockPanel>
+    </Border>
+
+    <Border Grid.Row="1" Background="#FFF3CD" BorderBrush="#E0A800" BorderThickness="0,0,0,1" Padding="16,8">
+      <TextBlock Text="{Binding SafetyStatus}" Foreground="#7A4E00" FontWeight="Bold" />
+    </Border>
+
+    <Grid Grid.Row="2">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="220" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Border Grid.Column="0" Background="White" BorderBrush="#D8DEE6" BorderThickness="0,0,1,0" Padding="12">
+        <ItemsControl ItemsSource="{Binding Pages}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Button Content="{Binding}"
+                      Height="44"
+                      Margin="0,0,0,8"
+                      HorizontalContentAlignment="Left"
+                      Padding="14,0"
+                      IsEnabled="False" />
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </Border>
+
+      <Border Grid.Column="1" Margin="24" Background="White" BorderBrush="#D8DEE6" BorderThickness="1" CornerRadius="4" Padding="32">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+          <TextBlock Text="UTS Solution Foundation"
+                     FontSize="30"
+                     FontWeight="SemiBold"
+                     Foreground="#17324D"
+                     HorizontalAlignment="Center" />
+          <TextBlock Text="Architecture boundaries, contracts and validation gates are active."
+                     Margin="0,12,0,0"
+                     FontSize="16"
+                     Foreground="#536273"
+                     TextAlignment="Center" />
+        </StackPanel>
+      </Border>
+    </Grid>
+
+    <StatusBar Grid.Row="3">
+      <StatusBarItem Content="VB.NET • .NET Framework 4.8 • x86 • WPF/MVVM • SQLite" />
+    </StatusBar>
+  </Grid>
+</Window>

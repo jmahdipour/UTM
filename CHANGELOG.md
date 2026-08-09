@@ -398,3 +398,35 @@ First EDR Package
 
 1. Verified physical hardware map and adapter commissioning.
 2. Reporting, validation and release architecture.
+
+## Documentation v0.3 — Implementation Baseline
+
+Date: 2026-08-09
+
+### EDR-0010
+
+- Frozen Windows-integrated v1 identity using the authenticated Windows SID mapped to a UTS Actor.
+- Kept authorization based on stable permission identifiers and versioned role assignments.
+- Added short-lived trusted Application sessions, permission-revision invalidation, separation-of-duties and redaction rules.
+- Kept the default process local-only with no external listener or application-owned password store.
+
+### EDR-0011
+
+- Frozen SQLite-backed durable operations for analysis, import, reporting, export, backup and maintenance.
+- Excluded motion/JOG/Stop from background jobs and prohibited unsafe automatic retry.
+- Added startup recovery, abandoned-attempt, controlled shutdown, backup/restore verification and no-auto-resume rules.
+
+### EDR-0012
+
+- Frozen immutable report input bundles, template/report lifecycle, deterministic validation and authorized release manifests.
+- Prohibited report-time scientific calculations and raw/driver dependencies.
+- Required Simulator non-production labeling and retained ISO/standard claims as validation-gated.
+- Kept PDF behind `IReportRenderer` until a compatible renderer passes Windows x86 and visual-regression gates.
+
+### EDR-0013 and technical baseline
+
+- Frozen the local VB.NET/.NET Framework 4.8/x86 Modular Monolith delivery shape.
+- Pinned the initial reference, SQLite, charting, diagnostic and test package versions in `ENGINEERING/TECHNICAL_BASELINE.md`.
+- Added Windows/offline deployment rules, CI/build-quality constraints and explicit performance acceptance budgets.
+- Added Solution Architecture, implementation RTM and baseline acceptance tests.
+- Corrected stale README progress labels and added an executable implementation roadmap.

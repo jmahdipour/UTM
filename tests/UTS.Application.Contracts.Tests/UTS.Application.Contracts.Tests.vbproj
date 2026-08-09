@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>UTS.Application.Contracts.Tests</RootNamespace>
+    <AssemblyName>UTS.Application.Contracts.Tests</AssemblyName>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\UTS.Core\UTS.Core.vbproj" />
+    <ProjectReference Include="..\..\src\UTS.Application.Contracts\UTS.Application.Contracts.vbproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

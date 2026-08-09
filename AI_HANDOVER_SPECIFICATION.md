@@ -1,11 +1,11 @@
 ---
 project: Universal Testing Machine (UTS)
 document: AI_HANDOVER_SPECIFICATION
-version: 0.3
+version: 0.4
 status: FROZEN
 classification: MASTER
 priority: HIGHEST
-last_revision: 2026-08-03
+last_revision: 2026-08-09
 author: Project Owner + OpenAI
 ---
 
@@ -554,13 +554,23 @@ Hardware-Independent Driver and PLC Mapping Lifecycle Contracts
 
 Deterministic Driver Simulator, Fault Injection and Commissioning Gates
 
+Windows-Integrated Identity, Session, Authorization and Security Boundary
+
+Durable Operations, Recovery and Resilience Architecture
+
+Reporting, Validation and Controlled Release Architecture
+
+Technical Delivery, Dependency, Deployment and Performance Baseline
+
 Documentation Repository
 
 Pending
 
 Verified Physical Hardware Map and Adapter Commissioning
 
-Reporting, Validation and Release Architecture
+Executable production implementation and acceptance closure under ROADMAP
+
+Production PDF renderer compatibility and visual-regression validation
 
 ---
 

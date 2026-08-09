@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <RootNamespace>UTS.Presentation.Wpf</RootNamespace>
+    <AssemblyName>UTS.Presentation.Wpf</AssemblyName>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UTS.Application.Contracts\UTS.Application.Contracts.vbproj" />
+    <PackageReference Include="OxyPlot.Wpf" />
+  </ItemGroup>
+</Project>

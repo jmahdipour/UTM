@@ -1,0 +1,36 @@
+name: UTS controlled build
+
+on:
+  push:
+    branches: [main, "implementation/**"]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        configuration: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: microsoft/setup-msbuild@v2
+      - uses: NuGet/setup-nuget@v2
+      - name: Static contract validation
+        run: python tools/validate_implementation_baseline.py
+      - name: Restore and build x86
+        run: msbuild UTS.sln /restore /m /p:Configuration=${{ matrix.configuration }} /p:Platform=x86
+      - name: Run x86 tests
+        shell: pwsh
+        run: ./build/Invoke-Validation.ps1 -Configuration ${{ matrix.configuration }}
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ matrix.configuration }}
+          path: TestResults/**/*.trx
+          if-no-files-found: warn

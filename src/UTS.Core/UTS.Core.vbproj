@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>UTS.Core</RootNamespace>
+    <AssemblyName>UTS.Core</AssemblyName>
+  </PropertyGroup>
+</Project>

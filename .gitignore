@@ -427,3 +427,8 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# UTS runtime data
+*.db
+*.db-shm
+*.db-wal

@@ -11,13 +11,13 @@
 Current Version:
 
 ```
-Documentation v0.2
+Documentation v0.3
 ```
 
 Status:
 
 ```
-Architecture Phase
+Implementation Baseline Phase
 ```
 
 Project State:
@@ -92,6 +92,8 @@ ROADMAP.md
 
 ARCHITECTURE/
 
+ENGINEERING/
+
 EDR/
 
 DOMAIN/
@@ -117,7 +119,7 @@ Only Frozen Decisions inside this repository are authoritative.
 
 # Current Progress
 
-Completed
+Completed — architecture decisions
 
 - Business Architecture
 - Database Philosophy
@@ -127,20 +129,25 @@ Completed
 - Measurement Architecture
 - Analysis Pipeline
 - Event Driven Architecture
+- Executable Test Method, state, safety, metrology and UI contracts
+- SQLite physical model and Application/API contracts
+- Hardware-independent Driver/Simulator contract
+- Identity/session/authorization architecture
+- Durable operations/recovery architecture
+- Reporting/validation/release architecture
+- Technical delivery/dependency/performance baseline
 
 In Progress
 
-- Documentation Repository
+- VB.NET/.NET Framework 4.8 x86 Solution foundation
+- executable architecture and Core contract tests
 
 Pending
 
-- Executable Test Method EDR
-
-- Physical Database
-- UI Pages
-- PLC Layer
-- Reporting
-- API
+- remaining production implementation milestones in `ROADMAP.md`
+- Windows x86 CI/native SQLite validation
+- verified physical hardware map and commissioning evidence
+- production PDF renderer compatibility/visual-regression gate
 
 ---
 

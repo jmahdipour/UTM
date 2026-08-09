@@ -1,10 +1,10 @@
 ---
 project: Universal Testing Machine (UTS)
 document: FROZEN_DECISIONS
-version: 0.3
+version: 0.4
 status: FROZEN
 classification: MASTER-INDEX
-last_revision: 2026-08-03
+last_revision: 2026-08-09
 ---
 
 # Frozen Decision Index
@@ -56,13 +56,18 @@ This is the mandatory entry point for authoritative UTS decisions. Read it befor
 | EDR-0007 | SQLite persistence, units and migration policy | FROZEN | Resolves the physical persistence decision; governs `DATABASE/` |
 | EDR-0008 | Versioned in-process Application/API contracts | FROZEN | Resolves Application/API boundary; governs `APPLICATION/` and related contract catalogs |
 | EDR-0009 | Hardware-independent driver, PLC mapping lifecycle, Simulator and commissioning gates | FROZEN | Resolves Driver/Simulator contract; physical hardware map and adapter activation remain `BLOCKED-HARDWARE` |
+| EDR-0010 | Windows-integrated identity, UTS sessions, permission IDs and local security boundary | FROZEN | Resolves v1 authentication/session/authorization architecture; external transport remains prohibited |
+| EDR-0011 | SQLite-backed durable operations, recovery and resilience | FROZEN | Resolves long-running operation and crash/startup recovery architecture; motion is excluded from jobs |
+| EDR-0012 | Immutable report bundles, validation and controlled release lifecycle | FROZEN | Resolves reporting/validation/release architecture; production PDF provider remains validation-gated |
+| EDR-0013 | Modular Monolith delivery, pinned dependencies, deployment and performance budgets | FROZEN | Establishes the executable technical baseline and Solution gate |
 
 ## Open decision sequence
 
 These items must be resolved in dependency order:
 
-1. Verified physical hardware map and adapter commissioning.
-2. Reporting, validation and release architecture.
+1. Complete the executable Solution milestones in `ROADMAP.md` using Simulator evidence.
+2. Select and validate a .NET Framework 4.8/x86 PDF renderer.
+3. Verify the physical hardware map and complete adapter commissioning separately; status remains `BLOCKED-HARDWARE`.
 
 ## Synchronization check
 

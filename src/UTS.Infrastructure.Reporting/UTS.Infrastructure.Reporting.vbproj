@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>UTS.Infrastructure.Reporting</RootNamespace>
+    <AssemblyName>UTS.Infrastructure.Reporting</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UTS.Core\UTS.Core.vbproj" />
+    <ProjectReference Include="..\UTS.Application.Contracts\UTS.Application.Contracts.vbproj" />
+  </ItemGroup>
+</Project>

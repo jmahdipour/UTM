@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>UTS.Application.Contracts</RootNamespace>
+    <AssemblyName>UTS.Application.Contracts</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UTS.Core\UTS.Core.vbproj" />
+  </ItemGroup>
+</Project>
