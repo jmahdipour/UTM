@@ -535,3 +535,11 @@ Date: 2026-08-09
 - Added 8 acceptance variants for informative-source semantics, compliance scope, point/configuration-specific stiffness, optional procedure selection, all three formula routes and continuous/discontinuous-yield behavior.
 - Expanded the static validator to cover nine packages while retaining global identity, cross-package parameter reuse, source-local definition and bidirectional routing checks.
 - Kept Annex F informative and opt-in; prohibited linear-portion stiffness reuse outside its valid route, retained complete-system/configuration matching and routed discontinuous or serrated yielding to estimated strain over `Lc` with Formula (2), not Formula F.2. Every new parameter remains `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for Annexes G-L and the detailed ASTM package.
+
+### SG-02 ISO atomic package 10
+
+- Atomized 153 source items from normative Annex G, Formulas G.1-G.8 and Tables G.1-G.3 for uniaxial-tension determination of modulus of elasticity.
+- Added 56 parameter/formula records for force/extensometer eligibility, bilateral measurement, specimen and sampling controls, regression/range quality, both uncertainty examples, G.8 reporting and historical reproducibility data.
+- Added 24 acceptance variants for applicability, metrology, alignment, area, rate/sampling, repeated use, bilateral averaging, regression, fit quality, range revision, uncertainty-route isolation, CWA/Annex-K examples, reporting and method limitations.
+- Expanded the static validator to cover ten packages while retaining global identity, source-local definition, locator, authority and bidirectional routing checks.
+- Kept mandatory, permitted, recommended, note and information-only semantics distinct; prohibited silent `mE`/`E` equivalence and prevented Table-G.1/G.2 examples, proficiency values and Table-G.3 historical reproducibility from becoming universal acceptance limits. Every new parameter remains `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for Annexes H-L and the detailed ASTM package.
