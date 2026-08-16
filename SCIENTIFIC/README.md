@@ -32,6 +32,9 @@ This package defines the controlled scientific scope and evidence required by ED
 - `ISO_6892_1_2019_ANNEX_E_ATOMIC_RTM.md` atomizes 58 source items from normative Annex E, Formulas E.1-E.4 and Figures 14-15.
 - `ISO_6892_1_2019_ANNEX_E_PARAMETERS.md` records 12 new tube-form, plug-geometry and `S0` parameter/formula candidates pending independent review.
 - `ISO_6892_1_2019_ANNEX_E_ATOMIC_ACCEPTANCE.md` defines 15 bidirectionally linked acceptance variants; all remain `NOT-RUN`.
-- `validate_atomic_traceability.py` checks all eight packages, counts, locators, global parameter authority, cross-package identity uniqueness and SCI/SAT/parameter/variant links.
+- `ISO_6892_1_2019_ANNEX_F_ATOMIC_RTM.md` atomizes 35 source items from informative Annex F and Formulas F.1-F.3.
+- `ISO_6892_1_2019_ANNEX_F_PARAMETERS.md` records 3 new stiffness-compensated rate and calibration formulas pending independent review.
+- `ISO_6892_1_2019_ANNEX_F_ATOMIC_ACCEPTANCE.md` defines 8 bidirectionally linked acceptance variants; all remain `NOT-RUN`.
+- `validate_atomic_traceability.py` checks all nine packages, counts, locators, global parameter authority, cross-package identity uniqueness and SCI/SAT/parameter/variant links.
 
-The package is a design baseline. Clauses 1-23, Figures 1-15 and Annexes A-E are atomized and routed, but their independent review remains pending. Annexes F-L and the detailed ASTM profile are not yet atomized. No serialized fixtures, scientific-engine implementation or conformity evidence exists.
+The package is a design baseline. Clauses 1-23, Figures 1-15 and Annexes A-F are atomized and routed, but their independent review remains pending. Annexes G-L and the detailed ASTM profile are not yet atomized. No serialized fixtures, scientific-engine implementation or conformity evidence exists.

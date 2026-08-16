@@ -527,3 +527,11 @@ Date: 2026-08-09
 - Added 15 acceptance variants for exact product/form selection, both figure geometries, plug use/clearance/interference, strip preparation, product-standard authority and all four formula routes.
 - Expanded the static validator to cover eight packages while retaining global identity, cross-package parameter reuse, source-local definition and bidirectional routing checks.
 - Kept Annex E normative while preserving permissive, general-use, strict, inclusive and dispute semantics; recorded the overlapping Formula-E.3 `<0.25` and `<0.10` conditions as a review blocker rather than inventing exclusive intervals or precedence. `SG-02` remains open for Annexes F-L and the detailed ASTM package.
+
+### SG-02 ISO atomic package 9
+
+- Atomized 35 source items from informative Annex F and Formulas F.1-F.3 for stiffness-aware estimation of strain rate and crosshead separation rate.
+- Added 3 parameter/formula records for estimated strain rate, compensated crosshead separation rate and complete testing-equipment stiffness calibration; reused package-1 Formula (2) authority without duplication.
+- Added 8 acceptance variants for informative-source semantics, compliance scope, point/configuration-specific stiffness, optional procedure selection, all three formula routes and continuous/discontinuous-yield behavior.
+- Expanded the static validator to cover nine packages while retaining global identity, cross-package parameter reuse, source-local definition and bidirectional routing checks.
+- Kept Annex F informative and opt-in; prohibited linear-portion stiffness reuse outside its valid route, retained complete-system/configuration matching and routed discontinuous or serrated yielding to estimated strain over `Lc` with Formula (2), not Formula F.2. Every new parameter remains `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for Annexes G-L and the detailed ASTM package.
