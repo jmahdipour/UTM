@@ -519,3 +519,11 @@ Date: 2026-08-09
 - Added 19 acceptance variants for exact profile/geometry selection, proportional and non-proportional routes, table boundaries, machining/shape examples, nominal-dimension eligibility and `S0` determination.
 - Expanded the static validator to cover seven packages while retaining global identity, cross-package parameter reuse, source-local definition and bidirectional routing checks.
 - Kept Annex D normative while preserving recommendation, preference, approximation and conditional semantics; every new parameter remains `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`. `SG-02` remains open for Figures 14-15, Annexes E-L and the detailed ASTM package.
+
+### SG-02 ISO atomic package 8
+
+- Atomized 58 source items from normative Annex E, Formulas E.1-E.4 and Figures 14-15 for complete-tube, longitudinal/transverse-strip and circular machined-wall specimens.
+- Added 12 parameter/formula records for general longitudinal-strip use, strict and dispute plug geometry, original-area accuracy and every exact/simplified `S0` expression; reused the package-1 Annex-B/Annex-D 3 mm routing boundary without duplication.
+- Added 15 acceptance variants for exact product/form selection, both figure geometries, plug use/clearance/interference, strip preparation, product-standard authority and all four formula routes.
+- Expanded the static validator to cover eight packages while retaining global identity, cross-package parameter reuse, source-local definition and bidirectional routing checks.
+- Kept Annex E normative while preserving permissive, general-use, strict, inclusive and dispute semantics; recorded the overlapping Formula-E.3 `<0.25` and `<0.10` conditions as a review blocker rather than inventing exclusive intervals or precedence. `SG-02` remains open for Annexes F-L and the detailed ASTM package.

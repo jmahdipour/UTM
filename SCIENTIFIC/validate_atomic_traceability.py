@@ -133,6 +133,18 @@ PACKAGES = (
         expected_variant_count=19,
         page_summary="normative Annex D, Formula D.1, Tables D.1-D.3 and Figure 13; printed pages 31 and 44-47; PDF pages 37 and 50-53",
     ),
+    Package(
+        name="ANNEX E",
+        rtm=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_E_ATOMIC_RTM.md",
+        parameters=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_E_PARAMETERS.md",
+        acceptance=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_E_ATOMIC_ACCEPTANCE.md",
+        expected_by_clause={
+            "AE": 58,
+        },
+        expected_parameter_count=12,
+        expected_variant_count=15,
+        page_summary="normative Annex E, Formulas E.1-E.4 and Figures 14-15; printed pages 32-33 and 48-49; PDF pages 38-39 and 54-55",
+    ),
 )
 
 
