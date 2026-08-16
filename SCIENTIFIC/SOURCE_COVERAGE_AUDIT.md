@@ -21,7 +21,7 @@ The test-design deficiency is now addressed by `TEST_CASE_SPECIFICATIONS.md` and
 4. independently review every extracted numeric/table parameter;
 5. create serialized fixtures and executable evidence.
 
-Six controlled atomization packages are now present for ISO 6892-1:2019 Clauses 1-23, Figures 1-12 and Annexes A-C:
+Seven controlled atomization packages are now present for ISO 6892-1:2019 Clauses 1-23, Figures 1-13 and Annexes A-D:
 
 - 191 atomic source items covering scope, dependencies, terms/formulas, all 46 Table 1 symbols, environment, specimen/geometry, gauge length, apparatus and test-rate conditions;
 - 53 parameter/formula candidates with exact printed-page/PDF-page locators and boundary semantics;
@@ -36,9 +36,11 @@ Six controlled atomization packages are now present for ISO 6892-1:2019 Clauses 
 - 19 additional parameter/formula candidates and 14 acceptance variants covering all Annex-B numeric/table boundaries while reusing the two controlled package-1 thickness limits;
 - 25 additional atomic source items for normative Annex C, Formula C.1 and Figure 12, including unmachined-product applicability, both `L0` options, grip-distance rules, coiled-product preparation and `S0` routes;
 - 10 additional parameter/formula candidates and 10 acceptance variants covering Annex-C numeric/formula boundaries while reusing the package-1 exclusive size limit;
-- static validation of all six packages, counts, references, global parameter authority and cross-package identity uniqueness.
+- 64 additional atomic source items for normative Annex D, Formula D.1, Tables D.1-D.3 and Figure 13, including machined/unmachined geometry, proportional and non-proportional profiles, all tolerance rows and `S0` routes;
+- 31 additional parameter/formula candidates and 19 acceptance variants covering Annex-D numeric/table boundaries while reusing applicability, Formula-D.1 and coefficient authorities from package 1;
+- static validation of all seven packages, counts, references, global parameter authority and cross-package identity uniqueness.
 
-This is extraction/routing evidence, not independent approval. All 129 parameters remain `INDEPENDENT-REVIEW-PENDING`, all 122 acceptance variants remain `NOT-RUN`, and Figures 13-15, Annexes D-L plus the detailed ASTM package are still open.
+This is extraction/routing evidence, not independent approval. All 160 parameters remain `INDEPENDENT-REVIEW-PENDING`, all 141 acceptance variants remain `NOT-RUN`, and Figures 14-15, Annexes E-L plus the detailed ASTM package are still open.
 
 Therefore, the accurate status is:
 
@@ -76,7 +78,8 @@ File hashes and redistribution controls remain governed by `REFERENCES/README.md
 | Annex A | `SCI-001`-`SCI-006`, `SCI-010`, `SCI-013`-`SCI-021`, `SCI-024`-`SCI-027`, `SCI-030`-`SCI-031`, `SCI-034`-`SCI-045`; paired tests | 94 source items, 19 parameters/formulas and 21 variants atomize informative scope, raw-data structure, sampling, property landmarks, smoothing, fracture, elastic slope, Table-A.1 validation and machine-readable guidance | independent interpretation/parameter review; serialized fixtures; external TENSTAND/CWA/CRM evidence remains unadmitted |
 | Annex B and Figure 11 | `SCI-001`, `SCI-003`, `SCI-006`-`SCI-010`, `SCI-012`, `SCI-018`, `SCI-020`, `SCI-027`, `SCI-032`, `SCI-036`, `SCI-038`-`SCI-039`; paired tests | 48 source items, 19 new parameters/formulas and 14 variants atomize thin-product applicability, rectangular geometry, all B.1/B.2 table rows, preparation, nominal-width eligibility and `S0` accuracy | independent interpretation/parameter review; serialized generated boundary fixtures |
 | Annex C and Figure 12 | `SCI-001`, `SCI-003`, `SCI-005`-`SCI-009`, `SCI-012`, `SCI-016`, `SCI-027`, `SCI-032`, `SCI-036`, `SCI-038`-`SCI-039`; paired tests | 25 source items, 10 new parameters/formulas and 10 variants atomize unmachined-product applicability/geometry, both `L0` profiles, grip-distance bounds, straightening, circular measurement and Formula-C.1 `S0` routes | independent interpretation/parameter review, including the unresolved C.2 `b0` meaning; serialized generated boundary fixtures |
-| Annexes D-E and Figures 13-15 | `SCI-007`, `SCI-008`, `SCI-032`; paired tests | normative specimen-family routing | row-by-row tables, formulas, tolerances and generated boundary cases |
+| Annex D and Figure 13 | `SCI-001`-`SCI-003`, `SCI-006`-`SCI-010`, `SCI-012`, `SCI-027`-`SCI-028`, `SCI-032`, `SCI-036`, `SCI-038`-`SCI-039`; paired tests | 64 source items, 31 new parameters/formulas and 19 variants atomize machined/unmachined applicability, round/rectangular geometry, all D.1-D.3 table rows, tolerance routing and `S0` measurement | independent interpretation/parameter review; serialized generated boundary fixtures; Figure-11 rectangular geometry is reused from Annex B |
+| Annex E and Figures 14-15 | `SCI-007`, `SCI-008`, `SCI-032`; paired tests | normative tube specimen-family routing | row-by-row formulas, geometry routes, preparation and generated boundary cases |
 | Annex F | `SCI-033`; `SAT-033` | opt-in informative estimator | formula/input itemization and informative-labelling assertions |
 | Annex G | `SCI-010`, `SCI-034`-`SCI-037`; paired tests | equipment, procedure, evaluation, quality, uncertainty and report families | all equipment/rate/sampling/evaluation parameters and G.8 fields atomized |
 | Annexes H-I | `SCI-027`; `SAT-027` | special elongation workflows | step-level/manual measurement and conversion cases |
@@ -114,7 +117,7 @@ These are `Derived Scientific Property` outputs unless a separately mapped stand
 | Gate | Current assessment | Closure blocker |
 |---|---|---|
 | `SG-01 Source Control` | design evidence present | independent integrity/review record still required for release closure |
-| `SG-02 Clause Traceability` | OPEN - ISO packages 1-6 extracted | Clauses 1-23, Figures 1-12 and Annexes A-C independent review pending; Figures 13-15, Annexes D-L and ASTM detailed package absent |
+| `SG-02 Clause Traceability` | OPEN - ISO packages 1-7 extracted | Clauses 1-23, Figures 1-13 and Annexes A-D independent review pending; Figures 14-15, Annexes E-L and ASTM detailed package absent |
 | `SG-03` through `SG-10` | NOT STARTED / PENDING IMPLEMENTATION | fixtures, VB.NET implementation, execution, independent evidence and sign-off absent |
 
 No Workbook or scientific-conformity claim may proceed on the basis of the 45 family rows alone.

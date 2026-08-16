@@ -511,3 +511,11 @@ Date: 2026-08-09
 - Added 10 acceptance variants for exact profile selection, Figure-12 geometry, unmachined shape, gauge/grip boundaries, coiled-product preparation and both `S0` routes.
 - Expanded the static validator to cover six packages while retaining global identity, cross-package parameter reuse, source-local definition and bidirectional routing checks.
 - Kept Annex C normative, every new parameter `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; recorded the unresolved C.2 `b0` meaning as a review blocker instead of selecting a transverse dimension by inference. `SG-02` remains open for Figures 13-15, Annexes D-L and the detailed ASTM package.
+
+### SG-02 ISO atomic package 7
+
+- Atomized 64 source items from normative Annex D, Formula D.1, Tables D.1-D.3 and Figure 13 for machined and unmachined larger flat, wire, bar and section specimens.
+- Added 31 parameter/formula records for transition geometry, parallel/dispute lengths, all Table-D.1/D.2 profiles, all nine Table-D.3 tolerance rows and original-area measurement; reused package-1 applicability, Formula-D.1 and coefficient authorities without duplication.
+- Added 19 acceptance variants for exact profile/geometry selection, proportional and non-proportional routes, table boundaries, machining/shape examples, nominal-dimension eligibility and `S0` determination.
+- Expanded the static validator to cover seven packages while retaining global identity, cross-package parameter reuse, source-local definition and bidirectional routing checks.
+- Kept Annex D normative while preserving recommendation, preference, approximation and conditional semantics; every new parameter remains `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`. `SG-02` remains open for Figures 14-15, Annexes E-L and the detailed ASTM package.

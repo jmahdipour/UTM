@@ -148,7 +148,7 @@ In Progress
 Pending
 
 - remaining production implementation milestones in `ROADMAP.md`
-- independent review of extracted ISO atomic packages for Clauses 1-23, Figures 1-12 and Annexes A-C; atomization of Figures 13-15 and Annexes D-L; detailed ASTM E8/E8M-15a package
+- independent review of extracted ISO atomic packages for Clauses 1-23, Figures 1-13 and Annexes A-D; atomization of Figures 14-15 and Annexes E-L; detailed ASTM E8/E8M-15a package
 - serialized scientific fixtures and independent test oracles
 - Scientific Engine implementation and independent closure of all `SCI-*`/`SAT-*` pairs
 - Windows x86 CI/native SQLite validation
