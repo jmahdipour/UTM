@@ -551,3 +551,11 @@ Date: 2026-08-09
 - Added 6 acceptance variants for informative applicability, two-ended pre-test marking, arc geometry, post-fracture reassembly, scratch-distance metrology, the optional dye aid and Clause-20.2 route isolation.
 - Expanded the static validator to cover eleven packages while retaining global identity, source-local definition, locator, authority and bidirectional routing checks.
 - Kept Annex H informative and its procedure non-exclusive; distinguished the specified value from the measured result and retained screw use, dye film and extensometer measurement as preferred, optional and alternative semantics. Every new parameter remains `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for Annexes I-L and the detailed ASTM package.
+
+### SG-02 ISO atomic package 12
+
+- Atomized 35 source items from informative Annex I, Formulas I.1-I.2 and Figure I.1 for subdivision-based measurement of percentage elongation after fracture.
+- Added 10 parameter/formula records for equal subdivisions, the 5-mm recommendation and 10-mm upper end, integer `N/n` parity, even/odd mark offsets and both elongation calculations.
+- Added 7 acceptance variants for the joint fracture-position/necking applicability condition, pre-test subdivision, X/Y symmetry, parity routing, both formula branches and Figure-I.1 identity.
+- Expanded the static validator to cover twelve packages while retaining global identity, source-local definition, locator, authority and bidirectional routing checks.
+- Kept Annex I informative and prohibited silent rescue outside its two-condition applicability route; required exact integer parity and mark provenance and retained the illustrated head shape as guidance only. Every new parameter remains `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for Annexes J-L and the detailed ASTM package.

@@ -181,6 +181,18 @@ PACKAGES = (
         expected_variant_count=6,
         page_summary="informative Annex H; printed page 60; PDF page 66",
     ),
+    Package(
+        name="ANNEX I",
+        rtm=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_I_ATOMIC_RTM.md",
+        parameters=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_I_PARAMETERS.md",
+        acceptance=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_I_ATOMIC_ACCEPTANCE.md",
+        expected_by_clause={
+            "AI": 35,
+        },
+        expected_parameter_count=10,
+        expected_variant_count=7,
+        page_summary="informative Annex I, Formulas I.1-I.2 and Figure I.1; printed pages 61-62; PDF pages 67-68",
+    ),
 )
 
 
