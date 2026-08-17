@@ -169,6 +169,18 @@ PACKAGES = (
         expected_variant_count=24,
         page_summary="normative Annex G, Formulas G.1-G.8 and Tables G.1-G.3; printed pages 52-59; PDF pages 58-65",
     ),
+    Package(
+        name="ANNEX H",
+        rtm=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_H_ATOMIC_RTM.md",
+        parameters=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_H_PARAMETERS.md",
+        acceptance=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_H_ATOMIC_ACCEPTANCE.md",
+        expected_by_clause={
+            "AH": 19,
+        },
+        expected_parameter_count=3,
+        expected_variant_count=6,
+        page_summary="informative Annex H; printed page 60; PDF page 66",
+    ),
 )
 
 

@@ -543,3 +543,11 @@ Date: 2026-08-09
 - Added 24 acceptance variants for applicability, metrology, alignment, area, rate/sampling, repeated use, bilateral averaging, regression, fit quality, range revision, uncertainty-route isolation, CWA/Annex-K examples, reporting and method limitations.
 - Expanded the static validator to cover ten packages while retaining global identity, source-local definition, locator, authority and bidirectional routing checks.
 - Kept mandatory, permitted, recommended, note and information-only semantics distinct; prohibited silent `mE`/`E` equivalence and prevented Table-G.1/G.2 examples, proficiency values and Table-G.3 historical reproducibility from becoming universal acceptance limits. Every new parameter remains `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for Annexes H-L and the detailed ASTM package.
+
+### SG-02 ISO atomic package 11
+
+- Atomized 19 source items from informative Annex H for manual measurement of percentage elongation after fracture when the specified value is below 5 percent.
+- Added 3 parameter/formula records for the strict specified-value applicability boundary and equal first/second arc radii derived from `L0`.
+- Added 6 acceptance variants for informative applicability, two-ended pre-test marking, arc geometry, post-fracture reassembly, scratch-distance metrology, the optional dye aid and Clause-20.2 route isolation.
+- Expanded the static validator to cover eleven packages while retaining global identity, source-local definition, locator, authority and bidirectional routing checks.
+- Kept Annex H informative and its procedure non-exclusive; distinguished the specified value from the measured result and retained screw use, dye film and extensometer measurement as preferred, optional and alternative semantics. Every new parameter remains `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for Annexes I-L and the detailed ASTM package.
