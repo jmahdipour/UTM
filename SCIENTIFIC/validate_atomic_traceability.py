@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate controlled ISO 6892-1:2019 atomic traceability packages."""
+"""Validate controlled scientific atomic traceability packages."""
 
 from __future__ import annotations
 
@@ -24,6 +24,12 @@ class Package:
     expected_parameter_count: int
     expected_variant_count: int
     page_summary: str
+    source_prefix: str = "ISO19-"
+    source_pattern: str = r"`(ISO19-(?:C\d{2}|A[A-L])(?:-[A-Z][A-Z0-9]*)?-\d{3})`"
+    parameter_prefix: str = "IP-"
+    parameter_pattern: str = r"`(IP-[A-Z0-9-]+)`"
+    variant_prefix: str = "IAT-"
+    variant_pattern: str = r"`(IAT-[A-Z0-9-]+)`"
 
 
 PACKAGES = (
@@ -193,6 +199,65 @@ PACKAGES = (
         expected_variant_count=7,
         page_summary="informative Annex I, Formulas I.1-I.2 and Figure I.1; printed pages 61-62; PDF pages 67-68",
     ),
+    Package(
+        name="ANNEX J",
+        rtm=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_J_ATOMIC_RTM.md",
+        parameters=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_J_PARAMETERS.md",
+        acceptance=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_J_ATOMIC_ACCEPTANCE.md",
+        expected_by_clause={"AJ": 15},
+        expected_parameter_count=5,
+        expected_variant_count=6,
+        page_summary="informative Annex J and Formula J.1; printed page 63; PDF page 69",
+    ),
+    Package(
+        name="ANNEX K",
+        rtm=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_K_ATOMIC_RTM.md",
+        parameters=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_K_PARAMETERS.md",
+        acceptance=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_K_ATOMIC_ACCEPTANCE.md",
+        expected_by_clause={"AK": 41},
+        expected_parameter_count=13,
+        expected_variant_count=14,
+        page_summary="informative Annex K, Formulas K.1-K.4 and Tables K.1-K.4; printed pages 64-67; PDF pages 70-73",
+    ),
+    Package(
+        name="ANNEX L",
+        rtm=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_L_ATOMIC_RTM.md",
+        parameters=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_L_PARAMETERS.md",
+        acceptance=SCIENTIFIC / "ISO_6892_1_2019_ANNEX_L_ATOMIC_ACCEPTANCE.md",
+        expected_by_clause={"AL": 84},
+        expected_parameter_count=4,
+        expected_variant_count=8,
+        page_summary="informative Annex L, Tables L.1-L.4 and Figures L.1-L.4; printed pages 68-74; PDF pages 74-80",
+    ),
+    Package(
+        name="ASTM E8/E8M-15A",
+        rtm=SCIENTIFIC / "ASTM_E8_E8M_15A_ATOMIC_RTM.md",
+        parameters=SCIENTIFIC / "ASTM_E8_E8M_15A_PARAMETERS.md",
+        acceptance=SCIENTIFIC / "ASTM_E8_E8M_15A_ATOMIC_ACCEPTANCE.md",
+        expected_by_clause={
+            "S01": 6,
+            "S02": 7,
+            "S03": 15,
+            "S04": 3,
+            "S05": 9,
+            "S06": 37,
+            "S07": 29,
+            "S08": 15,
+            "S09": 3,
+            "AX": 9,
+            "FIG": 26,
+            "TAB": 7,
+        },
+        expected_parameter_count=25,
+        expected_variant_count=31,
+        page_summary="historical ASTM E8/E8M-15a boundary; 29 controlled PDF pages; SI and inch-pound result paths remain distinct",
+        source_prefix="ASTM15-",
+        source_pattern=r"`(ASTM15-[A-Z0-9]+-\d{3})`",
+        parameter_prefix="AP-ASTM15-",
+        parameter_pattern=r"`(AP-ASTM15-[A-Z0-9-]+)`",
+        variant_prefix="AAT-ASTM15-",
+        variant_pattern=r"`(AAT-ASTM15-[A-Z0-9-]+)`",
+    ),
 )
 
 
@@ -215,13 +280,13 @@ def check_package(
     parameter_text = package.parameters.read_text(encoding="utf-8")
     acceptance_text = package.acceptance.read_text(encoding="utf-8")
 
-    atomic_rows = table_rows(rtm_text, "ISO19-")
+    atomic_rows = table_rows(rtm_text, package.source_prefix)
     atomic_ids = [
         item
         for row in atomic_rows
         for item in ids(
             row,
-            r"`(ISO19-(?:C\d{2}|A[A-L])(?:-[TF][A-Z0-9]+)?-\d{3})`",
+            package.source_pattern,
         )
     ]
     duplicate_atomic = sorted(item for item, count in Counter(atomic_ids).items() if count != 1)
@@ -236,16 +301,16 @@ def check_package(
         )
 
     for clause, expected in package.expected_by_clause.items():
-        actual = sum(1 for item in set(atomic_ids) if item.startswith(f"ISO19-{clause}"))
+        actual = sum(1 for item in set(atomic_ids) if item.startswith(f"{package.source_prefix}{clause}"))
         if actual != expected:
             errors.append(f"{clause} expected {expected} source items; found {actual}")
 
     for row in atomic_rows:
-        row_id_match = re.search(r"`(ISO19-[^`]+)`", row)
+        row_id_match = re.search(rf"`({re.escape(package.source_prefix)}[^`]+)`", row)
         row_id = row_id_match.group(1) if row_id_match else "UNKNOWN"
         row_sci = ids(row, r"`(SCI-\d{3})`")
         row_sat = ids(row, r"`(SAT-\d{3})`")
-        row_iat = ids(row, r"`(IAT-[A-Z0-9-]+)`")
+        row_iat = ids(row, package.variant_pattern)
         if not row_sci or any(item not in known_sci for item in row_sci):
             errors.append(f"{row_id} has missing/unknown SCI routing: {row_sci}")
         if not row_sat or any(item not in known_sat for item in row_sat):
@@ -257,10 +322,10 @@ def check_package(
         if "EXTRACTED / REVIEW-PENDING" not in row:
             errors.append(f"{row_id} has an invalid evidence status")
 
-    parameter_rows = table_rows(parameter_text, "IP-")
-    parameter_ids = [item for row in parameter_rows for item in ids(row, r"`(IP-[A-Z0-9-]+)`")]
+    parameter_rows = table_rows(parameter_text, package.parameter_prefix)
+    parameter_ids = [item for row in parameter_rows for item in ids(row, package.parameter_pattern)]
     parameter_defined = set(parameter_ids)
-    parameter_referenced = set(ids(rtm_text, r"`(IP-[A-Z0-9-]+)`"))
+    parameter_referenced = set(ids(rtm_text, package.parameter_pattern))
     if (
         len(parameter_rows) != package.expected_parameter_count
         or len(parameter_defined) != package.expected_parameter_count
@@ -283,10 +348,10 @@ def check_package(
         if not re.search(r"PDFs? \d+", row):
             errors.append(f"Parameter row lacks controlled PDF locator: {row[:80]}")
 
-    variant_rows = table_rows(acceptance_text, "IAT-")
-    variant_ids = [item for row in variant_rows for item in ids(row, r"`(IAT-[A-Z0-9-]+)`")]
+    variant_rows = table_rows(acceptance_text, package.variant_prefix)
+    variant_ids = [item for row in variant_rows for item in ids(row, package.variant_pattern)]
     variant_defined = set(variant_ids)
-    variant_referenced = set(ids(rtm_text, r"`(IAT-[A-Z0-9-]+)`"))
+    variant_referenced = set(ids(rtm_text, package.variant_pattern))
     if (
         len(variant_rows) != package.expected_variant_count
         or len(variant_defined) != package.expected_variant_count
@@ -328,8 +393,8 @@ def main() -> int:
     parameter_definition_list = [
         item
         for package in PACKAGES
-        for row in table_rows(package.parameters.read_text(encoding="utf-8"), "IP-")
-        for item in ids(row, r"`(IP-[A-Z0-9-]+)`")
+        for row in table_rows(package.parameters.read_text(encoding="utf-8"), package.parameter_prefix)
+        for item in ids(row, package.parameter_pattern)
     ]
     known_parameters = set(parameter_definition_list)
 
@@ -363,12 +428,12 @@ def main() -> int:
         all_errors.append(f"Globally unreferenced parameter IDs: {sorted(globally_unreferenced)}")
 
     if all_errors:
-        print("ISO ATOMIC TRACEABILITY: FAIL")
+        print("SCIENTIFIC ATOMIC TRACEABILITY: FAIL")
         for error in all_errors:
             print(f"- {error}")
         return 1
 
-    print("ISO ATOMIC TRACEABILITY: PASS")
+    print("SCIENTIFIC ATOMIC TRACEABILITY: PASS")
     for package in PACKAGES:
         print(
             f"- {package.name}: {sum(package.expected_by_clause.values())} source items, "

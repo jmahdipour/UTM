@@ -559,3 +559,17 @@ Date: 2026-08-09
 - Added 7 acceptance variants for the joint fracture-position/necking applicability condition, pre-test subdivision, X/Y symmetry, parity routing, both formula branches and Figure-I.1 identity.
 - Expanded the static validator to cover twelve packages while retaining global identity, source-local definition, locator, authority and bidirectional routing checks.
 - Kept Annex I informative and prohibited silent rescue outside its two-condition applicability route; required exact integer parity and mark provenance and retained the illustrated head shape as guidance only. Every new parameter remains `INDEPENDENT-REVIEW-PENDING` and every new variant `NOT-RUN`; `SG-02` remains open for Annexes J-L and the detailed ASTM package.
+
+### SG-02 ISO atomic packages 13-15
+
+- Atomized 15 source items, 5 parameter/formula candidates and 6 acceptance variants from informative Annex J and Formula J.1 for the optional `Awn` workflow.
+- Atomized 41 source items, 13 parameter/formula candidates and 14 acceptance variants from informative Annex K, Formulas K.1-K.4 and Tables K.1-K.4 for uncertainty inventory, combination and example routing.
+- Atomized 84 source items, 4 parameter/formula candidates and 8 acceptance variants from informative Annex L, preserving all 70 interlaboratory observations, four figures, reproducibility interpretation and evidence-only status.
+- Kept every extracted value `INDEPENDENT-REVIEW-PENDING`, every variant `NOT-RUN` and all informative examples/datasets prohibited from becoming universal acceptance limits.
+
+### SG-02 ASTM atomic package 16
+
+- Atomized 166 source items from the exact historical ASTM E8/E8M-15a source, including clauses, annex material, 26 figures and 7 tables.
+- Added 25 ASTM-specific parameter/formula candidates and 31 linked acceptance variants covering apparatus, specimens, procedures, speeds, results, reporting, precision/bias and unit-system isolation.
+- Expanded the static validator to cover all sixteen ISO/ASTM packages with package-specific identity namespaces and cross-package uniqueness/routing checks.
+- Updated the aggregate extraction status to 1,202 source items, 291 parameter/formula candidates and 260 acceptance variants; independent review, serialized fixtures, executable implementation and conformity evidence remain pending.

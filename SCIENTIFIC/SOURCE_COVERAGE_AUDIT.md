@@ -4,7 +4,7 @@ document: SCIENTIFIC_SOURCE_COVERAGE_AUDIT
 version: 1.0
 status: CONTROLLED-DRAFT
 governing_edr: EDR-0014
-last_revision: 2026-08-09
+last_revision: 2026-08-17
 ---
 
 # Scientific Source Coverage Audit
@@ -21,7 +21,7 @@ The test-design deficiency is now addressed by `TEST_CASE_SPECIFICATIONS.md` and
 4. independently review every extracted numeric/table parameter;
 5. create serialized fixtures and executable evidence.
 
-Twelve controlled atomization packages are now present for ISO 6892-1:2019 Clauses 1-23, Figures 1-15 and Annexes A-I:
+Sixteen controlled atomization packages are now present for ISO 6892-1:2019 Clauses 1-23, Figures 1-15 and Annexes A-L plus the exact historical ASTM E8/E8M-15a source:
 
 - 191 atomic source items covering scope, dependencies, terms/formulas, all 46 Table 1 symbols, environment, specimen/geometry, gauge length, apparatus and test-rate conditions;
 - 53 parameter/formula candidates with exact printed-page/PDF-page locators and boundary semantics;
@@ -48,9 +48,13 @@ Twelve controlled atomization packages are now present for ISO 6892-1:2019 Claus
 - 3 additional parameter/formula candidates and 6 acceptance variants covering the `<5 percent` trigger, equal arc radii, lifecycle, tool, fixture, visibility-aid and route-isolation evidence;
 - 35 additional atomic source items for informative Annex I, Formulas I.1-I.2 and Figure I.1, including the two-condition applicability route, equal subdivisions, X/Y symmetry, integer parity and even/odd reconstruction;
 - 10 additional parameter/formula candidates and 7 acceptance variants covering subdivision size/count, mutually exclusive parity, exact mark offsets, both elongation formulas and figure-key identity;
-- static validation of all twelve packages, counts, references, global parameter authority and cross-package identity uniqueness.
+- 15 additional atomic source items, 5 parameter/formula candidates and 6 acceptance variants for informative Annex J and Formula J.1, including pre-test marking, gauge-length accuracy, fracture clearances and optional `Awn` calculation;
+- 41 additional atomic source items, 13 parameter/formula candidates and 14 acceptance variants for informative Annex K, Formulas K.1-K.4 and Tables K.1-K.4, including Type A/Type B inventories, combination rules and example-only values;
+- 84 additional atomic source items, 4 parameter/formula candidates and 8 acceptance variants for informative Annex L, including all 70 Table-L.1-L.4 observations, Figures L.1-L.4, reproducibility interpretation and evidence-only boundaries;
+- 166 ASTM-specific atomic source items, 25 parameter/formula candidates and 31 acceptance variants for the exact E8/E8M-15a edition, including apparatus, specimen, procedure, speed, result, reporting, precision/bias, figure/table and unit-system routes;
+- static validation of all sixteen packages, counts, references, global parameter authority and cross-package identity uniqueness.
 
-This is extraction/routing evidence, not independent approval. All 244 parameters remain `INDEPENDENT-REVIEW-PENDING`, all 201 acceptance variants remain `NOT-RUN`, and Annexes J-L plus the detailed ASTM package are still open.
+This is extraction/routing evidence, not independent approval. All 291 parameters remain `INDEPENDENT-REVIEW-PENDING` and all 260 acceptance variants remain `NOT-RUN`.
 
 Therefore, the accurate status is:
 
@@ -83,7 +87,7 @@ File hashes and redistribution controls remain governed by `REFERENCES/README.md
 | Clauses 17-19 | `SCI-024`-`SCI-026`; paired tests | 24 source items atomize `Ag`, `Agt`, `At`, maximum/fracture relationships, plateau midpoint and Figure-1 constructions | independent interpretation/parameter review |
 | Clauses 20-21 | `SCI-027`-`SCI-028`; paired tests | 39 source items atomize manual/extensometer `A`, fracture-position validity, conversion, `Z`, geometry measurement and accuracy guidance | independent interpretation/parameter review; serialized measurement and conversion fixtures |
 | Clause 22 | `SCI-001`, `SCI-015`, `SCI-037`; paired tests | 17 source items atomize every minimum field, applicability condition and property-specific rounding quantum | independent interpretation/rounding review; ISO 80000-1 dependency review remains open |
-| Clause 23 | `SCI-036`; `SAT-036` | 8 source items atomize informational status, no-adjustment/no-combination rules and Annex K-L routing | independent interpretation review; Annex K-L detail remains open |
+| Clause 23 | `SCI-036`; `SAT-036` | 8 source items atomize informational status, no-adjustment/no-combination rules and Annex K-L routing | independent interpretation review; Annex K-L extraction now routed separately |
 | Figures 1 and 8-10 | `SCI-013`-`SCI-018`, `SCI-024`-`SCI-027`, `SCI-030`, `SCI-038`-`SCI-041`; paired tests | 15 source items atomize property constructions, all `Rm` behavior classes, illustrated rate schedule and inadmissible rate discontinuity | independent figure/parameter review |
 | Annex A | `SCI-001`-`SCI-006`, `SCI-010`, `SCI-013`-`SCI-021`, `SCI-024`-`SCI-027`, `SCI-030`-`SCI-031`, `SCI-034`-`SCI-045`; paired tests | 94 source items, 19 parameters/formulas and 21 variants atomize informative scope, raw-data structure, sampling, property landmarks, smoothing, fracture, elastic slope, Table-A.1 validation and machine-readable guidance | independent interpretation/parameter review; serialized fixtures; external TENSTAND/CWA/CRM evidence remains unadmitted |
 | Annex B and Figure 11 | `SCI-001`, `SCI-003`, `SCI-006`-`SCI-010`, `SCI-012`, `SCI-018`, `SCI-020`, `SCI-027`, `SCI-032`, `SCI-036`, `SCI-038`-`SCI-039`; paired tests | 48 source items, 19 new parameters/formulas and 14 variants atomize thin-product applicability, rectangular geometry, all B.1/B.2 table rows, preparation, nominal-width eligibility and `S0` accuracy | independent interpretation/parameter review; serialized generated boundary fixtures |
@@ -94,24 +98,22 @@ File hashes and redistribution controls remain governed by `REFERENCES/README.md
 | Annex G | `SCI-001`-`SCI-010`, `SCI-012`-`SCI-016`, `SCI-018`, `SCI-020`, `SCI-031`, `SCI-034`-`SCI-041`, `SCI-045`; paired tests | 153 source items, 56 parameters/formulas and 24 variants atomize normative scope, equipment, bilateral measurement, specimen/procedure controls, Formulas G.1-G.8, Tables G.1-G.3, fit quality, two uncertainty examples and every G.8 report field | independent interpretation/parameter review; serialized regression/uncertainty/boundary fixtures; referenced-standard dependencies; historical/proficiency values remain information-only |
 | Annex H | `SCI-001`, `SCI-003`, `SCI-005`-`SCI-010`, `SCI-027`, `SCI-030`, `SCI-038`-`SCI-040`; paired tests | 19 source items, 3 parameters/formulas and 6 variants atomize informative `<5 percent` specified-value precautions, two-ended marking, equal-radius arcs, fracture reassembly, scratch measurement, dye aid and Clause-20.2 alternative | independent interpretation/parameter review; serialized procedural/geometry fixtures; the recommended method remains non-exclusive |
 | Annex I and Figure I.1 | `SCI-001`, `SCI-003`, `SCI-005`-`SCI-009`, `SCI-027`, `SCI-030`, `SCI-038`-`SCI-039`; paired tests | 35 source items, 10 parameters/formulas and 7 variants atomize informative applicability, equal subdivisions, X/Y fracture symmetry, integer parity, even/odd mark offsets, Formulas I.1-I.2 and every Figure-I.1 key identity | independent interpretation/parameter review; serialized partition/parity/geometry fixtures; 5-mm recommendation and 10-mm upper-end interpretation remain review-pending |
-| Annex J | `SCI-029`; `SAT-029` | optional `Awn` workflow | complete procedure inputs, restrictions and reporting evidence |
-| Annex K | `SCI-036`; `SAT-036` | uncertainty evidence | Type A/Type B component inventory and reviewed examples |
-| Annex L | `SCI-045`; `SAT-045` | interlaboratory evidence admission | approved dataset/use mapping; Annex L is evidence, not a universal acceptance tolerance |
+| Annex J | `SCI-029`; `SAT-029` | 15 source items, 5 parameters/formulas and 6 variants atomize the optional `Awn` workflow, equidistant marking, dimensional accuracy, fracture clearances and Formula J.1 | independent interpretation/parameter review; serialized procedural/geometry fixtures |
+| Annex K | `SCI-036`; `SAT-036` | 41 source items, 13 parameters/formulas and 14 variants atomize uncertainty concepts, Type A/Type B components, Formulas K.1-K.4 and Tables K.1-K.4 | independent uncertainty review; serialized calculation/component fixtures; examples remain information-only |
+| Annex L | `SCI-005`, `SCI-006`, `SCI-028`, `SCI-036`, `SCI-038`, `SCI-045`; paired tests | 84 source items, 4 parameters/formulas and 8 variants atomize all 70 observations, four plots, reproducibility/confidence interpretation and footnote conversions | independent dataset/interpretation review; serialized table/plot fixtures; observations remain evidence, not universal tolerances |
 
-## ASTM E8/E8M-15a gap
+## ASTM E8/E8M-15a package boundary
 
-The isolated ASTM profile is architecturally Frozen, but detailed ASTM requirement traceability is not complete. `SCI-002`/`SAT-002` proves isolation only; it does not cover all E8/E8M-15a test specimens, apparatus, procedures, speed rules, yield methods, tensile strength, elongation, reduction of area, reporting, precision/bias and unit-system differences.
+The isolated ASTM profile is architecturally Frozen and its exact historical `15a` source now has detailed extraction/routing coverage. The 166-item package covers scope/dependencies, terminology, apparatus, specimen types, procedures, speed rules, yield methods, tensile strength, elongation, reduction of area, reporting, precision/bias, 26 figure routes and 7 table routes. E8 inch-pound and E8M SI values remain separate where the source does not state exact equivalence.
 
-Before the ASTM profile can be represented as scientifically complete, it requires its own:
+Before the ASTM profile can be represented as scientifically complete, it still requires:
 
-- atomic source inventory for the exact `15a` edition;
-- separate E8 and E8M parameter sets where values are not equivalent;
-- ASTM-specific Requirement IDs and acceptance variants;
 - referenced-standard dependency register;
 - controlled Golden/boundary fixtures and independent review;
+- executable ASTM implementation and evidence;
 - edition-difference review before adding any later edition such as `-25`.
 
-Until that package exists, the allowed claim is **ASTM profile boundary defined; detailed ASTM implementation scope Pending**.
+The allowed claim is **historical ASTM E8/E8M-15a extraction and routing defined; independent review, fixtures and implementation Pending**.
 
 ## Derived engineering coverage
 
@@ -128,7 +130,7 @@ These are `Derived Scientific Property` outputs unless a separately mapped stand
 | Gate | Current assessment | Closure blocker |
 |---|---|---|
 | `SG-01 Source Control` | design evidence present | independent integrity/review record still required for release closure |
-| `SG-02 Clause Traceability` | OPEN - ISO packages 1-12 extracted | Clauses 1-23, Figures 1-15 and Annexes A-I independent review pending; Annexes J-L and ASTM detailed package absent |
+| `SG-02 Clause Traceability` | OPEN - packages 1-16 extracted | ISO Clauses 1-23, Figures 1-15, Annexes A-L and ASTM E8/E8M-15a independent review pending; serialized fixtures and executable evidence absent |
 | `SG-03` through `SG-10` | NOT STARTED / PENDING IMPLEMENTATION | fixtures, VB.NET implementation, execution, independent evidence and sign-off absent |
 
 No Workbook or scientific-conformity claim may proceed on the basis of the 45 family rows alone.

@@ -44,6 +44,18 @@ This package defines the controlled scientific scope and evidence required by ED
 - `ISO_6892_1_2019_ANNEX_I_ATOMIC_RTM.md` atomizes 35 source items from informative Annex I, Formulas I.1-I.2 and Figure I.1.
 - `ISO_6892_1_2019_ANNEX_I_PARAMETERS.md` records 10 subdivision, parity, mark-offset and elongation formulas pending independent review.
 - `ISO_6892_1_2019_ANNEX_I_ATOMIC_ACCEPTANCE.md` defines 7 bidirectionally linked acceptance variants; all remain `NOT-RUN`.
-- `validate_atomic_traceability.py` checks all twelve packages, counts, locators, global parameter authority, cross-package identity uniqueness and SCI/SAT/parameter/variant links.
+- `ISO_6892_1_2019_ANNEX_J_ATOMIC_RTM.md` atomizes 15 source items from informative Annex J and Formula J.1.
+- `ISO_6892_1_2019_ANNEX_J_PARAMETERS.md` records 5 gauge-length, marking, clearance and `Awn` formula candidates pending independent review.
+- `ISO_6892_1_2019_ANNEX_J_ATOMIC_ACCEPTANCE.md` defines 6 bidirectionally linked acceptance variants; all remain `NOT-RUN`.
+- `ISO_6892_1_2019_ANNEX_K_ATOMIC_RTM.md` atomizes 41 source items from informative Annex K, Formulas K.1-K.4 and Tables K.1-K.4.
+- `ISO_6892_1_2019_ANNEX_K_PARAMETERS.md` records 13 uncertainty-component, combination and example candidates pending independent review.
+- `ISO_6892_1_2019_ANNEX_K_ATOMIC_ACCEPTANCE.md` defines 14 bidirectionally linked acceptance variants; all remain `NOT-RUN`.
+- `ISO_6892_1_2019_ANNEX_L_ATOMIC_RTM.md` atomizes 84 source items from informative Annex L, Tables L.1-L.4 and Figures L.1-L.4.
+- `ISO_6892_1_2019_ANNEX_L_PARAMETERS.md` records 4 reproducibility, confidence, dataset and absolute-conversion candidates pending independent review.
+- `ISO_6892_1_2019_ANNEX_L_ATOMIC_ACCEPTANCE.md` defines 8 bidirectionally linked acceptance variants; all remain `NOT-RUN`.
+- `ASTM_E8_E8M_15A_ATOMIC_RTM.md` atomizes 166 source items from the exact historical ASTM E8/E8M-15a source while preserving E8/E8M unit-system isolation.
+- `ASTM_E8_E8M_15A_PARAMETERS.md` records 25 ASTM-specific applicability, geometry, speed, formula and result candidates pending independent review.
+- `ASTM_E8_E8M_15A_ATOMIC_ACCEPTANCE.md` defines 31 bidirectionally linked acceptance variants; all remain `NOT-RUN`.
+- `validate_atomic_traceability.py` checks all sixteen packages, counts, locators, global parameter authority, cross-package identity uniqueness and SCI/SAT/parameter/variant links.
 
-The package is a design baseline. Clauses 1-23, Figures 1-15 and Annexes A-I are atomized and routed, but their independent review remains pending. Annexes J-L and the detailed ASTM profile are not yet atomized. No serialized fixtures, scientific-engine implementation or conformity evidence exists.
+The package is a design baseline. ISO 6892-1:2019 Clauses 1-23, Figures 1-15 and Annexes A-L plus the exact historical ASTM E8/E8M-15a profile are atomized and routed, but independent review remains pending. No serialized fixtures, scientific-engine implementation or conformity evidence exists.

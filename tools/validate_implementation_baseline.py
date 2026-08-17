@@ -188,7 +188,7 @@ def validate_document_sync(errors: list[str]) -> None:
         "independent oracle",
         "FX-ANA-ENERGY-LINEAR",
         "SG-02 Clause Traceability",
-        "ASTM profile boundary defined; detailed ASTM implementation scope Pending",
+        "historical ASTM E8/E8M-15a extraction and routing defined; independent review, fixtures and implementation Pending",
     ):
         if token not in scientific_cases + scientific_fixtures + scientific_coverage:
             fail(errors, f"Scientific test-design or coverage token missing: {token}")
