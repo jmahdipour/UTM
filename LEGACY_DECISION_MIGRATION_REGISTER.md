@@ -149,4 +149,21 @@ The archive contains 87 Markdown files, including 82 chapters (`ARCH-000` throug
 
 Detailed evidence, duplicate-topic mapping and line references are in `REFERENCES/LEGACY/JTS/REVIEW_AND_MIGRATION.md`. No JTS statement became Frozen through this ingestion.
 
+## `tensile_shell.html` UI mockup review
+
+`REFERENCES/LEGACY/tensile_shell.html` is a static HTML/CSS/JS mockup (no backend, no real state machine) built to imitate the Shimadzu TrapeziumX screen layout. It was reviewed line-by-line on 2026-08-17 against EDR-0001 through EDR-0009.
+
+| ID | Source pattern | Status | Governing resolution |
+|---|---|---|---|
+| TSX-SUP-001 | JOG modal exposes a software clutch (`OFF / 1:1 / 1:10`) that scales JOG speed via `setClutch()`. | SUPERSEDED | EDR-0003 states no software clutch exists; EDR-0009 marks the legacy clutch coils (M10/M11) `REJECTED-FOR-UTS-COMMAND`. |
+| TSX-SUP-002 | JOG direction buttons are latched (`jog()` starts continuous motion on click, runs until a separate Stop click). | SUPERSEDED | EDR-0003/EDR-0004 require press-and-hold JOG in Setup only. |
+| TSX-SUP-003 | JOG speed is a continuous log-scaled knob from 0.05 to 500 mm/min. | SUPERSEDED | EDR-0003 authorizes only the approved 0.1/1/10 mm/min UI presets. |
+| TSX-SUP-004 | Calibration page has a standalone "Tare / Zero" button. | SUPERSEDED | GR-011 prohibits a separate Zero control; Zero must only be reachable from the interactive measurement widget's own menu. |
+| TSX-SUP-005 | Reception hierarchy is Customer → Reception intake → Sample Group → Specimen; the word "Order" does not appear anywhere in the file. | SUPERSEDED | GR-001 keeps Order as the highest business object, matching the JTS-SUP-003 disposition above. |
+| TSX-REF-001 | Hardcoded numeric values (Full Scale 500 N, LC-25t, compliance stiffness 312.5 kN/mm, calibration factors, etc.). | REFERENCE-ONLY / UNVERIFIED | No physical-machine evidence accompanies these values; the hardware map remains `BLOCKED-HARDWARE`. |
+| TSX-MIG-001 | Six-page spine (Reception/Test/Method/Calibration/Settings/Report) and the seven-tab Method wizard (System/Sensor/Testing/Specimen/Data Processing/Chart/Report). | MIGRATED-ALREADY | Already governed by EDR-0006; retain as corroborating layout evidence only. |
+| TSX-MIG-002 | Calibration page separates per-sensor installed-mismatch warning from machine-compliance/stiffness correction. | MIGRATED-ALREADY | Already governed by EDR-0005 (`SensorMismatch` quality flag) and its `ComplianceCorrectionRevision` ownership. |
+
+No numeric value, PLC behavior, or safety pattern from `tensile_shell.html` may be implemented as-is. Its sole approved use is as visual/workflow inspiration for screen density and layout, subordinate to all Frozen EDR/GR text.
+
 # End of document

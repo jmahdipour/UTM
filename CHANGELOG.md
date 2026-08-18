@@ -576,3 +576,12 @@ Date: 2026-08-09
 - Added 25 ASTM-specific parameter/formula candidates and 31 linked acceptance variants covering apparatus, specimens, procedures, speeds, results, reporting, precision/bias and unit-system isolation.
 - Expanded the static validator to cover all sixteen ISO/ASTM packages with package-specific identity namespaces and cross-package uniqueness/routing checks.
 - Updated the aggregate extraction status to 1,202 source items, 291 parameter/formula candidates and 260 acceptance variants; independent review, serialized fixtures, executable implementation and conformity evidence remain pending.
+
+## Documentation v0.4 — Legacy UI Mockup Review
+
+Date: 2026-08-17
+
+- Reviewed `REFERENCES/LEGACY/tensile_shell.html` line-by-line against EDR-0001 through EDR-0009.
+- Classified five patterns as `SUPERSEDED` (software JOG clutch, latched JOG buttons, continuous JOG speed knob, standalone Tare/Zero button, Order-less Customer-rooted Reception hierarchy) and recorded why each conflicts with current Frozen decisions.
+- Classified hardcoded numeric values as `REFERENCE-ONLY`/`UNVERIFIED` and two layout patterns as `MIGRATED-ALREADY`.
+- No numeric value, PLC behavior, or safety pattern from this file may be implemented as-is; recorded in `LEGACY_DECISION_MIGRATION_REGISTER.md`.
