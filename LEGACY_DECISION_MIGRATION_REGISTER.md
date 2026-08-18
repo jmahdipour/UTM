@@ -106,26 +106,17 @@ A legacy statement does not become a Frozen UTS decision merely because it is pr
 
 The supplied `AG01.zip` was integrity-checked and analyzed as legacy engineering evidence. Controlled results are in `AG01_LEGACY_CODE_ANALYSIS.md`. It adds eight compatible capability observations, ten candidate EDR decisions, eight superseded implementation patterns, a reference-only PLC address map, formula evidence and eight verification items. No PLC address, scaling factor, limit, calibration value, formula or legacy UI pattern became Frozen through this ingestion.
 
-# End of document
-
-
 ## Resolved candidate EDRs
 
 | Candidate | Resolution | Governing decision |
 |---|---|---|
 | CEDR-001 | Continuous measurement streams and semantic domain events are separate, connected flows. | EDR-0001 |
-
-
 | CEDR-002 | Test Methods use immutable released versions containing ordered phases/segments, typed control targets/rates, transitions, terminations and per-segment acquisition profiles. Material, Acceptance, calibration and safety remain separate aggregates. | EDR-0002 |
-
-
 | CEDR-005 | Machine and Test Run use separate coordinated state machines with guarded commands; layered safety/interlocks override all normal transitions. | EDR-0003 and EDR-0004 |
 | CEDR-006 | Press-and-hold JOG is limited to Setup, uses explicit/idempotent Stop and approved 0.1/1/10 mm/min UI presets; no software clutch exists. Physical mapping, thresholds and safety performance remain open. | EDR-0003 and EDR-0004 (partial; hardware verification remains) |
-
-
 | CEDR-003 | Methods declare logical sensor requirements; deploy/run resolution binds actual sensor installations and calibration revisions into an immutable Run Measurement Snapshot. | EDR-0005 |
 | CEDR-004 | Calibration, range, overload validation and quality are per sensor/binding; only applicable Active calibration revisions satisfy production arming. | EDR-0005 |
-
-
 | CEDR-007 | The six primary pages remain Reception/Test/Method/Calibration/Settings/Report; Reception is explicitly an Order-rooted workspace under GR-001. | EDR-0006 |
 | CEDR-012 | Roles/permissions are data-driven and commands are checked in Application plus state/safety guards. Audit/localization/export service details continue in their dedicated designs. | EDR-0006 (UI/permission portion) |
+
+# End of document
