@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <RootNamespace>UTS.Bootstrapper</RootNamespace>
+    <AssemblyName>UTS</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UTS.Core\UTS.Core.vbproj" />
+    <ProjectReference Include="..\UTS.Application.Contracts\UTS.Application.Contracts.vbproj" />
+    <ProjectReference Include="..\UTS.Application\UTS.Application.vbproj" />
+    <ProjectReference Include="..\UTS.Infrastructure.SQLite\UTS.Infrastructure.SQLite.vbproj" />
+    <ProjectReference Include="..\UTS.Infrastructure.Driver.Abstractions\UTS.Infrastructure.Driver.Abstractions.vbproj" />
+    <ProjectReference Include="..\UTS.Infrastructure.Driver.Simulator\UTS.Infrastructure.Driver.Simulator.vbproj" />
+    <ProjectReference Include="..\UTS.Infrastructure.Reporting\UTS.Infrastructure.Reporting.vbproj" />
+    <ProjectReference Include="..\UTS.Presentation.Wpf\UTS.Presentation.Wpf.vbproj" />
+    <PackageReference Include="NLog" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,84 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Core", "src\UTS.Core\UTS.Core.vbproj", "{A1111111-1111-4111-8111-111111111111}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Application.Contracts", "src\UTS.Application.Contracts\UTS.Application.Contracts.vbproj", "{A2222222-2222-4222-8222-222222222222}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Application", "src\UTS.Application\UTS.Application.vbproj", "{A3333333-3333-4333-8333-333333333333}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Infrastructure.SQLite", "src\UTS.Infrastructure.SQLite\UTS.Infrastructure.SQLite.vbproj", "{A4444444-4444-4444-8444-444444444444}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Infrastructure.Driver.Abstractions", "src\UTS.Infrastructure.Driver.Abstractions\UTS.Infrastructure.Driver.Abstractions.vbproj", "{A5555555-5555-4555-8555-555555555555}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Infrastructure.Driver.Simulator", "src\UTS.Infrastructure.Driver.Simulator\UTS.Infrastructure.Driver.Simulator.vbproj", "{A6666666-6666-4666-8666-666666666666}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Infrastructure.Reporting", "src\UTS.Infrastructure.Reporting\UTS.Infrastructure.Reporting.vbproj", "{A7777777-7777-4777-8777-777777777777}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Presentation.Wpf", "src\UTS.Presentation.Wpf\UTS.Presentation.Wpf.vbproj", "{A8888888-8888-4888-8888-888888888888}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Bootstrapper", "src\UTS.Bootstrapper\UTS.Bootstrapper.vbproj", "{A9999999-9999-4999-8999-999999999999}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Core.Tests", "tests\UTS.Core.Tests\UTS.Core.Tests.vbproj", "{B1111111-1111-4111-8111-111111111111}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Application.Contracts.Tests", "tests\UTS.Application.Contracts.Tests\UTS.Application.Contracts.Tests.vbproj", "{B2222222-2222-4222-8222-222222222222}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UTS.Infrastructure.SQLite.Tests", "tests\UTS.Infrastructure.SQLite.Tests\UTS.Infrastructure.SQLite.Tests.vbproj", "{B3333333-3333-4333-8333-333333333333}"
+EndProject
+Global
+  GlobalSection(SolutionConfigurationPlatforms) = preSolution
+    Debug|x86 = Debug|x86
+    Release|x86 = Release|x86
+  EndGlobalSection
+  GlobalSection(ProjectConfigurationPlatforms) = postSolution
+    {A1111111-1111-4111-8111-111111111111}.Debug|x86.ActiveCfg = Debug|x86
+    {A1111111-1111-4111-8111-111111111111}.Debug|x86.Build.0 = Debug|x86
+    {A1111111-1111-4111-8111-111111111111}.Release|x86.ActiveCfg = Release|x86
+    {A1111111-1111-4111-8111-111111111111}.Release|x86.Build.0 = Release|x86
+    {A2222222-2222-4222-8222-222222222222}.Debug|x86.ActiveCfg = Debug|x86
+    {A2222222-2222-4222-8222-222222222222}.Debug|x86.Build.0 = Debug|x86
+    {A2222222-2222-4222-8222-222222222222}.Release|x86.ActiveCfg = Release|x86
+    {A2222222-2222-4222-8222-222222222222}.Release|x86.Build.0 = Release|x86
+    {A3333333-3333-4333-8333-333333333333}.Debug|x86.ActiveCfg = Debug|x86
+    {A3333333-3333-4333-8333-333333333333}.Debug|x86.Build.0 = Debug|x86
+    {A3333333-3333-4333-8333-333333333333}.Release|x86.ActiveCfg = Release|x86
+    {A3333333-3333-4333-8333-333333333333}.Release|x86.Build.0 = Release|x86
+    {A4444444-4444-4444-8444-444444444444}.Debug|x86.ActiveCfg = Debug|x86
+    {A4444444-4444-4444-8444-444444444444}.Debug|x86.Build.0 = Debug|x86
+    {A4444444-4444-4444-8444-444444444444}.Release|x86.ActiveCfg = Release|x86
+    {A4444444-4444-4444-8444-444444444444}.Release|x86.Build.0 = Release|x86
+    {A5555555-5555-4555-8555-555555555555}.Debug|x86.ActiveCfg = Debug|x86
+    {A5555555-5555-4555-8555-555555555555}.Debug|x86.Build.0 = Debug|x86
+    {A5555555-5555-4555-8555-555555555555}.Release|x86.ActiveCfg = Release|x86
+    {A5555555-5555-4555-8555-555555555555}.Release|x86.Build.0 = Release|x86
+    {A6666666-6666-4666-8666-666666666666}.Debug|x86.ActiveCfg = Debug|x86
+    {A6666666-6666-4666-8666-666666666666}.Debug|x86.Build.0 = Debug|x86
+    {A6666666-6666-4666-8666-666666666666}.Release|x86.ActiveCfg = Release|x86
+    {A6666666-6666-4666-8666-666666666666}.Release|x86.Build.0 = Release|x86
+    {A7777777-7777-4777-8777-777777777777}.Debug|x86.ActiveCfg = Debug|x86
+    {A7777777-7777-4777-8777-777777777777}.Debug|x86.Build.0 = Debug|x86
+    {A7777777-7777-4777-8777-777777777777}.Release|x86.ActiveCfg = Release|x86
+    {A7777777-7777-4777-8777-777777777777}.Release|x86.Build.0 = Release|x86
+    {A8888888-8888-4888-8888-888888888888}.Debug|x86.ActiveCfg = Debug|x86
+    {A8888888-8888-4888-8888-888888888888}.Debug|x86.Build.0 = Debug|x86
+    {A8888888-8888-4888-8888-888888888888}.Release|x86.ActiveCfg = Release|x86
+    {A8888888-8888-4888-8888-888888888888}.Release|x86.Build.0 = Release|x86
+    {A9999999-9999-4999-8999-999999999999}.Debug|x86.ActiveCfg = Debug|x86
+    {A9999999-9999-4999-8999-999999999999}.Debug|x86.Build.0 = Debug|x86
+    {A9999999-9999-4999-8999-999999999999}.Release|x86.ActiveCfg = Release|x86
+    {A9999999-9999-4999-8999-999999999999}.Release|x86.Build.0 = Release|x86
+    {B1111111-1111-4111-8111-111111111111}.Debug|x86.ActiveCfg = Debug|x86
+    {B1111111-1111-4111-8111-111111111111}.Debug|x86.Build.0 = Debug|x86
+    {B1111111-1111-4111-8111-111111111111}.Release|x86.ActiveCfg = Release|x86
+    {B1111111-1111-4111-8111-111111111111}.Release|x86.Build.0 = Release|x86
+    {B2222222-2222-4222-8222-222222222222}.Debug|x86.ActiveCfg = Debug|x86
+    {B2222222-2222-4222-8222-222222222222}.Debug|x86.Build.0 = Debug|x86
+    {B2222222-2222-4222-8222-222222222222}.Release|x86.ActiveCfg = Release|x86
+    {B2222222-2222-4222-8222-222222222222}.Release|x86.Build.0 = Release|x86
+    {B3333333-3333-4333-8333-333333333333}.Debug|x86.ActiveCfg = Debug|x86
+    {B3333333-3333-4333-8333-333333333333}.Debug|x86.Build.0 = Debug|x86
+    {B3333333-3333-4333-8333-333333333333}.Release|x86.ActiveCfg = Release|x86
+    {B3333333-3333-4333-8333-333333333333}.Release|x86.Build.0 = Release|x86
+  EndGlobalSection
+EndGlobal

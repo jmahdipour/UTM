@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: DOCUMENTATION_GOVERNANCE
-version: 0.2
+version: 0.3
 status: FROZEN
 classification: GOVERNANCE
 effective_date: 2026-08-02
@@ -69,7 +69,7 @@ No important decision may remain only in chat.
 - Feature and documentation branches are controlled working records until merged.
 - A branch document may be marked Frozen for review continuity, but it becomes the released project baseline only after integration into the default branch.
 - Pull request creation and merge remain explicit owner-controlled actions.
-- The current `docs/readme-v0.1` branch must be reviewed and integrated before application implementation is declared released.
+- An implementation branch is a controlled working record only. Implementation is released only after its EDR, code, tests, traceability and master-document synchronization are reviewed and integrated into the default branch.
 
 ## Evidence handling
 

@@ -11,6 +11,10 @@
 *.sln.docstates
 *.env
 
+# Licensed/controlled reference binaries are stored locally and catalogued in
+# REFERENCES/README.md. Do not redistribute them through the Git repository.
+/REFERENCES/CONTROLLED/**/*.pdf
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -425,3 +429,8 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# UTS runtime data
+*.db
+*.db-shm
+*.db-wal

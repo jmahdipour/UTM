@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>UTS.Infrastructure.Driver.Simulator</RootNamespace>
+    <AssemblyName>UTS.Infrastructure.Driver.Simulator</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UTS.Core\UTS.Core.vbproj" />
+    <ProjectReference Include="..\UTS.Application.Contracts\UTS.Application.Contracts.vbproj" />
+    <ProjectReference Include="..\UTS.Infrastructure.Driver.Abstractions\UTS.Infrastructure.Driver.Abstractions.vbproj" />
+  </ItemGroup>
+</Project>

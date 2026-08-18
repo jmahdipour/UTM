@@ -1,10 +1,10 @@
 ---
 project: Universal Testing Machine (UTS)
 document: FROZEN_DECISIONS
-version: 0.3
+version: 0.5
 status: FROZEN
 classification: MASTER-INDEX
-last_revision: 2026-08-03
+last_revision: 2026-08-09
 ---
 
 # Frozen Decision Index
@@ -39,7 +39,7 @@ This is the mandatory entry point for authoritative UTS decisions. Read it befor
 | GR-009 | Sensor is not Measurement | FROZEN | AI Handover |
 | GR-010 | Measurement is not Calculated Measurement | FROZEN | AI Handover |
 | GR-011 | Interactive Measurement Widget | FROZEN | AI Handover |
-| GR-012 | Analysis pipeline | FROZEN | AI Handover |
+| GR-012 | Analysis pipeline | FROZEN-AS-AMENDED | EDR-0014 |
 | GR-013 | Data and event consumption | FROZEN-AS-AMENDED | EDR-0001 |
 | GR-014 | Hardware independence | FROZEN | AI Handover |
 
@@ -56,13 +56,21 @@ This is the mandatory entry point for authoritative UTS decisions. Read it befor
 | EDR-0007 | SQLite persistence, units and migration policy | FROZEN | Resolves the physical persistence decision; governs `DATABASE/` |
 | EDR-0008 | Versioned in-process Application/API contracts | FROZEN | Resolves Application/API boundary; governs `APPLICATION/` and related contract catalogs |
 | EDR-0009 | Hardware-independent driver, PLC mapping lifecycle, Simulator and commissioning gates | FROZEN | Resolves Driver/Simulator contract; physical hardware map and adapter activation remain `BLOCKED-HARDWARE` |
+| EDR-0010 | Windows-integrated identity, UTS sessions, permission IDs and local security boundary | FROZEN | Resolves v1 authentication/session/authorization architecture; external transport remains prohibited |
+| EDR-0011 | SQLite-backed durable operations, recovery and resilience | FROZEN | Resolves long-running operation and crash/startup recovery architecture; motion is excluded from jobs |
+| EDR-0012 | Immutable report bundles, validation and controlled release lifecycle | FROZEN | Resolves reporting/validation/release architecture; production PDF provider remains validation-gated |
+| EDR-0013 | Modular Monolith delivery, pinned dependencies, deployment and performance budgets | FROZEN | Establishes the executable technical baseline and Solution gate |
+| EDR-0014 | Complete revisioned Scientific and Analysis Engine | FROZEN | Amends GR-012; governs ISO 6892-1:2019, isolated ASTM and derived true-curve/energy analysis |
 
 ## Open decision sequence
 
 These items must be resolved in dependency order:
 
-1. Verified physical hardware map and adapter commissioning.
-2. Reporting, validation and release architecture.
+1. Complete the executable Solution milestones in `ROADMAP.md` using Simulator evidence.
+2. Complete atomic ISO source-item/parameter traceability and the detailed isolated ASTM E8/E8M-15a package under EDR-0014.
+3. Materialize the controlled scientific fixtures/oracles, then implement and independently verify every v1 `SCI-*`/`SAT-*` pair.
+4. Select and validate a .NET Framework 4.8/x86 PDF renderer.
+5. Verify the physical hardware map and complete adapter commissioning separately; status remains `BLOCKED-HARDWARE`.
 
 ## Synchronization check
 

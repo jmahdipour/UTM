@@ -11,13 +11,13 @@
 Current Version:
 
 ```
-Documentation v0.2
+Documentation v0.4
 ```
 
 Status:
 
 ```
-Architecture Phase
+Implementation Baseline and Scientific Specification Phase
 ```
 
 Project State:
@@ -92,6 +92,8 @@ ROADMAP.md
 
 ARCHITECTURE/
 
+ENGINEERING/
+
 EDR/
 
 DOMAIN/
@@ -99,6 +101,8 @@ DOMAIN/
 STANDARDS/
 
 REFERENCES/
+
+SCIENTIFIC/
 
 UI/
 ```
@@ -117,7 +121,7 @@ Only Frozen Decisions inside this repository are authoritative.
 
 # Current Progress
 
-Completed
+Completed — architecture decisions
 
 - Business Architecture
 - Database Philosophy
@@ -125,22 +129,31 @@ Completed
 - Material Library
 - Acceptance Architecture
 - Measurement Architecture
-- Analysis Pipeline
+- Analysis Pipeline architecture and complete scientific scope (EDR-0014)
 - Event Driven Architecture
+- Executable Test Method, state, safety, metrology and UI contracts
+- SQLite physical model and Application/API contracts
+- Hardware-independent Driver/Simulator contract
+- Identity/session/authorization architecture
+- Durable operations/recovery architecture
+- Reporting/validation/release architecture
+- Technical delivery/dependency/performance baseline
+- ISO 6892-1:2019 requirement-family RTM and detailed scientific test-case specification
 
 In Progress
 
-- Documentation Repository
+- VB.NET/.NET Framework 4.8 x86 Solution foundation
+- executable architecture and Core contract tests
 
 Pending
 
-- Executable Test Method EDR
-
-- Physical Database
-- UI Pages
-- PLC Layer
-- Reporting
-- API
+- remaining production implementation milestones in `ROADMAP.md`
+- independent review of the 16 extracted ISO/ASTM atomic packages covering ISO Clauses 1-23, Figures 1-15, Annexes A-L and the exact historical ASTM E8/E8M-15a profile
+- serialized scientific fixtures and independent test oracles
+- Scientific Engine implementation and independent closure of all `SCI-*`/`SAT-*` pairs
+- Windows x86 CI/native SQLite validation
+- verified physical hardware map and commissioning evidence
+- production PDF renderer compatibility/visual-regression gate
 
 ---
 
