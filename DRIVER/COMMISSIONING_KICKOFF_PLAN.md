@@ -1,16 +1,26 @@
 ---
 project: Universal Testing Machine (UTS)
 document: COMMISSIONING_KICKOFF_PLAN
-version: 0.1
-status: PROPOSED
+version: 1.0
+status: ACCEPTED
 classification: SCOPE
 governing_edr: EDR-0009
 related: DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md
 proposed_date: 2026-08-17
 proposed_by: External review (longest-feedback-loop risk)
+accepted_date: 2026-08-18
+accepted_by: Project owner
 ---
 
 # Commissioning Kickoff Plan (Gates G01-G03)
+
+## Owner decision
+
+**ACCEPTED on 2026-08-18.** Owner confirmed physical machine access is available now.
+G01-G03 evidence-gathering starts immediately, in parallel with Milestones 1-14.
+Progress is tracked directly in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md`'s gate
+register as evidence is produced; this plan's checklist below remains the intake
+guide for what to collect.
 
 ## Why this document exists
 
@@ -64,8 +74,11 @@ lifecycle, only the timing of when collection starts.
   sized to be ownable by whoever has physical/administrative access to the machine,
   which for a single-maintainer project may not be the same person writing code.
 
-## Required owner action
+## Decision record
 
-Accept, adjust the artifact list, or reject. If accepted, track progress directly in
-`DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md`'s existing gate register — this
-document does not introduce a separate tracking mechanism.
+Accepted as-is on 2026-08-18; artifact list not adjusted. Evidence-gathering is now
+active. Each artifact, once actually obtained (photographed, exported, hashed),
+updates the corresponding gate's evidence in
+`DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` — no gate's `Current result` changes
+from `BLOCKED-HARDWARE` until real evidence is filed there; this acceptance record
+authorizes starting collection, not a change to any gate result by itself.

@@ -1,16 +1,26 @@
 ---
 project: Universal Testing Machine (UTS)
 document: SCIENTIFIC_SCOPE_ASSESSMENT
-version: 0.1
-status: PROPOSED
+version: 1.0
+status: ACCEPTED
 classification: SCOPE
 governing_edr: EDR-0014
 related: MVP_SCOPE.md
 proposed_date: 2026-08-17
 proposed_by: External review (documentation/implementation effort ratio)
+accepted_date: 2026-08-18
+accepted_by: Project owner
 ---
 
 # Scientific Package Scope Assessment
+
+## Owner decision
+
+**ACCEPTED as proposed on 2026-08-18**, including the Clauses 17-23 deferral as
+initially proposed (no separate first-customer check requested). This split now
+governs which of the 16 atomic packages require independent review, fixtures and
+implementation for v1 (Clauses 1-16, Annexes B/C/D/E/G, ASTM E8/E8M-15a) versus v2+
+(Clauses 17-23, Annexes A/F/H/I/J/K/L).
 
 ## Why this document exists
 
@@ -85,8 +95,9 @@ requirement needs it.
   it proposes which packages must clear those sub-gates for a v1 exit versus which
   may clear them on a later release cadence.
 
-## Required owner action
+## Decision record
 
-Accept, adjust the per-package split (particularly Clauses 17-23, which needs a real
-first-customer check, not just a package-size heuristic), or reject in favor of
-requiring the full EDR-0014 scope before any release.
+Accepted as-is on 2026-08-18; per-package split not adjusted. `ROADMAP.md` Milestone
+10 exit criteria and `SCIENTIFIC/README.md` should be read alongside this split when
+scheduling SG-01 through SG-10 sub-gate work: v1-tagged packages block a v1 release,
+v2+-tagged packages remain fully designed and available to re-enter scope on demand.

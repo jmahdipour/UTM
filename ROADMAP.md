@@ -1,32 +1,36 @@
 ---
 project: Universal Testing Machine (UTS)
 document: ROADMAP
-version: 0.1
+version: 0.2
 status: CONTROLLED
-last_revision: 2026-08-09
+last_revision: 2026-08-18
 ---
 
 # UTS Implementation Roadmap
 
 The product is implemented from scratch as one VB.NET/.NET Framework 4.8/x86 Modular Monolith. A milestone closes only when code, tests, RTM and documentation agree.
 
-| Milestone | Deliverable | Exit evidence |
-|---:|---|---|
-| 1 | Supplemental EDRs and technical baseline | EDR-0010-0014 indexed; baseline validator passes |
-| 2 | Solution foundation | all production/test projects, dependency rules, pinned packages, Windows CI and architecture tests |
-| 3 | Core primitives and canonical serialization | identities, quantities/units, result types, clocks/hashes and deterministic serialization tests |
-| 4 | Domain aggregates and state machines | Order/Specimen/Method/Metrology/Run models and exhaustive transition tests |
-| 5 | Security/operation/driver forward migrations and repositories | migrations, checksums, SQLite x86 smoke and transaction/invariant tests |
-| 6 | Application command/query pipeline | sessions, permissions, validation, idempotency, concurrency and transaction orchestration |
-| 7 | Deterministic Simulator and driver conformance | virtual clock/scenarios, mandatory fault catalog and no-auto-resume proof |
-| 8 | Machine runtime and execution engine | command lane, Safety Supervisor, JOG lease, segment runner, Stop/reconciliation/recovery |
-| 9 | Acquisition and raw persistence | bounded frames/chunks, gaps, replay, backpressure and crash finalization |
-| 10 | Scientific and analysis engine | all applicable ISO 6892-1:2019 clauses/points and Annex G; isolated ASTM profile; true/logarithmic curves; energy; uncertainty; deterministic re-analysis; complete scientific RTM and independent verification |
-| 11 | WPF operator application | six workspaces, widgets, live chart, settings and permission/state projections |
-| 12 | Reporting, export, audit and backup | CSV, selected validated PDF renderer, release lifecycle and restore drills |
-| 13 | System performance and packaging | soak/fault tests, x86 budgets, offline installer, diagnostics and upgrade recovery |
-| 14 | Traceability and system acceptance | all software RTM rows/test cases closed; no open production-code placeholders |
-| 15 | Physical monitor-only and commissioning | controlled hardware evidence; production writes remain blocked until EDR-0009 gates pass |
+`MVP_SCOPE.md` was accepted on 2026-08-18. The **MVP** column below flags which part
+of each milestone's exit evidence is required for a v1 release versus deferred to
+v2+; it narrows *what must be proven*, not the milestone's designed scope.
+
+| Milestone | Deliverable | Exit evidence | MVP |
+|---:|---|---|---|
+| 1 | Supplemental EDRs and technical baseline | EDR-0010-0014 indexed; baseline validator passes | Required |
+| 2 | Solution foundation | all production/test projects, dependency rules, pinned packages, Windows CI and architecture tests | Required |
+| 3 | Core primitives and canonical serialization | identities, quantities/units, result types, clocks/hashes and deterministic serialization tests | Required |
+| 4 | Domain aggregates and state machines | Order/Specimen/Method/Metrology/Run models and exhaustive transition tests | Required |
+| 5 | Security/operation/driver forward migrations and repositories | migrations, checksums, SQLite x86 smoke and transaction/invariant tests | Required |
+| 6 | Application command/query pipeline | sessions, permissions, validation, idempotency, concurrency and transaction orchestration | Required |
+| 7 | Deterministic Simulator and driver conformance | virtual clock/scenarios, mandatory fault catalog and no-auto-resume proof | Required |
+| 8 | Machine runtime and execution engine | command lane, Safety Supervisor, JOG lease, segment runner, Stop/reconciliation/recovery | Required |
+| 9 | Acquisition and raw persistence | bounded frames/chunks, gaps, replay, backpressure and crash finalization | Required |
+| 10 | Scientific and analysis engine | all applicable ISO 6892-1:2019 clauses/points and Annex G; isolated ASTM profile; true/logarithmic curves; energy; uncertainty; deterministic re-analysis; complete scientific RTM and independent verification | Partial — MVP-tagged packages only (Clauses 1-16, Annexes B/C/D/E/G, ASTM E8/E8M-15a); see `SCIENTIFIC/SCOPE_ASSESSMENT.md` |
+| 11 | WPF operator application | six workspaces, widgets, live chart, settings and permission/state projections | Required (all six workspaces; not every advanced widget) |
+| 12 | Reporting, export, audit and backup | CSV, selected validated PDF renderer, release lifecycle and restore drills | Partial — CSV + one validated PDF template only; see `MVP_SCOPE.md` |
+| 13 | System performance and packaging | soak/fault tests, x86 budgets, offline installer, diagnostics and upgrade recovery | Required (installer/packaging); extended soak/fault budget may extend past v1 |
+| 14 | Traceability and system acceptance | all software RTM rows/test cases closed; no open production-code placeholders | Partial — MVP-tagged RTM rows only; deferred-scope rows stay open by design |
+| 15 | Physical monitor-only and commissioning | controlled hardware evidence; production writes remain blocked until EDR-0009 gates pass | Partial — `PhysicalMonitorOnly` (G01-G03) only; `PhysicalCommissioning`/`PhysicalProduction` (G04-G17) deferred past v1. G01-G03 evidence-gathering is active now per `DRIVER/COMMISSIONING_KICKOFF_PLAN.md` (accepted 2026-08-18), in parallel with Milestones 1-14. |
 
 ## Current gate
 

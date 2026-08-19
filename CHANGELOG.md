@@ -585,3 +585,12 @@ Date: 2026-08-17
 - Classified five patterns as `SUPERSEDED` (software JOG clutch, latched JOG buttons, continuous JOG speed knob, standalone Tare/Zero button, Order-less Customer-rooted Reception hierarchy) and recorded why each conflicts with current Frozen decisions.
 - Classified hardcoded numeric values as `REFERENCE-ONLY`/`UNVERIFIED` and two layout patterns as `MIGRATED-ALREADY`.
 - No numeric value, PLC behavior, or safety pattern from this file may be implemented as-is; recorded in `LEGACY_DECISION_MIGRATION_REGISTER.md`.
+
+## Documentation v0.5 — MVP Scope, Commissioning Kickoff and Scientific Split Accepted
+
+Date: 2026-08-18
+
+- Owner accepted `MVP_SCOPE.md` as proposed (status PROPOSED -> ACCEPTED): v1 covers Single tensile mode, ISO 6892-1:2019 Clauses 1-16, ASTM E8/E8M-15a, INSO 3132, one sensor pair per channel, CSV + one validated PDF report, Simulator-driven Milestones 1-14 plus `PhysicalMonitorOnly` (G01-G03).
+- Owner accepted `DRIVER/COMMISSIONING_KICKOFF_PLAN.md` as proposed (status PROPOSED -> ACCEPTED): confirmed physical machine access; Gates G01-G03 evidence-gathering starts now, in parallel with Milestones 1-14. No gate `Current result` in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changes until real evidence is filed.
+- Owner accepted `SCIENTIFIC/SCOPE_ASSESSMENT.md` as proposed (status PROPOSED -> ACCEPTED), including the Clauses 17-23 deferral: v1-critical-path scientific packages are Clauses 1-16, Annexes B/C/D/E/G and ASTM E8/E8M-15a; Clauses 17-23 and Annexes A/F/H/I/J/K/L remain fully designed and deferred to v2+.
+- Synchronized `ROADMAP.md` (v0.2): added an MVP-required column to the milestone table reflecting the three accepted decisions above; no milestone's designed exit evidence was removed, only flagged as MVP-required or deferred.

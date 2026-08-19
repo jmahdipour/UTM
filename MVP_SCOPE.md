@@ -1,13 +1,22 @@
 ---
 project: Universal Testing Machine (UTS)
 document: MVP_SCOPE
-version: 0.1
-status: PROPOSED
+version: 1.0
+status: ACCEPTED
 classification: SCOPE
-last_revision: 2026-08-17
+last_revision: 2026-08-18
+accepted_date: 2026-08-18
+accepted_by: Project owner
 ---
 
-# MVP Scope Proposal
+# MVP Scope
+
+## Owner decision
+
+**ACCEPTED as proposed on 2026-08-18.** The boundary table below (option 1: accept
+as-is) now governs implementation sequencing. `ROADMAP.md` milestone exit criteria
+carry a "MVP-required" flag matching this table. This document no longer proposes;
+it defines the v1 boundary.
 
 ## Why this document exists
 
@@ -32,12 +41,11 @@ This document is `PROPOSED`, not `FROZEN`. It requires an explicit owner decisio
 
 This document does not propose changing any Frozen EDR's *scope of correctness* — EDR-0014 remains the authoritative complete definition of the Scientific Engine, and nothing in the "Out of v1" column is wrong or should be un-designed. This document only proposes an *implementation sequencing* boundary: build and verify the left column first, ship on it, and treat the right column as already-designed backlog for the next release.
 
-## Required owner action
+## Decision record
 
-This proposal needs one of:
-
-1. **Accept as-is** — move status to `ACCEPTED`, and `ROADMAP.md` milestone exit criteria get a "MVP-required" flag matching this table.
-2. **Adjust the boundary** — the columns above are a starting proposal, not a fixed answer; the actual first market (e.g., rebar testing labs under INSO 3132) should drive which ISO clauses and which acceptance profile are truly load-bearing for v1.
-3. **Reject** — if the intent is genuinely to ship the full EDR-0014 scope before any release, say so explicitly here so this document does not linger as an unresolved question.
+Accepted as-is on 2026-08-18. No boundary adjustment requested. Any future change to
+this table requires a new revision of this document and a corresponding update to
+`ROADMAP.md`'s MVP-required flags, per `DOCUMENTATION_GOVERNANCE.md`'s required
+synchronization rule.
 
 Until one of these happens, this file's table is a proposal only and carries no authority under `DOCUMENTATION_GOVERNANCE.md`.
