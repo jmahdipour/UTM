@@ -1,10 +1,11 @@
 ---
 project: Universal Testing Machine (UTS)
 document: DOCUMENTATION_GOVERNANCE
-version: 0.3
+version: 0.4
 status: FROZEN
 classification: GOVERNANCE
 effective_date: 2026-08-02
+last_revision: 2026-08-17
 ---
 
 # Documentation and Decision Governance
@@ -49,6 +50,10 @@ Before analysis, design, implementation or refactoring:
 | REJECTED | Explicitly declined | No |
 
 A Frozen decision changes only through a newer EDR containing an explicit `Supersedes` relationship.
+
+## Implementation-evidence gate
+
+An EDR proposing a new bounded contract (an aggregate, a state machine, a command surface or a persistence shape) may reach `FROZEN` only together with, or immediately followed by, a minimal executable slice that exercises at least one of its public contracts under a passing test. A documentation-only EDR that amends scope, terminology or an existing already-implemented contract is exempt. The purpose is to prevent the accepted-decision backlog from growing faster than the Solution can absorb it; it does not lower the bar for correctness or completeness of the decision text itself.
 
 ## Required synchronization
 
