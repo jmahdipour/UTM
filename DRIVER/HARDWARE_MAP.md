@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: HARDWARE_MAP
-version: 0.2
+version: 0.3
 status: CONTROLLED-DRAFT
 governing_edr: EDR-0009
 machine_profile: UNASSIGNED
@@ -77,6 +77,24 @@ targets, not a serial link — previously unrecorded in this map.
 These items must be explicitly checked against the physical machine during the
 active G01-G03 evidence-gathering track (`DRIVER/COMMISSIONING_KICKOFF_PLAN.md`) —
 communication medium may have changed since 2011-2019.
+
+## Current-machine communication — owner-confirmed, live, 2026-08-18
+
+Reported directly by the project owner while the physical machine was actively
+communicating, not extracted from the archive. This is a step above
+`LEGACY-EVIDENCE` (it describes the machine as it exists today) but is not yet
+`DOCUMENT-VERIFIED` per EDR-0009's point lifecycle — no screenshot, log export, or
+network capture has been filed yet to back it.
+
+| Item | Value | Status |
+|---|---|---|
+| Communication medium/protocol | Ethernet/TCP via the `FaconSvr` ("FaSvr") intermediary driver — same driver family as `Autograph_SVR.fcs`/`Autograph_SVR2.fcs` | OWNER-CONFIRMED-LIVE, undocumented |
+| Current target IP | `192.168.2.200` | OWNER-CONFIRMED-LIVE, undocumented — differs from both addresses in the legacy archive (`192.168.2.100` active, `10.50.10.100` unused); confirms the subnet (`192.168.2.0/24`) but not the exact host, and confirms the IP has changed at least once since the archived `.fcs` files were authored |
+
+**To advance this from `OWNER-CONFIRMED-LIVE` to `DOCUMENT-VERIFIED`:** capture a
+screenshot or export of the running `FaSvr` connection/status screen showing the
+`192.168.2.200` target, the adapter/interface it binds to, and the connection state,
+and file it as a G02 artifact per `DRIVER/COMMISSIONING_KICKOFF_PLAN.md`.
 
 ## Required current-machine points not established by AG01
 

@@ -605,3 +605,12 @@ Date: 2026-08-18
 - Synchronized `DRIVER/HARDWARE_MAP.md` (v0.1 -> v0.2) with the new points, a new communication-topology section, and a second source reference. No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state; all remain `BLOCKED-HARDWARE`.
 - Explicitly excluded `DataBase/Plc_DB.mdb` (real customer/lab names, addresses, phone numbers) and the other Access databases in the archive from any ingestion; only PLC/communication-driver-relevant technical files were reviewed.
 - Distinguished the `.fcs` communication-driver tag list from the PLC's own ladder-logic program source, which remains a separate, still-missing artifact for Gate G03.
+
+## Documentation v0.7 — Live Current-Machine Communication Confirmed
+
+Date: 2026-08-18
+
+- Owner confirmed, while the physical machine was actively communicating, that current communication is Ethernet/TCP via the `FaconSvr` ("FaSvr") intermediary driver at IP `192.168.2.200` — the same driver family reviewed in `AUTOGRAPH_LEGACY_ARCHIVE_REVIEW.md`, but a different host than either address recorded in the legacy `.fcs` archive (`192.168.2.100` active, `10.50.10.100` unused).
+- Recorded as `OWNER-CONFIRMED-LIVE` in `DRIVER/HARDWARE_MAP.md` (v0.2 -> v0.3), a new status distinct from `LEGACY-EVIDENCE` (describes the machine as it exists today) and from `DOCUMENT-VERIFIED` (no screenshot/export/log filed yet).
+- Updated the G02 row in `DRIVER/COMMISSIONING_KICKOFF_PLAN.md` to reflect this initial live confirmation and the remaining artifact needed (FaSvr connection-screen screenshot or export) to advance to `DOCUMENT-VERIFIED`.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
