@@ -594,3 +594,14 @@ Date: 2026-08-18
 - Owner accepted `DRIVER/COMMISSIONING_KICKOFF_PLAN.md` as proposed (status PROPOSED -> ACCEPTED): confirmed physical machine access; Gates G01-G03 evidence-gathering starts now, in parallel with Milestones 1-14. No gate `Current result` in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changes until real evidence is filed.
 - Owner accepted `SCIENTIFIC/SCOPE_ASSESSMENT.md` as proposed (status PROPOSED -> ACCEPTED), including the Clauses 17-23 deferral: v1-critical-path scientific packages are Clauses 1-16, Annexes B/C/D/E/G and ASTM E8/E8M-15a; Clauses 17-23 and Annexes A/F/H/I/J/K/L remain fully designed and deferred to v2+.
 - Synchronized `ROADMAP.md` (v0.2): added an MVP-required column to the milestone table reflecting the three accepted decisions above; no milestone's designed exit evidence was removed, only flagged as MVP-required or deferred.
+
+## Documentation v0.6 — Autograph Legacy Archive Review
+
+Date: 2026-08-18
+
+- Owner uploaded `Autograph.zip` (SHA-256 `d6cf28306a546fca9ed8fb9ea929d0be2e502b513b80e877658871023a6666a4`), the software that currently operates the physical machine. Preserved evidence pointer in `REFERENCES/LEGACY/AUTOGRAPH/README.md`.
+- Added `AUTOGRAPH_LEGACY_ARCHIVE_REVIEW.md`: a fuller cross-verifying AG01-family source snapshot (54 files / 18,084 lines vs. the original 32 files / 12,502 lines). Confirms all previously recorded `DRIVER/HARDWARE_MAP.md` points exactly; no contradiction.
+- New legacy evidence: PLC vendor/protocol confirmed independently (`Fatek Facon PLC Server File Format 1`); communication topology is Ethernet/TCP (active target `192.168.2.100`, unused alternate `10.50.10.100`), not previously recorded; PLC read-poll interval `10 ms`; three previously undocumented `Group_read` points (`X0`, `Y2`, `R22`); three unclassified communication-driver addresses (`R3844`, `R4096`, `R3845`).
+- Synchronized `DRIVER/HARDWARE_MAP.md` (v0.1 -> v0.2) with the new points, a new communication-topology section, and a second source reference. No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state; all remain `BLOCKED-HARDWARE`.
+- Explicitly excluded `DataBase/Plc_DB.mdb` (real customer/lab names, addresses, phone numbers) and the other Access databases in the archive from any ingestion; only PLC/communication-driver-relevant technical files were reviewed.
+- Distinguished the `.fcs` communication-driver tag list from the PLC's own ladder-logic program source, which remains a separate, still-missing artifact for Gate G03.

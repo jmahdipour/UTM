@@ -1,19 +1,19 @@
 ---
 project: Universal Testing Machine (UTS)
 document: HARDWARE_MAP
-version: 0.1
+version: 0.2
 status: CONTROLLED-DRAFT
 governing_edr: EDR-0009
 machine_profile: UNASSIGNED
 physical_adapter_status: BLOCKED-HARDWARE
-last_revision: 2026-08-03
+last_revision: 2026-08-18
 ---
 
 # Hardware Map and Verification Register
 
 ## Authority warning
 
-Every row below comes only from `upload/AG01.zip` legacy source. All are `LEGACY-EVIDENCE`, not verified current-machine mappings. All writes are disabled. Neither the old name nor the old behavior proves electrical polarity, scaling, safety function, acknowledgement or present PLC-program identity.
+Every row below comes only from legacy source: `REFERENCES/LEGACY/AG01/` (original `AG01.zip`) and `REFERENCES/LEGACY/AUTOGRAPH/` (`Autograph.zip`, a fuller cross-verifying snapshot of the same codebase; see `AUTOGRAPH_LEGACY_ARCHIVE_REVIEW.md`). All are `LEGACY-EVIDENCE`, not verified current-machine mappings. All writes are disabled. Neither the old name nor the old behavior proves electrical polarity, scaling, safety function, acknowledgement or present PLC-program identity.
 
 ## Legacy read evidence
 
@@ -31,6 +31,18 @@ Every row below comes only from `upload/AG01.zip` legacy source. All are `LEGACY
 | `R37` | extensometer raw count | `MainModule.vb:2003-2018` | LEGACY-EVIDENCE | sensor mapping/data type/scale unknown |
 | `M42` | extensometer sign | `MainModule.vb:2006,2017` | LEGACY-EVIDENCE | polarity and orientation unverified |
 | `T55` | programmable hold timer | `MainModule.vb:2020-2022` | LEGACY-EVIDENCE | timer base/rollover/ownership unknown |
+| `X0` | not referenced in reviewed `.vb` source | `Autograph_SVR.fcs` register list only | LEGACY-EVIDENCE | semantic unknown; found only in communication-driver tag list |
+| `Y2` | not referenced in reviewed `.vb` source | `Autograph_SVR.fcs` register list only | LEGACY-EVIDENCE | semantic unknown; found only in communication-driver tag list |
+| `R22` | not referenced in reviewed `.vb` source | `Autograph_SVR.fcs` register list only | LEGACY-EVIDENCE | possible third displacement-related word alongside R20/R21; unconfirmed |
+
+## Unclassified communication-driver addresses
+
+`R3844`, `R4096` and `R3845` appear in the `.fcs` communication-driver tag list (see
+`AUTOGRAPH_LEGACY_ARCHIVE_REVIEW.md`) as a distinct block, positioned before the rest
+of the itemized point list and not referenced in any reviewed `.vb` source. They may
+be Facon-driver-internal buffer/configuration addresses rather than live machine I/O.
+No semantic, direction or disposition is assigned; do not treat as read or write
+evidence until independently classified.
 
 ## Legacy write evidence — all disabled
 
@@ -50,6 +62,22 @@ Every row below comes only from `upload/AG01.zip` legacy source. All are `LEGACY
 | `R500` | crosshead speed setpoint | `speed*10`, `MainModule.vb:2103-2108` | data type, unit, scale, range, gearing and applied-value feedback | WRITE-DISABLED |
 | `M10/M11` | clutch Off/1:1/1:10 | `MainModule.vb:2109-2125`; duplicated in UI | Frozen EDR-0003 prohibits software clutch | REJECTED-FOR-UTS-COMMAND |
 
+## Legacy communication topology evidence
+
+From `AUTOGRAPH_LEGACY_ARCHIVE_REVIEW.md`. Both binary Facon driver project files
+identify as `Fatek Facon PLC Server File Format 1` and configure Ethernet/TCP
+targets, not a serial link — previously unrecorded in this map.
+
+| Item | Value | Status |
+|---|---|---|
+| Active target IP (`Autograph_SVR.fcs`, opened by code) | `192.168.2.100` | LEGACY-EVIDENCE, unverified against current machine |
+| Alternate target IP (`Autograph_SVR2.fcs`, commented out) | `10.50.10.100` | LEGACY-EVIDENCE, not code-referenced |
+| PLC read-poll interval (`MDIParent.Designer.vb:825`) | `TimerReadTick.Interval = 10` (ms) | LEGACY-EVIDENCE |
+
+These items must be explicitly checked against the physical machine during the
+active G01-G03 evidence-gathering track (`DRIVER/COMMISSIONING_KICKOFF_PLAN.md`) —
+communication medium may have changed since 2011-2019.
+
 ## Required current-machine points not established by AG01
 
 | Semantic requirement | Why required | Current status |
@@ -61,7 +89,7 @@ Every row below comes only from `upload/AG01.zip` legacy source. All are `LEGACY
 | safety-chain healthy/reset state | positive readiness, not inferred from UI flag | MISSING-HARDWARE-EVIDENCE |
 | watchdog feedback/health | communication-loss reaction proof | MISSING-HARDWARE-EVIDENCE |
 | command/program acknowledgement | deterministic command receipts | MISSING-HARDWARE-EVIDENCE |
-| PLC/drive program identity | bind map to exact controller software | MISSING-HARDWARE-EVIDENCE |
+| PLC/drive program identity | bind map to exact controller software | MISSING-HARDWARE-EVIDENCE (communication-driver tag list is legacy-evidenced per `AUTOGRAPH_LEGACY_ARCHIVE_REVIEW.md`; the controller's own program export is still missing) |
 | installed sensor identity/range | run binding and mismatch detection | MISSING-HARDWARE-EVIDENCE |
 | coherent scan/sample sequence | freshness/gap/atomicity evidence | MISSING-HARDWARE-EVIDENCE |
 
