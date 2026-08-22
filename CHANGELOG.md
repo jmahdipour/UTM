@@ -661,3 +661,11 @@ Date: 2026-08-18
 - Owner described the `X14` emergency-stop device as a large red pushbutton — visually consistent with the mushroom-head red-button convention ISO 13850 expects. `DRIVER/HARDWARE_MAP.md` (v0.7 -> v0.8): added to the `OWNER-CONFIRMED-FUNCTIONAL` evidence.
 - Explicitly preserved the gap this does not close: a plausible physical description is not a safety-circuit verification (polarity, dual-channel/positive-opening contacts, monitoring, response time, latching/reset behavior, ISO 13850/ISO 13849-1 conformance). A dedicated safety-circuit trace remains required before production arming.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Documentation v1.3 — X14 Behavior: Full Shutdown, Operator-Triggered
+
+Date: 2026-08-18
+
+- Owner confirmed `X14`'s behavior is a complete shutdown of the whole device, manually triggered by the operator (not an automatic/self-triggered protective function). `DRIVER/HARDWARE_MAP.md` (v0.8 -> v0.9): added to the `OWNER-CONFIRMED-FUNCTIONAL` evidence.
+- Explicitly preserved the remaining gap: NC-vs-NO polarity/fail-safe direction, dual-channel/positive-opening contacts, wire-break monitoring, response time, and manual-only reset behavior (EDR-0004 forbids automatic reset) are all still unknown. A dedicated safety-circuit trace remains required before production arming.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
