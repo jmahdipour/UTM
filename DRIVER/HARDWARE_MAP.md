@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: HARDWARE_MAP
-version: 0.6
+version: 0.7
 status: CONTROLLED-DRAFT
 governing_edr: EDR-0009
 machine_profile: UNASSIGNED
@@ -19,7 +19,7 @@ Every row below comes only from legacy source: `REFERENCES/LEGACY/AG01/` (origin
 
 | Point | Legacy semantic | Legacy expression/source | Verification status | Production disposition |
 |---|---|---|---|---|
-| `X14` | main E-stop input (per `.vb` source comment) | `MainModule.vb:1956` | LEGACY-EVIDENCE | **Safety-relevant discrepancy — flagged, not resolved:** `ELECTRICAL_SCHEMATIC_REVIEW.md` Sheet 7 shows a same-named local terminal `X14` wired only to switch `7S3` (an unlabeled circle-symbol device), on a module whose slot position relative to the E-stop circuit is not shown. The schematic does **not** independently confirm this is the emergency-stop input — the "E-stop" identity comes only from a VB source comment, not from the electrical drawing. Treat as unverified until a dedicated safety-circuit trace (not this general I/O schematic) confirms it. UNKNOWN polarity/topology; cannot satisfy safety readiness |
+| `X14` | main E-stop input (per `.vb` source comment) | `MainModule.vb:1956` | **Owner-confirmed functional 2026-08-18:** owner states `X14` does function as the emergency stop in practice. This upgrades the identity from "code-comment-only" to `OWNER-CONFIRMED-FUNCTIONAL`, but is **not** a safety-rated verification — it confirms *that* pressing it stops the machine, not *how* (polarity, dual-channel/positive-opening contacts, monitoring, response time, or conformance to ISO 13850/ISO 13849-1 as required by EDR-0004). A dedicated safety-circuit trace, independent of this general I/O schematic, is still required before `X14` can be treated as a safety-rated E-stop input for production arming | UNKNOWN polarity/topology; cannot satisfy safety readiness — functional confirmation does not substitute for safety-circuit verification |
 | `M20` | panel E-stop flag | `MainModule.vb:1957` | LEGACY-EVIDENCE | UNKNOWN origin/polarity; cannot satisfy safety readiness |
 | `M6` | manual handwheel | `MainModule.vb:1958` | LEGACY-EVIDENCE | not an approved UTS command mode |
 | `R25` | test time raw | `/10` at `MainModule.vb:1962-1966` | LEGACY-EVIDENCE | unit/rollover/update rate unknown |

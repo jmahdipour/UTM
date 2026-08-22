@@ -645,3 +645,11 @@ Date: 2026-08-18
 - **Physically confirms** the two-ratio magnetic clutch hardware (`12L3`/`12L4`) already flagged `SUPERSEDED`/`REJECTED-FOR-UTS-COMMAND` for software exposure (`TSX-SUP-001`, EDR-0003/EDR-0009) — hardware existence does not lift the prohibition.
 - Synchronized `DRIVER/HARDWARE_MAP.md` (v0.5 -> v0.6) and the G02 row in `DRIVER/COMMISSIONING_KICKOFF_PLAN.md`. G02 communication manual requirement now satisfied; electrical schematic obtained but current-revision confirmation and the servo drive's own manual remain outstanding.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Documentation v1.1 — X14 E-Stop Owner Functional Confirmation
+
+Date: 2026-08-18
+
+- Owner confirmed `X14` does function as the emergency stop in practice. `DRIVER/HARDWARE_MAP.md` (v0.6 -> v0.7): upgraded `X14` from code-comment-only identity to `OWNER-CONFIRMED-FUNCTIONAL`.
+- Explicitly preserved the gap this does not close: functional confirmation ("it stops the machine") is not a safety-rated verification of polarity, dual-channel/positive-opening contacts, monitoring, response time, or ISO 13850/ISO 13849-1 conformance per EDR-0004. A dedicated safety-circuit trace, independent of the general I/O schematic already reviewed, is still required before production arming can rely on `X14`.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
