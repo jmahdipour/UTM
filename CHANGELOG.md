@@ -625,3 +625,12 @@ Date: 2026-08-18
 - Recorded a point-in-time value snapshot for both groups (evidence of liveness/scale only, not calibrated engineering values or a specification).
 - Flagged an unresolved discrepancy: the live-connected `.fcs` file still encodes `192.168.2.100`, not the `192.168.2.200` reported as the current live address; documented both plausible explanations without assuming either, pending owner clarification.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Documentation v0.9 — PLC/Operator-PC Address Discrepancy Resolved
+
+Date: 2026-08-18
+
+- Owner confirmed: `192.168.2.100` (matching every reviewed `.fcs` file and the live screenshots) is the real, current PLC address. `192.168.2.200` was the operator PC's own address on the same subnet, not a second candidate PLC address.
+- `DRIVER/HARDWARE_MAP.md` (v0.4 -> v0.5): merged the prior "owner-confirmed-live" and "unresolved discrepancy" entries into one resolved "Current-machine communication" record. Communication medium and PLC address are now `DOCUMENT-VERIFIED` (screenshots + owner confirmation); electrical schematic, I/O list and communication/drive manuals remain outstanding for G02.
+- Updated the G02 row in `DRIVER/COMMISSIONING_KICKOFF_PLAN.md` to reflect the resolution.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.

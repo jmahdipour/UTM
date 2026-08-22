@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: HARDWARE_MAP
-version: 0.4
+version: 0.5
 status: CONTROLLED-DRAFT
 governing_edr: EDR-0009
 machine_profile: UNASSIGNED
@@ -78,23 +78,19 @@ These items must be explicitly checked against the physical machine during the
 active G01-G03 evidence-gathering track (`DRIVER/COMMISSIONING_KICKOFF_PLAN.md`) —
 communication medium may have changed since 2011-2019.
 
-## Current-machine communication — owner-confirmed, live, 2026-08-18
+## Current-machine communication — resolved 2026-08-18
 
-Reported directly by the project owner while the physical machine was actively
-communicating, not extracted from the archive. This is a step above
-`LEGACY-EVIDENCE` (it describes the machine as it exists today) but is not yet
-`DOCUMENT-VERIFIED` per EDR-0009's point lifecycle — no screenshot, log export, or
-network capture has been filed yet to back it.
+Initially reported as `192.168.2.200`, `192.168.2.100` and `192.168.2.200` were
+found to describe two different hosts, not two candidates for one host. Owner
+confirmed: `192.168.2.100` (matching every `.fcs` project file reviewed) is the
+real, current PLC address; `192.168.2.200` was the operator PC's own address on the
+same subnet, not the PLC's.
 
 | Item | Value | Status |
 |---|---|---|
-| Communication medium/protocol | Ethernet/TCP via the `FaconSvr` ("FaSvr") intermediary driver — same driver family as `Autograph_SVR.fcs`/`Autograph_SVR2.fcs` | OWNER-CONFIRMED-LIVE, undocumented |
-| Current target IP | `192.168.2.200` | OWNER-CONFIRMED-LIVE, undocumented — differs from both addresses in the legacy archive (`192.168.2.100` active, `10.50.10.100` unused); confirms the subnet (`192.168.2.0/24`) but not the exact host, and confirms the IP has changed at least once since the archived `.fcs` files were authored |
-
-**To advance this from `OWNER-CONFIRMED-LIVE` to `DOCUMENT-VERIFIED`:** capture a
-screenshot or export of the running `FaSvr` connection/status screen showing the
-`192.168.2.200` target, the adapter/interface it binds to, and the connection state,
-and file it as a G02 artifact per `DRIVER/COMMISSIONING_KICKOFF_PLAN.md`.
+| Communication medium/protocol | Ethernet/TCP via the `FaconSvr` ("FaSvr") intermediary driver | DOCUMENT-VERIFIED (screenshots, see below) |
+| Current PLC target IP | `192.168.2.100` | DOCUMENT-VERIFIED — consistent across the legacy `Autograph.zip` archive (2011-2019), the live screenshot evidence (2026-08-20), and owner confirmation |
+| Operator PC address (not the PLC) | `192.168.2.200` | OWNER-CONFIRMED, informational only — not a hardware-map point |
 
 ## Live screenshot evidence — 2026-08-20 (owner-provided)
 
@@ -154,17 +150,11 @@ active. The three previously `UNCLASSIFIED` addresses (`R3844`, `R4096`, `R3845`
 are confirmed live and populated as well — their semantic meaning is still unknown,
 classification is unchanged.
 
-**Unresolved discrepancy — needs owner clarification:** the re-uploaded
-`Autograph_SVR.fcs` still encodes target `192.168.2.100` internally, not the
-`192.168.2.200` reported as the current live address. Since the screenshots prove
-this exact file is genuinely driving live communication right now, one of the
-following is likely true, but this document does not assume which: (a) the PLC's
-real address is actually `192.168.2.100` and `192.168.2.200` referred to something
-else (e.g. the operator PC's own address on that subnet, consistent with the earlier
-mention of an active proxy), or (b) an active network proxy/NAT translates
-`192.168.2.200` to `192.168.2.100` for this connection. Either way, the exact
-current PLC IP as seen from the FaSvr host is `192.168.2.100` per this evidence;
-`192.168.2.200` is not contradicted, just not yet reconciled to a specific role.
+**Discrepancy resolved 2026-08-18 (owner-confirmed):** `192.168.2.100` (encoded in
+this `.fcs` file) is the real, current PLC address — consistent with the legacy
+archive and the live screenshots. `192.168.2.200` was the operator PC's own address
+on the same subnet, not a second candidate PLC address; see the corrected
+"Current-machine communication" section above.
 
 ## Required current-machine points not established by AG01
 

@@ -56,7 +56,7 @@ part of G01-G03 earlier than the current milestone ordering implies.
 | Gate | Concrete artifact to obtain | Owner action needed |
 |---|---|---|
 | G01 | Machine nameplate/serial photo, controller model, drive model, installed options list | Physical access to the machine, 1 site visit |
-| G02 | Electrical schematic (current revision), I/O list, communication manual, drive manual — as files, not verbal description. **Update 2026-08-18:** owner confirmed live, current communication is Ethernet/TCP via `FaconSvr`/"FaSvr" at `192.168.2.200` (see `DRIVER/HARDWARE_MAP.md` § Current-machine communication); this is `OWNER-CONFIRMED-LIVE`, not yet `DOCUMENT-VERIFIED` — still need a screenshot/export of the FaSvr connection screen | Request from machine builder/integrator or facilities archive |
+| G02 | Electrical schematic (current revision), I/O list, communication manual, drive manual — as files, not verbal description. **Resolved 2026-08-18:** current communication is Ethernet/TCP via `FaconSvr`/"FaSvr" targeting PLC address `192.168.2.100`, confirmed by live screenshots and owner statement (`192.168.2.200` was the operator PC's own address, not the PLC's) — see `DRIVER/HARDWARE_MAP.md` § Current-machine communication (status: `DOCUMENT-VERIFIED` for the communication medium/address). Electrical schematic, I/O list and manuals are still outstanding | Request from machine builder/integrator or facilities archive |
 | G03 | PLC program export (Facon/Fatek per `DRIVER/HARDWARE_MAP.md` legacy evidence) with SHA-256, and drive parameter export with version | Access to the programming port/software; may require the original integrator |
 
 Each artifact, once obtained, is filed as `LEGACY-EVIDENCE` or `DOCUMENT-VERIFIED`
