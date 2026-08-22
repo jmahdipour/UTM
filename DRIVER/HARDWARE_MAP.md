@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: HARDWARE_MAP
-version: 0.5
+version: 0.6
 status: CONTROLLED-DRAFT
 governing_edr: EDR-0009
 machine_profile: UNASSIGNED
@@ -19,20 +19,20 @@ Every row below comes only from legacy source: `REFERENCES/LEGACY/AG01/` (origin
 
 | Point | Legacy semantic | Legacy expression/source | Verification status | Production disposition |
 |---|---|---|---|---|
-| `X14` | main E-stop input | `MainModule.vb:1956` | LEGACY-EVIDENCE | UNKNOWN polarity/topology; cannot satisfy safety readiness |
+| `X14` | main E-stop input (per `.vb` source comment) | `MainModule.vb:1956` | LEGACY-EVIDENCE | **Safety-relevant discrepancy — flagged, not resolved:** `ELECTRICAL_SCHEMATIC_REVIEW.md` Sheet 7 shows a same-named local terminal `X14` wired only to switch `7S3` (an unlabeled circle-symbol device), on a module whose slot position relative to the E-stop circuit is not shown. The schematic does **not** independently confirm this is the emergency-stop input — the "E-stop" identity comes only from a VB source comment, not from the electrical drawing. Treat as unverified until a dedicated safety-circuit trace (not this general I/O schematic) confirms it. UNKNOWN polarity/topology; cannot satisfy safety readiness |
 | `M20` | panel E-stop flag | `MainModule.vb:1957` | LEGACY-EVIDENCE | UNKNOWN origin/polarity; cannot satisfy safety readiness |
 | `M6` | manual handwheel | `MainModule.vb:1958` | LEGACY-EVIDENCE | not an approved UTS command mode |
 | `R25` | test time raw | `/10` at `MainModule.vb:1962-1966` | LEGACY-EVIDENCE | unit/rollover/update rate unknown |
 | `R26` | alternate test time | commented at `MainModule.vb:1966` | LEGACY-EVIDENCE | rejected unless independently rediscovered |
-| `R32` | raw force count | `MainModule.vb:1968-1988` | LEGACY-EVIDENCE | data type/range/scale unknown; legacy INI factors prohibited |
+| `R32` | raw force count | `MainModule.vb:1968-1988` | LEGACY-EVIDENCE | data type/range/scale unknown; legacy INI factors prohibited. **Plausible, unconfirmed** per `ELECTRICAL_SCHEMATIC_REVIEW.md` Sheet 11: may correspond to load cell `11B3` on bridge-input module `11FBs-LC2` — schematic shows no register number, so this is not asserted as fact |
 | `M41` | force sign | `MainModule.vb:1971,1987` | LEGACY-EVIDENCE | polarity and sign convention unverified |
 | `R20/R21` | displacement low/high | `65535*high+low`, `MainModule.vb:1989-2002` | LEGACY-EVIDENCE | width/order/signedness and multiplier unverified; expression not accepted |
 | `M40` | displacement sign | `MainModule.vb:1999-2001` | LEGACY-EVIDENCE | polarity and orientation unverified |
-| `R37` | extensometer raw count | `MainModule.vb:2003-2018` | LEGACY-EVIDENCE | sensor mapping/data type/scale unknown |
+| `R37` | extensometer raw count | `MainModule.vb:2003-2018` | LEGACY-EVIDENCE | sensor mapping/data type/scale unknown. **Plausible, unconfirmed** per `ELECTRICAL_SCHEMATIC_REVIEW.md` Sheet 11: may correspond to extensometer `11B7` on bridge-input module `11FBs-LC5` — schematic shows no register number, so this is not asserted as fact |
 | `M42` | extensometer sign | `MainModule.vb:2006,2017` | LEGACY-EVIDENCE | polarity and orientation unverified |
 | `T55` | programmable hold timer | `MainModule.vb:2020-2022` | LEGACY-EVIDENCE | timer base/rollover/ownership unknown |
-| `X0` | not referenced in reviewed `.vb` source | `Autograph_SVR.fcs` register list only | LEGACY-EVIDENCE | semantic unknown; found only in communication-driver tag list |
-| `Y2` | not referenced in reviewed `.vb` source | `Autograph_SVR.fcs` register list only | LEGACY-EVIDENCE | semantic unknown; found only in communication-driver tag list |
+| `X0` | not referenced in reviewed `.vb` source | `Autograph_SVR.fcs` register list only | LEGACY-EVIDENCE | **Plausible, unconfirmed** per `ELECTRICAL_SCHEMATIC_REVIEW.md` Sheet 5: local terminal `X0` on the encoder module is wired to channel A of high-speed encoder "Mecaoion S48-8-2500ZT" (2500 pulses/rev). Fatek FBs PLCs assign global X-numbering by installed slot order, which this schematic set does not show — so this local terminal label is not confirmed to be the same global `X0` seen in the Facon tag list |
+| `Y2` | not referenced in reviewed `.vb` source | `Autograph_SVR.fcs` register list only | LEGACY-EVIDENCE | **Plausible, unconfirmed** per `ELECTRICAL_SCHEMATIC_REVIEW.md` Sheet 8: local terminal `Y2` on the digital-output module drives "Servo Stop" to the servo drive I/O link. Coherent with `Y2` appearing in the Facon driver's `Group_read` (not `Group_write`) list — a PLC output coil driven by the controller's own ladder program, only monitored (not written) by the external application. Same slot-position caveat as `X0` applies |
 | `R22` | not referenced in reviewed `.vb` source | `Autograph_SVR.fcs` register list only | LEGACY-EVIDENCE | possible third displacement-related word alongside R20/R21; unconfirmed |
 
 ## Unclassified communication-driver addresses
@@ -60,7 +60,7 @@ evidence until independently classified.
 | `M52` | programmable hold timer start/stop | `MainModule.vb:2084-2093` | method ownership, timer base and acknowledgement | WRITE-DISABLED |
 | `M60` | test/manual mode | `MainModule.vb:2095-2102` | controller-state model, safe transition and acknowledgement | WRITE-DISABLED |
 | `R500` | crosshead speed setpoint | `speed*10`, `MainModule.vb:2103-2108` | data type, unit, scale, range, gearing and applied-value feedback | WRITE-DISABLED |
-| `M10/M11` | clutch Off/1:1/1:10 | `MainModule.vb:2109-2125`; duplicated in UI | Frozen EDR-0003 prohibits software clutch | REJECTED-FOR-UTS-COMMAND |
+| `M10/M11` | clutch Off/1:1/1:10 | `MainModule.vb:2109-2125`; duplicated in UI | Frozen EDR-0003 prohibits software clutch | REJECTED-FOR-UTS-COMMAND — **physically confirmed to exist** per `ELECTRICAL_SCHEMATIC_REVIEW.md` Sheet 12: real two-ratio magnetic clutch hardware (solenoids `12L3` "Clutch 1/10" and `12L4` "Clutch 1/1"), driven via relays from PLC outputs `Y8`/`Y9`. The hardware's existence does not lift the prohibition on exposing a software clutch control in UTS |
 
 ## Legacy communication topology evidence
 
@@ -155,6 +155,31 @@ this `.fcs` file) is the real, current PLC address — consistent with the legac
 archive and the live screenshots. `192.168.2.200` was the operator PC's own address
 on the same subnet, not a second candidate PLC address; see the corrected
 "Current-machine communication" section above.
+
+## Electrical schematic and drive/sensor identity evidence — 2026-08-18
+
+From `ELECTRICAL_SCHEMATIC_REVIEW.md` (source: `Auto_graph_90-07-14-1.pdf`, a
+14-sheet site-specific schematic dated 2011, AtronicSaman Co., **current-revision
+status unconfirmed**). This is the strongest evidence obtained so far — a real
+electrical drawing, not source code or a communication-driver tag list — but it
+predates today by 15 years and has not been checked against the physical machine.
+Status: `DOCUMENT-VERIFIED` for what the drawing itself states; `LEGACY-EVIDENCE`
+for whether it still matches the installed machine.
+
+| Item | Value |
+|---|---|
+| Servo drive | `APD-VS20NL` |
+| Servo motor | `APM-SF20MEK`, 2 kW / 1000 rpm, integrated encoder |
+| Crosshead/position encoders (separate from the drive's own encoder) | Encoder 1: "Mecaoion S48-8-2500ZT", 2500 pulses/rev; Encoder 2: "Autonics ENH-100-2-T-24" |
+| Load cell input module | `FBS_1LC` bridge-input module, tag `11B3` "Load" |
+| Extensometer input module | Second `FBS_1LC` bridge-input module, tag `11B7` "Extensiometr" [sic] |
+| Analog speed/torque reference to drive | `FBS_4A2D` module, `CH0`→"Servo SP" (speed), `CH1`→"Servo Trg" (trigger/torque) |
+| Discrete servo control coils | `Y0` "Servo P-", `Y1` "Servo Din", `Y2` "Servo Stop", `Y4` "Servo ON", `Y5` "Servo EMG", `Y6` "Servo ALMRST" |
+
+**Full detail, sheet-by-sheet extraction, and the important caveat about Fatek
+FBs modules using slot-relative local addressing (so a local terminal label like
+`X0` or `Y2` is not automatically the same point as the same label elsewhere) are
+in `ELECTRICAL_SCHEMATIC_REVIEW.md` — not duplicated here.**
 
 ## Required current-machine points not established by AG01
 

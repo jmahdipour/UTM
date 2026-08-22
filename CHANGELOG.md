@@ -634,3 +634,14 @@ Date: 2026-08-18
 - `DRIVER/HARDWARE_MAP.md` (v0.4 -> v0.5): merged the prior "owner-confirmed-live" and "unresolved discrepancy" entries into one resolved "Current-machine communication" record. Communication medium and PLC address are now `DOCUMENT-VERIFIED` (screenshots + owner confirmation); electrical schematic, I/O list and communication/drive manuals remain outstanding for G02.
 - Updated the G02 row in `DRIVER/COMMISSIONING_KICKOFF_PLAN.md` to reflect the resolution.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Documentation v1.0 — Electrical Schematic and Vendor Manuals Reviewed
+
+Date: 2026-08-18
+
+- Owner provided the 14-sheet electrical schematic `Auto_graph_90-07-14-1.pdf` (AtronicSaman Co., "Auto graph" project, Eng. Zardi, dated 2011-08-15 through 2011-08-28 — current-revision status unconfirmed) plus three Fatek vendor manuals (Facon Server ActiveX interface, Facon Server DDE interface, FBs-CM25/CM55/CBE Ethernet module). All four preserved as evidence pointers with SHA-256 in `REFERENCES/LEGACY/ELECTRICAL/README.md`.
+- Added `ELECTRICAL_SCHEMATIC_REVIEW.md`: full sheet-by-sheet extraction. Resolves the plausible (unconfirmed) semantics of previously-`UNCLASSIFIED` points `X0` (encoder channel A) and `Y2` (Servo Stop output); flags a **safety-relevant discrepancy**: the schematic does not independently confirm `X14`'s "main E-stop" identity, which comes only from a VB source comment.
+- Confirms servo drive (`APD-VS20NL`) and motor (`APM-SF20MEK`) identity; confirms two dedicated `FBS_1LC` bridge-input modules for Load (`11B3`) and Extensometer (`11B7`) — plausible, unconfirmed correlation to `R32`/`R37`.
+- **Physically confirms** the two-ratio magnetic clutch hardware (`12L3`/`12L4`) already flagged `SUPERSEDED`/`REJECTED-FOR-UTS-COMMAND` for software exposure (`TSX-SUP-001`, EDR-0003/EDR-0009) — hardware existence does not lift the prohibition.
+- Synchronized `DRIVER/HARDWARE_MAP.md` (v0.5 -> v0.6) and the G02 row in `DRIVER/COMMISSIONING_KICKOFF_PLAN.md`. G02 communication manual requirement now satisfied; electrical schematic obtained but current-revision confirmation and the servo drive's own manual remain outstanding.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
