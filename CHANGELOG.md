@@ -678,3 +678,12 @@ Date: 2026-08-18
 - `DRIVER/HARDWARE_MAP.md` (v0.9 -> v0.10): recorded a prominent 🔴 safety flag. As reported, the circuit pattern (normally-open-in-idle, single-channel, unmonitored) is the opposite of the conventional fail-safe emergency-stop wiring convention, where a wire break or power loss should self-reveal as a stop condition rather than look identical to "not pressed."
 - Explicitly does **not** conclude the circuit is unsafe — records that this can only be resolved by a qualified person tracing the actual physical safety circuit against ISO 13849-1 category/PL requirements, not by further verbal description, before `X14` is relied on for production arming.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Documentation v1.5 — X14 Polarity Answer Corrected by Owner
+
+Date: 2026-08-18
+
+- Owner corrected the earlier polarity answer for `X14`: after the fail-safe convention was explained, owner now reports the contact is closed (NC) while idle/released, matching the standard convention — reversing the earlier "open (NO) while idle" report.
+- `DRIVER/HARDWARE_MAP.md` (v0.10 -> v0.11): recorded the correction as-is, downgraded the flag from 🔴 to 🟡, but explicitly kept the underlying caution: a self-corrected verbal answer is the operator's best current understanding, not a measurement, so none of the four circuit-level answers are treated as settled. Independently of polarity, the already-confirmed single-channel/unmonitored combination still means no guaranteed fault-detection path.
+- Reiterated that only a qualified person physically tracing the safety circuit against ISO 13849-1 can settle this — not further verbal description.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
