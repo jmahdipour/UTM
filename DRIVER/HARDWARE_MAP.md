@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: HARDWARE_MAP
-version: 0.3
+version: 0.4
 status: CONTROLLED-DRAFT
 governing_edr: EDR-0009
 machine_profile: UNASSIGNED
@@ -95,6 +95,76 @@ network capture has been filed yet to back it.
 screenshot or export of the running `FaSvr` connection/status screen showing the
 `192.168.2.200` target, the adapter/interface it binds to, and the connection state,
 and file it as a G02 artifact per `DRIVER/COMMISSIONING_KICKOFF_PLAN.md`.
+
+## Live screenshot evidence — 2026-08-20 (owner-provided)
+
+Three screenshots of the running `Fatek Communication Server [Autograph_svr.fcs]`
+application window were provided, alongside a re-upload of `Autograph_SVR.fcs`
+(SHA-256 `6f67583ccafe65db2e3dd1cb1de0463a37889a434338535b9f3994bd977289ad` —
+identical to the copy already reviewed in `AUTOGRAPH_LEGACY_ARCHIVE_REVIEW.md`, and
+still targeting `192.168.2.100` internally; see the unresolved discrepancy below).
+This is materially stronger than the prior `OWNER-CONFIRMED-LIVE` verbal report: it
+is direct visual proof that the point list is live, enabled, and actively updating
+on the currently running system, not only an archived source-code reference. Status:
+`SCREENSHOT-VERIFIED-LIVE` — stronger than `LEGACY-EVIDENCE`, but not yet
+`BENCH-VERIFIED`/`MACHINE-VERIFIED` per EDR-0009's point lifecycle, since no
+independent reviewer/test procedure produced these screenshots.
+
+**Group update configuration (new — not previously recorded):**
+
+| Group | Priority | Update rate | Status | Last update shown |
+|---|---|---|---|---|
+| `Group_read` | Hi | 31 ms | Enabled | 20/08/2026 09:47:55 |
+| `Group_write` | Normal | 110 ms | Enabled | 20/08/2026 09:47:55 |
+
+This refines, and is distinct from, the `10 ms` `TimerReadTick.Interval` recorded
+earlier — that value is the legacy VB6 application's own poll of FaSvr's cache;
+these are FaSvr's own driver-to-PLC group update rates.
+
+**Point-in-time value snapshot (evidence that every point is live and populated; not
+a specification, not calibrated engineering values):**
+
+| Group_read | Value | | Group_read | Value |
+|---|---:|---|---|---:|
+| `R3844` | 942 | | `R21` | 1 |
+| `R4096` | 57140 | | `M41` | 1 |
+| `R3845` | 2614 | | `R22` | 8544 |
+| `R20` | 8396 | | `M42` | 1 |
+| `M40` | 1 | | `R32` | 17 |
+| `T55` | 0 | | `X14` | 1 |
+| `X0` | 1 | | `R37` | 645 |
+| `Y2` | 1 | | `R25` | 0 |
+| | | | `R26` | 0 |
+| | | | `M20` | 0 |
+| | | | `M6` | 0 |
+
+| Group_write | Value | | Group_write | Value |
+|---|---:|---|---|---:|
+| `R500` | 1000 | | `M30` | 0 |
+| `M10` | 0 | | `M4` | 1 |
+| `M11` | 1 | | `M0` | 1 |
+| `M1941` | 0 | | `M31` | 0 |
+| `M60` | 0 | | `M50` | 0 |
+| `M61` | 0 | | `M51` | 0 |
+| `M62` | 0 | | `M63` | 0 |
+| | | | `M64` | 0 |
+
+All previously `LEGACY-EVIDENCE` read/write points above are now confirmed live and
+active. The three previously `UNCLASSIFIED` addresses (`R3844`, `R4096`, `R3845`)
+are confirmed live and populated as well — their semantic meaning is still unknown,
+classification is unchanged.
+
+**Unresolved discrepancy — needs owner clarification:** the re-uploaded
+`Autograph_SVR.fcs` still encodes target `192.168.2.100` internally, not the
+`192.168.2.200` reported as the current live address. Since the screenshots prove
+this exact file is genuinely driving live communication right now, one of the
+following is likely true, but this document does not assume which: (a) the PLC's
+real address is actually `192.168.2.100` and `192.168.2.200` referred to something
+else (e.g. the operator PC's own address on that subnet, consistent with the earlier
+mention of an active proxy), or (b) an active network proxy/NAT translates
+`192.168.2.200` to `192.168.2.100` for this connection. Either way, the exact
+current PLC IP as seen from the FaSvr host is `192.168.2.100` per this evidence;
+`192.168.2.200` is not contradicted, just not yet reconciled to a specific role.
 
 ## Required current-machine points not established by AG01
 

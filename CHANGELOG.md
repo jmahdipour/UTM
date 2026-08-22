@@ -614,3 +614,14 @@ Date: 2026-08-18
 - Recorded as `OWNER-CONFIRMED-LIVE` in `DRIVER/HARDWARE_MAP.md` (v0.2 -> v0.3), a new status distinct from `LEGACY-EVIDENCE` (describes the machine as it exists today) and from `DOCUMENT-VERIFIED` (no screenshot/export/log filed yet).
 - Updated the G02 row in `DRIVER/COMMISSIONING_KICKOFF_PLAN.md` to reflect this initial live confirmation and the remaining artifact needed (FaSvr connection-screen screenshot or export) to advance to `DOCUMENT-VERIFIED`.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Documentation v0.8 — FaSvr Live Screenshot Evidence
+
+Date: 2026-08-18
+
+- Owner provided 3 screenshots of the running `Fatek Communication Server [Autograph_svr.fcs]` application (dated 20/08/2026 09:47:55) plus a re-upload of `Autograph_SVR.fcs` (SHA-256 identical to the previously reviewed copy, still targeting `192.168.2.100` internally).
+- Recorded as `SCREENSHOT-VERIFIED-LIVE` in `DRIVER/HARDWARE_MAP.md` (v0.3 -> v0.4): direct visual proof every previously `LEGACY-EVIDENCE` read/write point, plus the three previously `UNCLASSIFIED` addresses (`R3844`, `R4096`, `R3845`), is live, enabled and actively updating on the currently running system.
+- New: precise group update rates from FaSvr itself - `Group_read` 31 ms (Hi priority), `Group_write` 110 ms (Normal priority) - distinct from the legacy VB6 app's own 10 ms `TimerReadTick`.
+- Recorded a point-in-time value snapshot for both groups (evidence of liveness/scale only, not calibrated engineering values or a specification).
+- Flagged an unresolved discrepancy: the live-connected `.fcs` file still encodes `192.168.2.100`, not the `192.168.2.200` reported as the current live address; documented both plausible explanations without assuming either, pending owner clarification.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
