@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: HARDWARE_MAP
-version: 0.7
+version: 0.8
 status: CONTROLLED-DRAFT
 governing_edr: EDR-0009
 machine_profile: UNASSIGNED
@@ -19,7 +19,7 @@ Every row below comes only from legacy source: `REFERENCES/LEGACY/AG01/` (origin
 
 | Point | Legacy semantic | Legacy expression/source | Verification status | Production disposition |
 |---|---|---|---|---|
-| `X14` | main E-stop input (per `.vb` source comment) | `MainModule.vb:1956` | **Owner-confirmed functional 2026-08-18:** owner states `X14` does function as the emergency stop in practice. This upgrades the identity from "code-comment-only" to `OWNER-CONFIRMED-FUNCTIONAL`, but is **not** a safety-rated verification — it confirms *that* pressing it stops the machine, not *how* (polarity, dual-channel/positive-opening contacts, monitoring, response time, or conformance to ISO 13850/ISO 13849-1 as required by EDR-0004). A dedicated safety-circuit trace, independent of this general I/O schematic, is still required before `X14` can be treated as a safety-rated E-stop input for production arming | UNKNOWN polarity/topology; cannot satisfy safety readiness — functional confirmation does not substitute for safety-circuit verification |
+| `X14` | main E-stop input (per `.vb` source comment) | `MainModule.vb:1956` | **Owner-confirmed functional 2026-08-18:** owner states `X14` does function as the emergency stop in practice, and describes the physical device as a large red pushbutton — visually consistent with the mushroom-head red-button convention ISO 13850 expects for emergency stop actuators. This upgrades the identity from "code-comment-only" to `OWNER-CONFIRMED-FUNCTIONAL` with a physically plausible device description, but is **not** a safety-rated verification — it confirms *that* pressing it stops the machine and *what it looks like*, not *how the circuit is built* (polarity, dual-channel/positive-opening contacts, monitoring, response time, latching/reset behavior, or conformance to ISO 13850/ISO 13849-1 as required by EDR-0004). A dedicated safety-circuit trace, independent of this general I/O schematic, is still required before `X14` can be treated as a safety-rated E-stop input for production arming | UNKNOWN polarity/topology; cannot satisfy safety readiness — functional and visual confirmation do not substitute for safety-circuit verification |
 | `M20` | panel E-stop flag | `MainModule.vb:1957` | LEGACY-EVIDENCE | UNKNOWN origin/polarity; cannot satisfy safety readiness |
 | `M6` | manual handwheel | `MainModule.vb:1958` | LEGACY-EVIDENCE | not an approved UTS command mode |
 | `R25` | test time raw | `/10` at `MainModule.vb:1962-1966` | LEGACY-EVIDENCE | unit/rollover/update rate unknown |

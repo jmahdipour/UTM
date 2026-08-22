@@ -653,3 +653,11 @@ Date: 2026-08-18
 - Owner confirmed `X14` does function as the emergency stop in practice. `DRIVER/HARDWARE_MAP.md` (v0.6 -> v0.7): upgraded `X14` from code-comment-only identity to `OWNER-CONFIRMED-FUNCTIONAL`.
 - Explicitly preserved the gap this does not close: functional confirmation ("it stops the machine") is not a safety-rated verification of polarity, dual-channel/positive-opening contacts, monitoring, response time, or ISO 13850/ISO 13849-1 conformance per EDR-0004. A dedicated safety-circuit trace, independent of the general I/O schematic already reviewed, is still required before production arming can rely on `X14`.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Documentation v1.2 — X14 Physical Device Description
+
+Date: 2026-08-18
+
+- Owner described the `X14` emergency-stop device as a large red pushbutton — visually consistent with the mushroom-head red-button convention ISO 13850 expects. `DRIVER/HARDWARE_MAP.md` (v0.7 -> v0.8): added to the `OWNER-CONFIRMED-FUNCTIONAL` evidence.
+- Explicitly preserved the gap this does not close: a plausible physical description is not a safety-circuit verification (polarity, dual-channel/positive-opening contacts, monitoring, response time, latching/reset behavior, ISO 13850/ISO 13849-1 conformance). A dedicated safety-circuit trace remains required before production arming.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
