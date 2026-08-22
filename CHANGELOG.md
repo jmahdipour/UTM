@@ -687,3 +687,12 @@ Date: 2026-08-18
 - `DRIVER/HARDWARE_MAP.md` (v0.10 -> v0.11): recorded the correction as-is, downgraded the flag from 🔴 to 🟡, but explicitly kept the underlying caution: a self-corrected verbal answer is the operator's best current understanding, not a measurement, so none of the four circuit-level answers are treated as settled. Independently of polarity, the already-confirmed single-channel/unmonitored combination still means no guaranteed fault-detection path.
 - Reiterated that only a qualified person physically tracing the safety circuit against ISO 13849-1 can settle this — not further verbal description.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Documentation v1.6 — X14: Two Physical E-Stop Buttons, Wiring Relationship Unknown
+
+Date: 2026-08-18
+
+- Owner reports there are in fact **two** separate E-stop pushbuttons — one on the machine body, one on/near the PLC panel — not one as previously assumed. Owner is unsure how they are wired together (single input in series vs. two separate PLC inputs).
+- `DRIVER/HARDWARE_MAP.md` (v0.11 -> v0.12): recorded as new evidence, kept at 🟡. Explicitly notes the picture is now incomplete, not just unverified — a second, undocumented PLC input may exist. The existing single-channel/unmonitored answers may describe only one button or both in series; not yet distinguishable.
+- Reiterated that only a qualified person physically tracing both buttons and the actual safety circuit can settle this.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
