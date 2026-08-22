@@ -669,3 +669,12 @@ Date: 2026-08-18
 - Owner confirmed `X14`'s behavior is a complete shutdown of the whole device, manually triggered by the operator (not an automatic/self-triggered protective function). `DRIVER/HARDWARE_MAP.md` (v0.8 -> v0.9): added to the `OWNER-CONFIRMED-FUNCTIONAL` evidence.
 - Explicitly preserved the remaining gap: NC-vs-NO polarity/fail-safe direction, dual-channel/positive-opening contacts, wire-break monitoring, response time, and manual-only reset behavior (EDR-0004 forbids automatic reset) are all still unknown. A dedicated safety-circuit trace remains required before production arming.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Documentation v1.4 — X14 Safety Flag: Reported NO-in-Idle, Single-Channel, Unmonitored
+
+Date: 2026-08-18
+
+- Owner answered the four outstanding circuit-level questions for `X14`: (1) contact open (NO) in the released/idle state; (2) not dual-channel; (3) no wire-break/line monitoring; (4) reset is manual-only, not automatic.
+- `DRIVER/HARDWARE_MAP.md` (v0.9 -> v0.10): recorded a prominent 🔴 safety flag. As reported, the circuit pattern (normally-open-in-idle, single-channel, unmonitored) is the opposite of the conventional fail-safe emergency-stop wiring convention, where a wire break or power loss should self-reveal as a stop condition rather than look identical to "not pressed."
+- Explicitly does **not** conclude the circuit is unsafe — records that this can only be resolved by a qualified person tracing the actual physical safety circuit against ISO 13849-1 category/PL requirements, not by further verbal description, before `X14` is relied on for production arming.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
