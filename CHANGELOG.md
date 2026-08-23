@@ -704,3 +704,10 @@ Date: 2026-08-18
 - Owner confirmed both E-stop buttons (machine body, PLC panel) produce the same result/shutdown behavior.
 - `DRIVER/HARDWARE_MAP.md` (v0.12 -> v0.13): recorded as functional-outcome evidence only. Explicitly notes this confirms behavioral equivalence, not wiring topology — still consistent with either series-into-one-input or two-separate-inputs, so the topology question from the prior entry remains open.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Documentation v1.8 — X14: Owner Decision to Defer Further Verification
+
+Date: 2026-08-18
+
+- Owner decided not to pursue further circuit verification of `X14` at this time, citing incident-free operation under the current configuration.
+- `DRIVER/HARDWARE_MAP.md` (v0.13 -> v0.14): recorded as the owner's decision, placed as a note below the read-evidence table (fixing a Markdown table structure break introduced in drafting). Explicitly does not resolve or close the open technical questions in the `X14` row — polarity, single-channel/unmonitored status, and the two-button wiring topology all remain open, and the 🟡 flag is unchanged. Explicitly does not modify any gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` and does not authorize treating `X14` as safety-rated for production arming.
