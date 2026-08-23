@@ -711,3 +711,14 @@ Date: 2026-08-18
 
 - Owner decided not to pursue further circuit verification of `X14` at this time, citing incident-free operation under the current configuration.
 - `DRIVER/HARDWARE_MAP.md` (v0.13 -> v0.14): recorded as the owner's decision, placed as a note below the read-evidence table (fixing a Markdown table structure break introduced in drafting). Explicitly does not resolve or close the open technical questions in the `X14` row — polarity, single-channel/unmonitored status, and the two-button wiring topology all remain open, and the 🟡 flag is unchanged. Explicitly does not modify any gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` and does not authorize treating `X14` as safety-rated for production arming.
+
+## Documentation v1.9 — Shimadzu OEM Identity Confirmed; Extensometer Zero-Reading Issue Recorded
+
+Date: 2026-08-18
+
+- Owner uploaded one page (SHA-256 `506290c5287eb7818da3d9a80a512613a780f83f4cdbf6ace4c748b43c0b1879`) of a Shimadzu Corporation manual, "Strain-Gage Type Extensometer For Shimadzu Autograph AG-A Series" (doc `CM22-0376`, sheet 8/19). Preserved as evidence pointer in `REFERENCES/LEGACY/SHIMADZU/README.md`; full review in `SHIMADZU_EXTENSOMETER_MANUAL_REVIEW.md`.
+- **New finding:** this independently confirms the physical machine's OEM lineage as Shimadzu Autograph AG-A Series, retroactively explaining the "Autograph"/"AG01" naming used throughout the legacy codebase and this repository's analysis documents since the original `AG01.zip` ingestion.
+- Confirms, from the OEM side, the same load/extensometer signal-path separation (dedicated SG AMP vs. LOAD AMP boards) already found on the retrofit side in `ELECTRICAL_SCHEMATIC_REVIEW.md`.
+- Owner reported a known operational issue: the extensometer reads zero during a specific range of the test loop. Reviewed `MainModule.vb`'s `Read_Deformation` routine and found no software-side cause (no conditional zeroing); the most likely origin is the raw register `R37` itself reading zero at the PLC/driver level. Recorded as an open issue, not resolved, with plausible-but-unconfirmed causes listed for awareness.
+- Synchronized `DRIVER/HARDWARE_MAP.md` (v0.14 -> v0.15), `R37` row.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
