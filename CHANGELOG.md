@@ -722,3 +722,11 @@ Date: 2026-08-18
 - Owner reported a known operational issue: the extensometer reads zero during a specific range of the test loop. Reviewed `MainModule.vb`'s `Read_Deformation` routine and found no software-side cause (no conditional zeroing); the most likely origin is the raw register `R37` itself reading zero at the PLC/driver level. Recorded as an open issue, not resolved, with plausible-but-unconfirmed causes listed for awareness.
 - Synchronized `DRIVER/HARDWARE_MAP.md` (v0.14 -> v0.15), `R37` row.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Code v0.1 — First Real-Build-Verified Fix
+
+Date: 2026-08-23
+
+- Owner performed the first real Visual Studio build (Debug x86, net48) of the Solution scaffold. 8 of 12 projects built successfully; 3 test methods across `tests/UTS.Core.Tests/EngineeringQuantityTests.vb` and `tests/UTS.Application.Contracts.Tests/CommandEnvelopeTests.vb` failed with misleading `BC30198`/`BC30035` syntax errors.
+- Root cause: a bare `New` object-creation expression cannot be the body of a single-line `Sub` statement lambda in VB.NET. Fixed by expanding to multi-line `Sub() ... End Sub` lambdas assigning to a discarded local. Confirmed no other occurrence of the pattern exists in `src/` or `tests/`.
+- `UTS.Presentation.Wpf` still fails to build (`InitializeComponent` not declared), cascading into `UTS.Bootstrapper`. Not yet fixed — likely stale intermediate build state from the initial failed restore, or a VB.NET WPF SDK-style tooling gap in the reported .NET 5 SDK; owner asked to try a clean `bin`/`obj` deletion and rebuild before any project-file change is attempted, to avoid a blind fix that could introduce a duplicate-item error.
