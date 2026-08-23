@@ -26,7 +26,9 @@ Namespace Commands
             Dim localOffset As New DateTimeOffset(2026, 8, 9, 12, 0, 0, TimeSpan.FromHours(2))
 
             Assert.That(
-                Sub() New CommandEnvelope(Of SamplePayload)(identifier, "SYS.TEST", 1, identifier, localOffset, identifier, New SamplePayload()),
+                Sub()
+                    Dim discarded = New CommandEnvelope(Of SamplePayload)(identifier, "SYS.TEST", 1, identifier, localOffset, identifier, New SamplePayload())
+                End Sub,
                 Throws.TypeOf(Of ArgumentException)())
         End Sub
     End Class

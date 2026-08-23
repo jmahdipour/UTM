@@ -19,14 +19,18 @@ Namespace Units
         <TestCase(Double.NegativeInfinity)>
         Public Sub NonfiniteValuesAreRejected(value As Double)
             Assert.That(
-                Sub() New EngineeringQuantity(value, QuantityKind.Force, UnitCode.Newton),
+                Sub()
+                    Dim discarded = New EngineeringQuantity(value, QuantityKind.Force, UnitCode.Newton)
+                End Sub,
                 Throws.TypeOf(Of ArgumentOutOfRangeException)())
         End Sub
 
         <Test>
         Public Sub IncompatibleKindAndUnitAreRejected()
             Assert.That(
-                Sub() New EngineeringQuantity(10.0R, QuantityKind.Length, UnitCode.Newton),
+                Sub()
+                    Dim discarded = New EngineeringQuantity(10.0R, QuantityKind.Length, UnitCode.Newton)
+                End Sub,
                 Throws.TypeOf(Of ArgumentException)())
         End Sub
     End Class
