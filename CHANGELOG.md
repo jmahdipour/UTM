@@ -696,3 +696,11 @@ Date: 2026-08-18
 - `DRIVER/HARDWARE_MAP.md` (v0.11 -> v0.12): recorded as new evidence, kept at 🟡. Explicitly notes the picture is now incomplete, not just unverified — a second, undocumented PLC input may exist. The existing single-channel/unmonitored answers may describe only one button or both in series; not yet distinguishable.
 - Reiterated that only a qualified person physically tracing both buttons and the actual safety circuit can settle this.
 - No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
+
+## Documentation v1.7 — X14: Both E-Stop Buttons Confirmed Functionally Identical
+
+Date: 2026-08-18
+
+- Owner confirmed both E-stop buttons (machine body, PLC panel) produce the same result/shutdown behavior.
+- `DRIVER/HARDWARE_MAP.md` (v0.12 -> v0.13): recorded as functional-outcome evidence only. Explicitly notes this confirms behavioral equivalence, not wiring topology — still consistent with either series-into-one-input or two-separate-inputs, so the topology question from the prior entry remains open.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state.
