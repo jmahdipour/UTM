@@ -13,9 +13,8 @@ Namespace Common
 
         <Test>
         Public Sub ParseRejectsUppercaseText()
-            Assert.That(
-                Sub() CanonicalId.Parse("AAAAAAAA-BBBB-4CCC-8DDD-EEEEEEEEEEEE"),
-                Throws.TypeOf(Of FormatException)())
+            Assert.Throws(Of FormatException)(
+                Sub() CanonicalId.Parse("AAAAAAAA-BBBB-4CCC-8DDD-EEEEEEEEEEEE"))
         End Sub
     End Class
 End Namespace
