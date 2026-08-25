@@ -730,3 +730,12 @@ Date: 2026-08-23
 - Owner performed the first real Visual Studio build (Debug x86, net48) of the Solution scaffold. 8 of 12 projects built successfully; 3 test methods across `tests/UTS.Core.Tests/EngineeringQuantityTests.vb` and `tests/UTS.Application.Contracts.Tests/CommandEnvelopeTests.vb` failed with misleading `BC30198`/`BC30035` syntax errors.
 - Root cause: a bare `New` object-creation expression cannot be the body of a single-line `Sub` statement lambda in VB.NET. Fixed by expanding to multi-line `Sub() ... End Sub` lambdas assigning to a discarded local. Confirmed no other occurrence of the pattern exists in `src/` or `tests/`.
 - `UTS.Presentation.Wpf` still fails to build (`InitializeComponent` not declared), cascading into `UTS.Bootstrapper`. Not yet fixed — likely stale intermediate build state from the initial failed restore, or a VB.NET WPF SDK-style tooling gap in the reported .NET 5 SDK; owner asked to try a clean `bin`/`obj` deletion and rebuild before any project-file change is attempted, to avoid a blind fix that could introduce a duplicate-item error.
+
+## Code v0.2 — Assert.That/Sub-Lambda Overload Ambiguity Fixed
+
+Date: 2026-08-24
+
+- Owner's second real build surfaced `BC30521 'Overload resolution failed because no accessible 'That' is most specific'` at all four remaining `Sub()`-lambda exception-assertion call sites: `tests/UTS.Core.Tests/CanonicalIdTests.vb` (`ParseRejectsUppercaseText`), `tests/UTS.Core.Tests/EngineeringQuantityTests.vb` (`NonfiniteValuesAreRejected`, `IncompatibleKindAndUnitAreRejected`), `tests/UTS.Application.Contracts.Tests/CommandEnvelopeTests.vb` (`NonUtcRequestedTimeIsRejected`).
+- Root cause: NUnit's `Assert.That` has multiple overloads (`TActual`/`IResolveConstraint`, `TestDelegate`/`IResolveConstraint`, `ActualValueDelegate(Of TActual)`/`IResolveConstraint`). VB.NET's overload resolution cannot pick a single most-specific match when a bare `Sub()` lambda is passed directly.
+- Fixed by using `Assert.Throws(Of TException)(Sub() ...)` instead, which has a single unambiguous overload. Confirmed no remaining `Throws.TypeOf` or ambiguous `Assert.That(Sub() ...)` pattern anywhere in `src/` or `tests/`.
+- **Process note:** this fix (commit `69b9d14`) was committed locally but not pushed to GitHub in the same turn it was made; the owner's build report that triggered this entry was against the un-pushed state. Pushed in this turn (`534bc5b..69b9d14`). A fresh `UTS_Solution_Skeleton.zip` was repackaged and verified to contain the fix before re-delivery.
