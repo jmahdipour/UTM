@@ -18,18 +18,18 @@ Namespace Units
         <TestCase(Double.PositiveInfinity)>
         <TestCase(Double.NegativeInfinity)>
         Public Sub NonfiniteValuesAreRejected(value As Double)
-            Assert.Throws(Of ArgumentOutOfRangeException)(
-                Sub()
-                    Dim discarded = New EngineeringQuantity(value, QuantityKind.Force, UnitCode.Newton)
-                End Sub)
+            Dim code As TestDelegate = Sub()
+                                            Dim discarded = New EngineeringQuantity(value, QuantityKind.Force, UnitCode.Newton)
+                                        End Sub
+            Assert.Throws(Of ArgumentOutOfRangeException)(code)
         End Sub
 
         <Test>
         Public Sub IncompatibleKindAndUnitAreRejected()
-            Assert.Throws(Of ArgumentException)(
-                Sub()
-                    Dim discarded = New EngineeringQuantity(10.0R, QuantityKind.Length, UnitCode.Newton)
-                End Sub)
+            Dim code As TestDelegate = Sub()
+                                            Dim discarded = New EngineeringQuantity(10.0R, QuantityKind.Length, UnitCode.Newton)
+                                        End Sub
+            Assert.Throws(Of ArgumentException)(code)
         End Sub
     End Class
 End Namespace
