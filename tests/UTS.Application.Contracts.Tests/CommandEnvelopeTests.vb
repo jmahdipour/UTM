@@ -25,7 +25,7 @@ Namespace Commands
             Dim identifier As CanonicalId = CanonicalId.FromGuid(Guid.NewGuid())
             Dim localOffset As New DateTimeOffset(2026, 8, 9, 12, 0, 0, TimeSpan.FromHours(2))
 
-            Dim code As TestDelegate = Sub()
+            Dim code As Action = Sub()
                                             Dim discarded = New CommandEnvelope(Of SamplePayload)(identifier, "SYS.TEST", 1, identifier, localOffset, identifier, New SamplePayload())
                                         End Sub
             Assert.Throws(Of ArgumentException)(code)

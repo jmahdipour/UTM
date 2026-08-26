@@ -18,7 +18,7 @@ Namespace Units
         <TestCase(Double.PositiveInfinity)>
         <TestCase(Double.NegativeInfinity)>
         Public Sub NonfiniteValuesAreRejected(value As Double)
-            Dim code As TestDelegate = Sub()
+            Dim code As Action = Sub()
                                             Dim discarded = New EngineeringQuantity(value, QuantityKind.Force, UnitCode.Newton)
                                         End Sub
             Assert.Throws(Of ArgumentOutOfRangeException)(code)
@@ -26,7 +26,7 @@ Namespace Units
 
         <Test>
         Public Sub IncompatibleKindAndUnitAreRejected()
-            Dim code As TestDelegate = Sub()
+            Dim code As Action = Sub()
                                             Dim discarded = New EngineeringQuantity(10.0R, QuantityKind.Length, UnitCode.Newton)
                                         End Sub
             Assert.Throws(Of ArgumentException)(code)

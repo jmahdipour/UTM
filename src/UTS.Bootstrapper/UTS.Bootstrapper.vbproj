@@ -16,4 +16,13 @@
     <ProjectReference Include="..\UTS.Presentation.Wpf\UTS.Presentation.Wpf.vbproj" />
     <PackageReference Include="NLog" />
   </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Update="App.xaml.vb">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
