@@ -739,3 +739,13 @@ Date: 2026-08-24
 - Root cause: NUnit's `Assert.That` has multiple overloads (`TActual`/`IResolveConstraint`, `TestDelegate`/`IResolveConstraint`, `ActualValueDelegate(Of TActual)`/`IResolveConstraint`). VB.NET's overload resolution cannot pick a single most-specific match when a bare `Sub()` lambda is passed directly.
 - Fixed by using `Assert.Throws(Of TException)(Sub() ...)` instead, which has a single unambiguous overload. Confirmed no remaining `Throws.TypeOf` or ambiguous `Assert.That(Sub() ...)` pattern anywhere in `src/` or `tests/`.
 - **Process note:** this fix (commit `69b9d14`) was committed locally but not pushed to GitHub in the same turn it was made; the owner's build report that triggered this entry was against the un-pushed state. Pushed in this turn (`534bc5b..69b9d14`). A fresh `UTS_Solution_Skeleton.zip` was repackaged and verified to contain the fix before re-delivery.
+
+## Code v0.3 — Assert.Throws(Of T)(Sub()...) Ambiguity Fixed for Real
+
+Date: 2026-08-24
+
+- Owner's third real build showed the v0.2 fix (`Assert.Throws(Of T)(Sub() ...)`) was itself still ambiguous with the same `BC30521` error, now naming `Throws` instead of `That`.
+- Root cause: VB.NET cannot unambiguously convert a bare `Sub()` lambda to `TestDelegate` while simultaneously inferring the generic type argument on `Assert.Throws(Of TActual)` — the two resolutions are circularly dependent.
+- Fixed by assigning the lambda to an explicitly typed `Dim code As TestDelegate = Sub() ...` local first, then passing that local (now unambiguously typed) to `Assert.Throws(Of T)(code)`. Applied to all four remaining call sites.
+- Confirmed no remaining `Assert.Throws(`/`Assert.That(` call with an inline lambda anywhere in `src/`/`tests/`.
+- Pushed and explicitly re-fetched `origin/main` to confirm the commit landed on GitHub this time, after the previous entry's push was silently missed in an earlier turn.
