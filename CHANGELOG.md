@@ -749,3 +749,13 @@ Date: 2026-08-24
 - Fixed by assigning the lambda to an explicitly typed `Dim code As TestDelegate = Sub() ...` local first, then passing that local (now unambiguously typed) to `Assert.Throws(Of T)(code)`. Applied to all four remaining call sites.
 - Confirmed no remaining `Assert.Throws(`/`Assert.That(` call with an inline lambda anywhere in `src/`/`tests/`.
 - Pushed and explicitly re-fetched `origin/main` to confirm the commit landed on GitHub this time, after the previous entry's push was silently missed in an earlier turn.
+
+## Code v0.4 — Full Re-Audit: Obsolete TestDelegate + WPF Markup-Compiler Metadata
+
+Date: 2026-08-25
+
+- Owner's fourth build (a genuine Rebuild All, ruling out stale `bin`/`obj` state) surfaced two separate issues:
+  1. `BC40000: 'TestDelegate' is obsolete: 'Use Action instead of TestDelegate'`, now a build error because `Directory.Build.props` sets `TreatWarningsAsErrors=true` and NUnit 4.6.1 (pinned in `Directory.Packages.props`) marks the `TestDelegate` overload obsolete. Changed all four `Dim code As TestDelegate = ...` locals to `Dim code As Action = ...`.
+  2. `UTS.Presentation.Wpf`'s `InitializeComponent is not declared` persisted through a real Rebuild All, ruling out a stale-cache explanation. Added explicit `Page`/`ApplicationDefinition` + `Compile` item metadata (`Generator`, `SubType`, `DependentUpon`) for `ShellWindow.xaml`/`App.xaml` using `Update` (not `Include`, to avoid duplicate-item conflicts with SDK implicit globbing) — a known fix for VB.NET SDK-style WPF markup-compiler gaps. `x:Class` values were re-verified to exactly match `RootNamespace` + folder/class in both projects; not a naming mismatch.
+- Performed a full re-audit of every `Assert.*` call site across all four test files (including the already-passing `UTS.Infrastructure.SQLite.Tests`): no other lambda-typed, `TestDelegate`, or similarly risky pattern remains.
+- Not independently build-verified in this environment (no Windows/WPF toolchain available); owner asked to report the next build result.
