@@ -759,3 +759,14 @@ Date: 2026-08-25
   2. `UTS.Presentation.Wpf`'s `InitializeComponent is not declared` persisted through a real Rebuild All, ruling out a stale-cache explanation. Added explicit `Page`/`ApplicationDefinition` + `Compile` item metadata (`Generator`, `SubType`, `DependentUpon`) for `ShellWindow.xaml`/`App.xaml` using `Update` (not `Include`, to avoid duplicate-item conflicts with SDK implicit globbing) — a known fix for VB.NET SDK-style WPF markup-compiler gaps. `x:Class` values were re-verified to exactly match `RootNamespace` + folder/class in both projects; not a naming mismatch.
 - Performed a full re-audit of every `Assert.*` call site across all four test files (including the already-passing `UTS.Infrastructure.SQLite.Tests`): no other lambda-typed, `TestDelegate`, or similarly risky pattern remains.
 - Not independently build-verified in this environment (no Windows/WPF toolchain available); owner asked to report the next build result.
+
+## Code v0.5 — WPF Layer Rebuilt Entirely in Code, XAML Removed
+
+Date: 2026-08-26
+
+- After four consecutive builds where `UTS.Presentation.Wpf`'s `InitializeComponent` failed to be generated (`BC30451`), including a genuine Rebuild All ruling out stale `bin`/`obj` state, and the prior explicit Page/ApplicationDefinition metadata patch not resolving it, removed XAML from both WPF-hosting projects entirely rather than continue unverifiable guesses (no Windows/WPF toolchain is available in this environment).
+- `ShellWindow.xaml`/`.xaml.vb` -> `ShellWindow.vb`: same visible layout and the same `ShellViewModel` bindings, built with the plain WPF object model and programmatic `System.Windows.Data.Binding` — true MVVM binding preserved, only the markup compiler dependency removed.
+- `App.xaml`/`.xaml.vb` -> `App.vb`: same `OnStartup` composition-root wiring. Added an explicit `<STAThread>` `Shared Sub Main` and a matching `<StartupObject>` in `UTS.Bootstrapper.vbproj`, since removing `App.xaml` also removes its auto-generated entry point.
+- Noted a documented VB-specific quirk worth remembering if XAML is reintroduced later: VB.NET's `StartupObject` project property is RootNamespace-qualified, unlike XAML's `x:Class` attribute, which is not — a likely contributor to the original failure, though not confirmed since the fix path taken bypassed XAML entirely.
+- Removed the now-stale Page/ApplicationDefinition/Compile item metadata from both `.vbproj` files. Added a defensive `Imports System` to `ShellWindow.vb` and `CompositionRoot.vb` for constructed exception types.
+- Not independently build-verified in this environment; owner asked to report the next build result.
