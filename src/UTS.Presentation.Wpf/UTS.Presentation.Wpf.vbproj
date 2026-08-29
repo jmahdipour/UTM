@@ -8,13 +8,4 @@
     <ProjectReference Include="..\UTS.Application.Contracts\UTS.Application.Contracts.vbproj" />
     <PackageReference Include="OxyPlot.Wpf" />
   </ItemGroup>
-  <ItemGroup>
-    <Page Update="Shell\ShellWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Update="Shell\ShellWindow.xaml.vb">
-      <DependentUpon>ShellWindow.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
 </Project>

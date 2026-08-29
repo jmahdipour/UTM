@@ -4,6 +4,7 @@
     <AssemblyName>UTS</AssemblyName>
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
+    <StartupObject>UTS.Bootstrapper.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\UTS.Core\UTS.Core.vbproj" />
@@ -15,14 +16,5 @@
     <ProjectReference Include="..\UTS.Infrastructure.Reporting\UTS.Infrastructure.Reporting.vbproj" />
     <ProjectReference Include="..\UTS.Presentation.Wpf\UTS.Presentation.Wpf.vbproj" />
     <PackageReference Include="NLog" />
-  </ItemGroup>
-  <ItemGroup>
-    <ApplicationDefinition Update="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Update="App.xaml.vb">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 </Project>
