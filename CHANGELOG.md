@@ -770,3 +770,13 @@ Date: 2026-08-26
 - Noted a documented VB-specific quirk worth remembering if XAML is reintroduced later: VB.NET's `StartupObject` project property is RootNamespace-qualified, unlike XAML's `x:Class` attribute, which is not — a likely contributor to the original failure, though not confirmed since the fix path taken bypassed XAML entirely.
 - Removed the now-stale Page/ApplicationDefinition/Compile item metadata from both `.vbproj` files. Added a defensive `Imports System` to `ShellWindow.vb` and `CompositionRoot.vb` for constructed exception types.
 - Not independently build-verified in this environment; owner asked to report the next build result.
+
+## Code v0.6 — Namespace-Shadowing Fix: 11/12 Projects Now Build
+
+Date: 2026-08-29
+
+- Owner's build succeeded for 11 of 12 projects, including `UTS.Presentation.Wpf` (confirming the code-only WPF rewrite in v0.5 worked). Only `UTS.Bootstrapper` failed: `App.vb(19,14): error BC30182: Type expected` on `Inherits Application`, cascading into an `OnStartup` override error.
+- Root cause identified with confidence: this solution has a project literally named `UTS.Application`. VB.NET's unqualified-name lookup checks enclosing namespaces (`UTS.Bootstrapper` -> `UTS` -> global) before `Imports` statements; at the `UTS` level it found the referenced `UTS.Application` namespace and resolved the bare word `Application` to that namespace instead of `System.Windows.Application`. This also explains why `ShellWindow.vb`'s `Inherits Window` succeeded in the same rebuild — `UTS.Presentation.Wpf` does not reference `UTS.Application`, so no collision exists for `Window`.
+- Fixed by fully qualifying the base class: `Inherits System.Windows.Application`. Documented the reasoning directly in `App.vb`'s XML doc remarks.
+- Defensively replaced one em-dash with a plain hyphen and removed a blank XML doc comment line in the same file (not confirmed contributing causes, but zero-risk to fix alongside).
+- **Session note:** the sandbox environment was reset between the prior turn and this one, losing the local clone; re-cloned from `origin/main` before continuing — no data loss, since all prior work was already pushed and verified.
