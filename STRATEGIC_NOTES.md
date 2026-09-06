@@ -42,3 +42,34 @@ slice. It is a business-development observation, not an engineering decision.
 
 **Required owner action:** none required; this is a standing note. Revisit if/when
 the project's timeline, funding, or market path changes materially.
+
+## SN-002: Two parallel tracks reached different milestones first
+
+**Observation (2026-08-29):** by this date, `UTS` (the fully-architected,
+EDR-governed Solution in this repository) had reached 11/12 buildable projects
+but no confirmed run against real hardware. Separately, and outside this
+repository's EDR track, the owner developed `Autograph.WPF` — a narrowly-scoped,
+classic-project-format VB.NET/WPF diagnostic and calibration tool — which
+reached real hardware validation (verified R37 rollover behavior on the
+physical extensometer) through several iterated versions (V1.1-V1.2.8). See
+`AUTOGRAPH_WPF_PROTOTYPE_REVIEW.md`.
+
+**Why this is not a criticism of either track:** the two answer different
+questions. `Autograph.WPF` answers "does this specific signal path work on the
+real machine, right now?" with a small, disposable, single-purpose tool.
+`UTS` answers "what does a complete, safety-governed, standards-traceable
+testing-machine software system look like?" with an architecture designed to
+outlast any one sensor or one machine. Reaching hardware first does not mean
+the narrow tool should replace the broad architecture, and having the broader
+architecture does not mean the narrow tool's hardware learnings should be
+discarded.
+
+**Why this is not an EDR:** it is a project-management/process observation,
+not a bounded software contract.
+
+**Required owner action:** none required. When ready, decide case-by-case
+whether a specific piece of `Autograph.WPF` (the R37 rollover-handling
+approach, the FaSvr late-bound COM connection pattern) should inform a future
+`UTS` EDR — each such adoption should go through the normal evidence ->
+EDR -> implementation-evidence-gate path like any other decision, not be
+copied wholesale.

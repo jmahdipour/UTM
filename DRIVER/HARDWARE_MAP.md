@@ -1,7 +1,7 @@
 ---
 project: Universal Testing Machine (UTS)
 document: HARDWARE_MAP
-version: 0.15
+version: 0.16
 status: CONTROLLED-DRAFT
 governing_edr: EDR-0009
 machine_profile: UNASSIGNED
@@ -28,7 +28,7 @@ Every row below comes only from legacy source: `REFERENCES/LEGACY/AG01/` (origin
 | `M41` | force sign | `MainModule.vb:1971,1987` | LEGACY-EVIDENCE | polarity and sign convention unverified |
 | `R20/R21` | displacement low/high | `65535*high+low`, `MainModule.vb:1989-2002` | LEGACY-EVIDENCE | width/order/signedness and multiplier unverified; expression not accepted |
 | `M40` | displacement sign | `MainModule.vb:1999-2001` | LEGACY-EVIDENCE | polarity and orientation unverified |
-| `R37` | extensometer raw count | `MainModule.vb:2003-2018` | LEGACY-EVIDENCE | sensor mapping/data type/scale unknown. **Plausible, unconfirmed** per `ELECTRICAL_SCHEMATIC_REVIEW.md` Sheet 11: may correspond to extensometer `11B7` on bridge-input module `11FBs-LC5` — schematic shows no register number, so this is not asserted as fact. Load/extensometer signal-path separation independently corroborated by an OEM Shimadzu manual page, see `SHIMADZU_EXTENSOMETER_MANUAL_REVIEW.md`. **Known open issue, owner-reported 2026-08-18:** reads zero during a specific range of the test loop; source-code review found no software-side cause in `Read_Deformation` — see that document for detail |
+| `R37` | extensometer raw count | `MainModule.vb:2003-2018` | LEGACY-EVIDENCE | sensor mapping/data type/scale unknown. **Plausible, unconfirmed** per `ELECTRICAL_SCHEMATIC_REVIEW.md` Sheet 11: may correspond to extensometer `11B7` on bridge-input module `11FBs-LC5` — schematic shows no register number, so this is not asserted as fact. Load/extensometer signal-path separation independently corroborated by an OEM Shimadzu manual page, see `SHIMADZU_EXTENSOMETER_MANUAL_REVIEW.md`. **Known open issue, owner-reported 2026-08-18:** reads zero during a specific range of the test loop; source-code review found no software-side cause in `Read_Deformation` — see that document for detail. **New evidence, 2026-08-29:** `AUTOGRAPH_WPF_PROTOTYPE_REVIEW.md` confirms R37 is a 16-bit counter (range 0-32767) that wraps, and reports hardware-verified rollover-handling logic (`R37CounterTracker`, tested against two real forward rollovers plus a reverse rollover). This is a plausible, well-supported explanation for the open zero-reading issue above — the legacy code path has no rollover handling, so a raw value near zero at every wrap would display as a real zero — but is not yet a confirmed root-cause determination |
 | `M42` | extensometer sign | `MainModule.vb:2006,2017` | LEGACY-EVIDENCE | polarity and orientation unverified |
 | `T55` | programmable hold timer | `MainModule.vb:2020-2022` | LEGACY-EVIDENCE | timer base/rollover/ownership unknown |
 | `X0` | not referenced in reviewed `.vb` source | `Autograph_SVR.fcs` register list only | LEGACY-EVIDENCE | **Plausible, unconfirmed** per `ELECTRICAL_SCHEMATIC_REVIEW.md` Sheet 5: local terminal `X0` on the encoder module is wired to channel A of high-speed encoder "Mecaoion S48-8-2500ZT" (2500 pulses/rev). Fatek FBs PLCs assign global X-numbering by installed slot order, which this schematic set does not show — so this local terminal label is not confirmed to be the same global `X0` seen in the Facon tag list |

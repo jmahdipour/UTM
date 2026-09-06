@@ -780,3 +780,16 @@ Date: 2026-08-29
 - Fixed by fully qualifying the base class: `Inherits System.Windows.Application`. Documented the reasoning directly in `App.vb`'s XML doc remarks.
 - Defensively replaced one em-dash with a plain hyphen and removed a blank XML doc comment line in the same file (not confirmed contributing causes, but zero-risk to fix alongside).
 - **Session note:** the sandbox environment was reset between the prior turn and this one, losing the local clone; re-cloned from `origin/main` before continuing — no data loss, since all prior work was already pushed and verified.
+
+## Documentation v2.0 — Autograph.WPF Prototype Reviewed (Real Hardware Validation)
+
+Date: 2026-08-29
+
+- Owner uploaded `Autograph_V1_2_8_Calibration_WPF_Integrated_READONLY_FIXED.zip` (SHA-256 `bf5fa6c4dab8f1ff3d9593720018ca8873c10571b53f22921c6addd8ff783d8b`) — a separate, independently-developed VB.NET/WPF diagnostic and calibration tool for the extensometer, hardware-validated through versions V1.1-V1.2.8 outside this repository's EDR track. Preserved as evidence pointer in `REFERENCES/PROTOTYPES/AUTOGRAPH_WPF/README.md`; full review in `AUTOGRAPH_WPF_PROTOTYPE_REVIEW.md`.
+- **Real hardware evidence:** `R37CounterTracker`'s rollover-handling logic was verified against two real forward rollovers (and later a reverse rollover) on the physical extensometer — the strongest driver evidence in this repository to date, a working communication path rather than source-code analysis or a static schematic.
+- **Plausible explanation recorded for the open extensometer zero-reading issue** (`DRIVER/HARDWARE_MAP.md` `R37` row, `SHIMADZU_EXTENSOMETER_MANUAL_REVIEW.md`): R37 is a 16-bit counter that wraps at 32768; the legacy `Read_Deformation` code path has no rollover handling, so a raw value near zero at every wrap would display as a real zero. Not yet a confirmed root-cause determination.
+- Noted `FaSvrAdapter`'s late-bound COM connection pattern (`Type.GetTypeFromProgID` + `InvokeMember`, no compile-time interop reference) as a pattern worth a deliberate decision if carried into `UTS`'s own driver adapter.
+- Explicitly not integrated into the `UTS` Solution: different project system (classic-style vs. SDK-style `.vbproj`), different namespace/domain model, no shared assemblies, and no reference to any UTS EDR contract. Whether to adopt any specific piece remains an open owner decision, to go through the normal evidence -> EDR -> implementation-evidence-gate path.
+- Added `STRATEGIC_NOTES.md` SN-002: a non-binding process observation that the narrowly-scoped prototype reached real hardware validation before the fully-architected `UTS` Solution did — recorded as a fact about the two tracks' different purposes, not a criticism of either.
+- Noted, circumstantially, that `Autograph.WPF`'s classic-style WPF project format builds without issue on the same machine where `UTS.Presentation.Wpf`'s SDK-style XAML repeatedly failed (Code v0.5) — a possible lower-risk fallback if XAML is ever reintroduced into `UTS`.
+- No gate in `DRIVER/COMMISSIONING_AND_ACTIVATION_GATES.md` changed state. No EDR or Frozen decision changed.
